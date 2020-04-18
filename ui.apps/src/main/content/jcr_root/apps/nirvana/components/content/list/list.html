@@ -1,0 +1,61 @@
+<ul data-sly-use.list="com.adobe.cq.wcm.core.components.models.List"
+    data-sly-use.model="com.adobe.aem.guides.nirvana.core.models.NewListModel"
+
+    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.itemTemplate="item.html"
+    class="cmp-list">
+
+
+
+<sly data-sly-test="${properties.listFrom == 'static'}">
+      <li data-sly-repeat.child="${model.list}">
+
+<article>
+        <a class="cmp-list__item-link" href="${child.pagePath}" target="${child.openInNewTab == 'true' ? '_blank' : '_self'}">
+            <span class="cmp-list__item-title">${child.pageName}</span>
+           
+        </a>
+     
+    </article>
+
+<ul data-sly-use.list="com.adobe.cq.wcm.core.components.models.List" data-sly-use.model="com.adobe.aem.guides.nirvana.core.models.NewListModel" data-sly-use.template="core/wcm/components/commons/v1/templates.html" data-sly-use.itemTemplate="item.html" class="cmp-list">
+
+    <sly data-sly-test="${properties.listFrom == 'static'}">
+        <li data-sly-repeat.child="${model.list}">
+
+            <article>
+                <a class="cmp-list__item-link" href="${child.pagePath}" target="${child.openInNewTab == 'true' ? '_blank' : '_self'}">
+                    <span class="cmp-list__item-title">${child.pageName}</span>
+
+                </a>
+
+            </article>
+
+        </li>
+
+    </sly>
+
+    <sly data-sly-test="${properties.listFrom != 'static'}">
+
+        <li data-sly-repeat.item="${list.listItems}" class="cmp-list__item" data-sly-call="${itemTemplate.item @ list = list, item = item}">
+        </li>
+    </sly>
+
+</ul>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=list.listItems.size == 0, classAppend='cmp-list'}"></sly>
+      </li>
+
+</sly>
+
+<sly data-sly-test="${properties.listFrom != 'static'}">
+
+    <li data-sly-repeat.item="${list.listItems}" 
+    class="cmp-list__item" data-sly-call="${itemTemplate.item @ list = list, item = item}">
+    </li>
+</sly>
+
+
+</ul>
+
+<sly data-sly-call="${template.placeholder @ isEmpty=list.listItems.size == 0, classAppend='cmp-list'}"></sly>

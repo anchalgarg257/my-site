@@ -1,0 +1,48 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+
+<sly data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.Notes">
+
+
+
+<h2>Notes</h2>
+
+<div class="danger" style="background-color:${model.colour ? model.colour : '#3D9970'  @ context='styleString'};">
+
+  <p>
+  <strong>${model.danger}!</strong> ${model.sometext}... 
+  </p>
+</div>
+
+
+</sly>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+
+<style>
+div {
+  margin-bottom: 15px;
+  padding: 4px 12px;
+}
+
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+
+.success {
+  background-color: #ddffdd;
+  border-left: 6px solid #4CAF50;
+}
+
+.info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+}
+
+
+.warning {
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
+}
+</style>

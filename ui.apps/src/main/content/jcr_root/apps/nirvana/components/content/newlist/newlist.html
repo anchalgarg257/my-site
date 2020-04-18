@@ -1,0 +1,29 @@
+<ul data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.ListModel" data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-list.child="${model.pageList}">
+
+<li><a href="${child.path}" >
+
+
+<sly data-sly-test="${child.hasIcon}">
+
+<i class="${child.className}"></i>
+
+</sly>
+
+<sly data-sly-test="${!child.hasIcon}">
+
+${child.title}
+
+</sly>
+
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+

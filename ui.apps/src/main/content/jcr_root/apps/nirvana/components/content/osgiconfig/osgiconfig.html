@@ -1,0 +1,21 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.MySimpleServiceModel">
+
+ConfigValue = ${model.configValue}
+<br>
+OpenInNewWindow = ${model.openInNewWindow}
+<br>
+StringValues = ${model.stringValues}
+<br>
+Gender = ${model.gender}
+<br>
+NumberValue = ${model.numberValue}
+<br>
+UserName = ${model.userName}
+<br>
+Password = ${model.password}
+
+
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+

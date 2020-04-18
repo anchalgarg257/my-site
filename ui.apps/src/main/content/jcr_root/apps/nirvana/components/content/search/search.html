@@ -1,0 +1,13 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+
+<input type="text" id="myInput">
+    <button type="button" id="myBtn">Show Value</button>
+
+<input type="hidden" id="foo" value="${properties.pathfield}" />
+
+<input type="hidden" id="zoo" value="${properties.numberfield}" />
+
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+
