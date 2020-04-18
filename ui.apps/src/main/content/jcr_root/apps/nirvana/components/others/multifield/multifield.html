@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<sly data-sly-use.model = "com.aem.demo.core.models.HelloWorldModel"/>
+
+<sly data-sly-test.listitems = "${model.multifield}"/>
+
+
+<sly data-sly-test="${wcmmode.edit && listitems.size==0}">
+   <div class="cq-placeholder cq-marker-start" data-emptytext="Multifield"></div>
+</sly>
+
+
+<sly data-sly-test = "${listitems.size>0}">
+
+<div class="container">
+  <h3>Inline List</h3>
+  <ul class="list-inline" data-sly-list.child="${model.multifield}">
+    <li><a href="${child.link}">
+    ${child.text}</a>
+    </li>
+
+  </ul>
+</div>
+
+</sly>

@@ -1,0 +1,10 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.CurrentPageChildren">
+
+     <sly data-sly-list.list="${model.childrenPages}">
+     ${list.name}
+     ${list.path}
+     </sly>
+
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>

@@ -1,0 +1,34 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.Standard">
+
+Date-
+
+----------
+${model.date}
+---------
+${model.name}
+----------
+Height
+${model.height}
+-------------
+${model.description}
+---------------
+${model.websiteLink}
+-----------
+Path browser
++++
+${model.pathBrowser}
+------------
+${model.openInNewTab}
+----------------
+${model.gender}
+-------------
+${model.country}
+------------
+${model.colour}
+--------------
+${model.tag}
+
+
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
