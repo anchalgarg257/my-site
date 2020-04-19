@@ -1,4 +1,3 @@
-alert("Hello! I am an alert box!!");
 $(document).on("dialog-ready", function () {
     $("button[coral-multifield-add]").click(function() {debugger;
         var field = $(this).parent();
