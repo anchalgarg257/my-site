@@ -1,0 +1,22 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+        <!-- slider Area Start-->
+<div class="slider-area">
+<div class="single-slider hero-overly slider-height2 d-flex align-items-center" 
+     data-background="${properties.fileReference}" style="background-image:url('${properties.fileReference @ context='uri'}');" >
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-md-11 offset-xl-1 offset-lg-1 offset-md-1">
+                            <div class="hero-caption">
+                                <span>${properties.caption}</span>
+                                <h2>${properties.heading}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <!-- slider Area End-->
+
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>

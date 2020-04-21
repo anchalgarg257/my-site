@@ -1,0 +1,4 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+   <a href="${properties.path @ extension = 'html'}" class="btn more-btn1">${properties.text} <i class="ti-angle-right"></i> </a>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>

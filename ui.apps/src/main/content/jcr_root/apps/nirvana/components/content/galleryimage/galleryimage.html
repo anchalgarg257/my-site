@@ -1,0 +1,23 @@
+<!-- Gallery img Start-->
+        <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+             class="gallery-area g-padding fix">
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="gallery-active owl-carousel">
+                            <div class="gallery-img">
+                                <a href="#"><img src="assets/img/gallery/gallery1.jpg" alt=""></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a href="#"><img src="assets/img/gallery/gallery2.jpg" alt=""></a>
+                            </div>
+                            <div class="gallery-img">
+                                <a href="#"><img src="assets/img/gallery/gallery3.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+        <!-- Gallery img End-->
