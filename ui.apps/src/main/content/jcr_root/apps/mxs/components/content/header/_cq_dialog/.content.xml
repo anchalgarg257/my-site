@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Header Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <hideExplore
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./hideExplore"
+                                        text="Explore Title Hide"
+                                        value="true"/>
+                                    <hideSignin
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./hideSignIn"
+                                        text="Hide Sign In"
+                                        value="true"/>
+                                    <hideCart
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./hideCart"
+                                        text="Hide Cart"
+                                        value="true"/>
+                                    <cartUrl
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Cart URL"
+                                        name="./cartUrl"
+                                        rootPath="/content"/>
+                                    <cartOpenNewWindow
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./isCartNewWindow"
+                                        text="Open in New Tab"
+                                        value="_blank"/>
+                                    <rootPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Navigation Root Path"
+                                        name="./rootPath"
+                                        required="{Boolean}true"
+                                        rootPath="/content"/>
+                                    <singleList
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        class="field-full-width"
+                                        fieldLabel="Drawer Navigation Horizontal Multilist">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested="JSON_STORE"
+                                            name="./singleList">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                method="absolute"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            fieldLabel="Title"
+                                                            name="./title"
+                                                            required="{Boolean}true"/>
+                                                        <path
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                            fieldLabel="Path"
+                                                            name="./path"
+                                                            required="{Boolean}true"
+                                                            rootPath="/content"/>
+                                                        <openNewWindow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                            name="./isNewWindow"
+                                                            text="Open in New Tab"
+                                                            value="_blank"/>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </singleList>
+                                </items>
+                            </columns>
+                        </items>
+                    </columns>
+                </items>
+            </basic>
+            <search
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Search"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <hideSearch
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./hideSearch"
+                                        text="Hide Search"
+                                        value="true"/>
+                                    <modelPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Model PopUp Page"
+                                        name="./modelPath"
+                                        rootPath="/content"/>
+                                </items>
+                            </columns>
+                        </items>
+                    </columns>
+                </items>
+            </search>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <drawer-navigation
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./drawerNavRendering"
+                                        text="Render Drawer Horizontal Navigation"
+                                        value="horizontal"/>
+                                    <drawerList
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                        class="field-full-width"
+                                        fieldLabel="Drawer Navigation Vertical Multilist">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                            acs-commons-nested="JSON_STORE"
+                                            name="./drawerList">
+                                            <layout
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <column
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <title
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            fieldLabel="Title"
+                                                            name="./title"/>
+                                                        <path
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                            fieldLabel="Path"
+                                                            name="./path"
+                                                            rootPath="/content"/>
+                                                        <openNewWindow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                            name="./isNewWindow"
+                                                            text="Open in New Tab"
+                                                            value="_blank"/>
+                                                        <singleList
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                            class="field-full-width"
+                                                            fieldLabel="Nested Multilist">
+                                                            <field
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                                acs-commons-nested="JSON_STORE"
+                                                                name="./singleList">
+                                                                <layout
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                                    method="absolute"/>
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <column
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <componentname
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                                fieldLabel="Title"
+                                                                                name="./title"
+                                                                                required="{Boolean}true"/>
+                                                                            <path
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                                                fieldLabel="Path"
+                                                                                name="./path"
+                                                                                required="{Boolean}true"
+                                                                                rootPath="/content"/>
+                                                                            <openNewWindow
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                                                name="./isNewWindow"
+                                                                                text="Open in New Tab"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </column>
+                                                                </items>
+                                                            </field>
+                                                        </singleList>
+                                                    </items>
+                                                </column>
+                                            </items>
+                                        </field>
+                                    </drawerList>
+                                </items>
+                            </columns>
+                        </items>
+                    </columns>
+                </items>
+            </advanced>
+        </items>
+    </content>
+</jcr:root>

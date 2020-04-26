@@ -1,0 +1,99 @@
+<!--/* This template is used for price table  master data   */-->
+<template data-sly-template.plan="${@ priceTable}">
+    <div>
+        <div class="pricing-table">
+            <div class="price-table" style="margin-top: 31px;">
+                <sly data-sly-test="${priceTable.title}">
+                    <div class="header">
+                        ${priceTable.title @context='html'}
+                    </div>
+                </sly>
+                <sly data-sly-list="${priceTable.list}">
+                    <sly data-sly-test="${item.title}">
+                        <p>${item.title @context='html'}</p>
+                    </sly>
+                    <sly data-sly-test="${item.description}">
+                        <p class="sub">${item.description @context='html'}</p>
+                    </sly>
+                </sly>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!--/* This template is used for IDD master data   */-->
+<template data-sly-template.idd="${@ iddList,countryName,countryCode,iddMessage}">
+    <div class="col idd-tmp">
+        <sly data-sly-test="${wcmmode.edit}">
+            <h5 class="text-center">Country Name: <span>${countryName}</span></h5>
+        </sly>
+        <h5 class="text-center">Country Code: <span>${countryCode}</span></h5>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div style="width: 700px;">
+                    <sly data-sly-list="${iddList.list}">
+                        <div class="row-fluid roaming-cruise-table">
+                            <sly data-sly-test="${item.title}">
+                                <div class="col text-center">
+                                    <p><strong>${item.title @context='html'}</strong></p>
+                                </div>
+                            </sly>
+                            <sly data-sly-test="${item.description}">
+                                <div class="col text-center">
+                                    <div class="class-price">
+                                        <p>${item.description @context='html'}</p>
+                                    </div>
+                                </div>
+                            </sly>
+                        </div>
+                    </sly>
+                    <div class="row">
+                        <div class="col">
+                            ${iddMessage @context='html'}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!--/* This template is used for Flexi Share master data   */-->
+<template data-sly-template.flexishare="${@ flexishare}">
+    <div class="plan-table">
+        <sly data-sly-list="${flexishare.list}">
+            <div data-sly-test="${itemList.last}">
+                <sly data-sly-resource="${'text' @ resourceType='mxs/components/content/text'}"/>
+            </div>
+            <div class="row details">
+                <sly data-sly-test="${item.title}">
+                    <div class="col-7">
+                        ${item.title @context='html'}
+                    </div>
+                </sly>
+                <sly data-sly-test="${item.description}">
+                    <div class="col-5 align-self-center">
+                        ${item.description @context='html'}
+                    </div>
+                </sly>
+            </div>
+        </sly>
+    </div>
+</template>
+
+<!--/* This template is used for Trade UP master data   */-->
+<template data-sly-template.tradeup="${@ tradeup,dividerText}">
+    <div class="row-fluid trade-in-table">
+        <sly data-sly-list="${tradeup.list}">
+            <div class="col text-center">
+                <p class="class mb-3">${item.title @context='html'}</p>
+                <div class="class-price">
+                    ${item.description @context='html'}
+                </div>
+            </div>
+            <sly data-sly-test="${!itemList.last}">
+                <span class="sp-divider"><em>${dividerText}</em></span>
+            </sly>
+        </sly>
+    </div>
+</template>

@@ -1,0 +1,9 @@
+<sly data-sly-test.dividerStyle="${properties.dividerStyle}"/>
+<sly data-sly-test.theme="${properties.theme}"/>
+
+<sly data-sly-test="${wcmmode.edit && !dividerStyle && !theme}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Divider"></div>
+</sly>
+<hr class="${dividerStyle} ${theme}">
+
+

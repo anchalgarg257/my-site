@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Store Locator"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <store-locator
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Iframe"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <storepath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Store Path"
+                                name="./storePath"
+                                required="{Boolean}true"
+                                rootPath="/content"/>
+                            <ctaButtonTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="CTA Button Title"
+                                name="./ctaText"
+                                required="{Boolean}true"
+                                value="See Location Map"/>
+                            <resultMessage
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Result Message"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <success-geolocation-on
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        emptyText="\{x} = Number of Stores&#xa;{y} = Radius in km&#xa;"
+                                        fieldLabel="Success With Geolocation On"
+                                        name="./successGeoOnMsg"/>
+                                    <success-geolocation-off
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        emptyText="\{x} = Number of Stores"
+                                        fieldLabel="Success With Geolocation Off"
+                                        name="./successGeoOffMsg"/>
+                                    <failed-geo-on-message
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldLabel="Failure with Geolocation On"
+                                        name="./failedGeoMsg"
+                                        value="There is no stores near you"/>
+                                    <failed-geo-off-message
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldLabel="Failure with Geolocation Off"
+                                        name="./failedMsg"
+                                        value="No Stores Found"/>
+                                </items>
+                            </resultMessage>
+                        </items>
+                    </column>
+                </items>
+            </store-locator>
+        </items>
+    </content>
+</jcr:root>

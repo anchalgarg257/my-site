@@ -1,0 +1,63 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Article Archives And Tags"></div>
+</sly>
+<sly data-sly-use.model='com.mxs.core.models.ArchiveAndTagsModel'/>
+<sly data-sly-test.type="${currentStyle.type}"/>
+
+<!--/* This template is used when the type of component is archives. */-->
+<sly data-sly-test="${type =='archives'}">
+    <sly data-sly-test.list="${model.list}"/>
+    <div class="article-nav">
+        <div class="title">${currentStyle.title @ context='html'}</div>
+        <div class="d-none d-sm-none d-md-block">
+            <ul data-sly-list="${list}">
+                <li><a href="${currentStyle.rootPath}.html?m=${item.month}&y=${item.year}">${item.archiveName}</a></li>
+                <sly data-sly-test="${itemList.last && currentStyle.linkURL && currentStyle.linkText}">
+                    <li class="view-all"><a href="${currentStyle.linkURL}.html"> ${currentStyle.linkText}</a></li>
+                </sly>
+            </ul>
+        </div>
+        <div class="dropdown-select form-group link-dropdown d-block d-sm-block d-md-none">
+            <select class="selectpicker" title="" name="" data-sly-list="${list}">
+                <sly data-sly-test.link="${currentStyle.rootPath}.html?m=${item.month}&y=${item.year}"/>
+                <option value="${link}"
+                        onclick="javascript:window.location.href='${link @ context='scriptString'}'; return false;">
+                    ${item.archiveName}
+                </option>
+                <sly data-sly-test=" ${itemList.last && currentStyle.linkURL && currentStyle.linkText}">
+                    <option value="${currentStyle.linkURL}"
+                            onclick="javascript:window.location.href='${currentStyle.linkURL  @ context='scriptString'}.html'; return false;">
+                        ${currentStyle.linkText}
+                    </option>
+                </sly>
+            </select>
+        </div>
+    </div>
+</sly>
+
+<!--/* This template is used when the type of component is tags */-->
+<sly data-sly-test="${type=='tags'}">
+    <sly data-sly-test.list="${model.tagList}"/>
+    <sly data-sly-test.numberOfTags="${properties.numberOfTags}"/>
+    <div class="article-nav">
+        <div class="title">${currentStyle.title @ context='html'}</div>
+        <div class="d-none d-sm-none d-md-block">
+            <ul data-sly-list="${list}">
+                <sly data-sly-test.link="${currentStyle.rootPath}.html?cat=${item.tag.name}"/>
+                <li><a href="${link}">${item.tag.title} (${item.count})</a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown-select form-group link-dropdown d-block d-sm-block d-md-none">
+            <select class="selectpicker" title="" name="" data-sly-list="${list}">
+                <sly data-sly-test="${item.count!=0}">
+                    <sly data-sly-test.link="${currentStyle.rootPath}.html?cat=${item.tag.name}"/>
+                    <option value="${link}"
+                            onclick="javascript:window.location.href='${link @ context='scriptString'}'; return false;">
+                        ${item.tag.title} (${item.count})
+                    </option>
+                </sly>
+            </select>
+        </div>
+    </div>
+</sly>

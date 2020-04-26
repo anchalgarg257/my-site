@@ -1,0 +1,77 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Article Popular Posts"></div>
+</sly>
+<sly data-sly-use.model='com.mxs.core.models.ArchiveAndTagsModel'/>
+<div class="container mb-3">
+    <div class="column-control ver-padding-sm type-g">
+        <h3>${currentStyle.title}</h3>
+        <div class="row">
+            <div class="col" data-sly-repeat.item="${model.articles}">
+                <article class="article-tile js-article-pulled">
+                    <div class="article-content">
+                        <div class="article-img"
+                             style="background-image: url('${item.assetPath @context='styleString'}')">
+                            <i class="material-icons">${item.icon}</i>
+                            <img src="${item.assetPath}" alt="${item.imageAltText}"/>
+                        </div>
+                        <div class="desc">
+                            <div class="title">
+                                <sly data-sly-test="${item.articleType=='type-video'}">
+                                    <h6><a href="" class="modal-video" data-toggle="modal" data-target="#videoModalID"
+                                           data-video="${item.articlePath}">${item.articleTitle}</a></h6>
+                                </sly>
+                                <sly data-sly-test="${item.articleType!='type-video'}">
+                                    <h6><a href="${item.articlePath}" target="_blank">${item.articleTitle}</a></h6>
+                                </sly>
+                            </div>
+                            <div class="text">
+                                <p> ${item.articleDescription @context='html'}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-desc no-gutters">
+                        <ul class="lang" data-sly-list.languageList="${item.languagePageList}">
+                            <sly data-sly-test="${languageList.articleType=='type-video'}">
+                                <li><a href="" class="modal-video" data-toggle="modal" data-target="#videoModalID"
+                                       data-video="${languageList.urlPath}">${languageList.language}</a></li>
+                            </sly>
+                            <sly data-sly-test="${languageList.articleType!='type-video'}">
+                                <li><a href="${languageList.urlPath}" target="_blank">${languageList.language}</a></li>
+                            </sly>
+                        </ul>
+                        <div class="d-flex justify-content-end no-gutters flex-wrap">
+                            <div class="flex-grow">
+                                <sly data-sly-list.sticker="${item.stickers}">
+                                    <div class="stickers"
+                                         style="background-color: ${sticker.stickerBgColor @context='styleString'}; color: #ffffff">
+                                        ${sticker.stickerTagTitle}
+                                    </div>
+                                </sly>
+                            </div>
+                            </div>
+                            <div class="date">
+                                <i class="material-icons">access_time</i> <date>12 May 2018</date>
+                            </div>
+                        </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!--/* Modal */-->
+    <div class="modal fade mxs-modal video-modal" id="videoModalID" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:70%; height:80%;">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons" aria-hidden="true">close</i>
+                </button>
+                <div class="modal-body d-flex justify-content-center align-content-center">
+                    <iframe id="player" type="text/html" width="100%" height="auto"
+                            src=""
+                            frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

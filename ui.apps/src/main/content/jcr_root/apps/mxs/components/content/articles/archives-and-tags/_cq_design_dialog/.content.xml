@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Article Archives And Tags"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.rte.height]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <archives-and-tags
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Article Listing"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <articlePath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Artcles Root Path"
+                                name="./rootPath"
+                                required="{Boolean}true"
+                                rootPath="/content"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Title"
+                                name="./title"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <experience-aem
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,experience-aem#colorPicker]">
+                                            <popovers jcr:primaryType="nt:unstructured"/>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                                <htmlRules jcr:primaryType="nt:unstructured">
+                                    <blockHandling
+                                        jcr:primaryType="nt:unstructured"
+                                        removeSingleParagraphContainer="{Boolean}true"/>
+                                </htmlRules>
+                            </title>
+                            <type
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".text-image-hide-show"
+                                fieldLabel="Type"
+                                name="./type">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <archives
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Archives"
+                                        value="archives"/>
+                                    <tags
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Tags"
+                                        value="tags"/>
+                                </items>
+                            </type>
+                            <archives
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="archives">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <number-of-months
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                fieldLabel="Number of Archive Month Displayed"
+                                                name="./months"/>
+                                            <view-all-details-link-title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="View All Details Link Text"
+                                                name="./linkText"/>
+                                            <link-url
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldLabel="View All Details Link URL"
+                                                name="./linkURL"
+                                                rootPath="/content"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </archives>
+                            <tags
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="tags">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tagPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldLabel="Tag Root Path for Category*"
+                                                name="./tagPath"
+                                                rootPath="/content/cq:tags"/>
+                                            <number-of-tags
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                fieldLabel="Number of Tags to be Displayed"
+                                                min="{Long}6"
+                                                name="./numberOfTags"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </tags>
+                        </items>
+                    </column>
+                </items>
+            </archives-and-tags>
+        </items>
+    </content>
+</jcr:root>

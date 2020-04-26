@@ -1,0 +1,18 @@
+<sly data-sly-test="${wcmmode.edit}">
+   <div class="cq-placeholder cq-marker-start" data-emptytext="Roaming Form"></div>
+</sly>
+<sly data-sly-use.model="com.mxs.core.models.RoamingFormData"/>
+<div data-sly-resource="${'title' @resourceType = 'mxs/components/content/title'}"></div>
+<div class="container ">
+   <div class="d-flex justify-content-center">
+      <div style="width: 400px;">
+         <div class="dropdown-select form-group">
+            <select class="selectpicker" title="" name="roaming-dropdown" data-sly-list="${model.list}">
+               <option value="${item.networkOperator}" data-country="${item.trimCountry.toLowerCase}" data-roaming-path1="${item.roamingPath}">${item.title}
+               </option>
+            </select>
+         </div>
+      </div>
+   </div>
+   <div class="roaming-template1"></div>
+</div>

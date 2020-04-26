@@ -1,0 +1,10 @@
+/* Rich Text height issue with fix in all the form element components */
+
+.coral-RichText-editable.coral-Form-field.coral-Textfield.coral-Textfield--multiline {
+    height: 60%;
+}
+
+/* Rich Text Spacing issue with multifield in radio button */
+.cq-dialog-floating .coral-Form-field.full-width.coral-Multifield {
+    width: 596px;
+}

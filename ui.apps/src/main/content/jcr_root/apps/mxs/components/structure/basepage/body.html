@@ -1,0 +1,10 @@
+<sly data-sly-test.tagManagerScript="${pageProperties.tagManagerScript ? pageProperties.tagManagerScript : inheritedPageProperties.tagManagerScript}"/>
+<sly data-sly-test="${tagManagerScript}">
+    ${tagManagerScript @context='scriptComment'}
+</sly>
+<sly data-sly-include="header.html"/>
+<sly data-sly-include="content.html"/>
+<a id="back-to-top" data-placement="bottom">
+</a>
+<sly data-sly-include="footer.html"/>
+<sly data-sly-include="footerlibs.html"/>

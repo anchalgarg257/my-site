@@ -1,0 +1,98 @@
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"
+      data-sly-use.head="head.js"
+      data-sly-use.headlibRenderer="headlibs.html"
+      data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"/>
+<meta data-sly-test.keywords="${head.keywords}" name="keywords" content="${keywords}"/>
+<meta data-sly-test.description="${head.description}" name="description" content="${description}"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<sly data-sly-test.siteName="${inheritedPageProperties.siteName}"/>
+<sly data-sly-test.site="mxs"/>
+<sly data-sly-test="${siteName == 'hotlink-site'}">
+    <sly data-sly-test.site="hotlink"/>
+</sly>
+<link rel="apple-touch-icon" sizes="57x57" href="/content/dam/${site}/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/content/dam/${site}/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/content/dam/${site}/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/content/dam/${site}/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/content/dam/${site}/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/content/dam/${site}/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/content/dam/${site}/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/content/dam/${site}/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/content/dam/${site}/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/content/dam/${site}/images/favicons/android-chrome-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/content/dam/${site}/images/favicons/android-chrome-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/content/dam/${site}/images/favicons/android-chrome-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/content/dam/${site}/images/favicons/android-chrome-192x192.png">
+
+
+<link rel="manifest" href="/content/dam/${site}/images/favicons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/content/dam/${site}/images/favicons/ms-icon-144x144.png">
+<meta name="msapplication-config" content="/content/dam/${site}/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<sly data-sly-test="${properties.hideInSiteMap}">
+    <meta name="robots" content="noindex">
+</sly>
+
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="${inheritedPageProperties.siteName}">
+
+<sly data-sly-use.model='com.mxs.core.utils.ExternalUrl'/>
+<sly data-sly-test.domain="${model.domain}"/>
+<meta property="og:url" content="${model.url @ scheme='https'}"/>
+
+<sly data-sly-test="${properties.pageTitle}">
+    <sly data-sly-test.pageTitle ="${properties.pageTitle}" data-sly-unwrap />
+</sly>
+</sly>
+<sly data-sly-test="${!properties.pageTitle && properties.jcr:title}">
+    <sly data-sly-test.pageTitle ="${properties.jcr:title}" data-sly-unwrap />
+</sly>
+
+<sly data-sly-test="${currentPage.template.path=='/apps/mxs/templates/articledetailpage'}">
+    <meta property="og:title" content="${properties.articleTitle}" />
+    <meta property="og:description"   content="${properties.articleDescription}" />
+    <meta name="title" content="${properties.articleTitle}" />
+    <meta name="description"   content="${properties.articleDescription}" />
+</sly>
+<sly data-sly-test="${currentPage.template.path!='/apps/mxs/templates/articledetailpage'}">
+    <meta property="og:title" content="${pageTitle}" />
+    <meta property="og:description"   content="${currentPage.description}" />
+    <meta name="title" content="${pageTitle}" />
+    <meta name="description" content="${currentPage.description}" />
+</sly>
+<sly data-sly-test="${properties.assetPath}">
+    <meta property="og:image" content="${domain}${properties.assetPath}" />
+</sly>
+<sly data-sly-test="${!properties.assetPath}">
+    <sly data-sly-test="${properties.metaImage}">
+        <meta property="og:image" content="${domain}${properties.metaImage}" />
+    </sly>
+    <sly data-sly-test="${!properties.metaImage && inheritedPageProperties.siteName!='hotlink-site'}">
+        <meta property="og:image" content="${domain}/etc/designs/mxs/images/maxis-logo.svg" />
+    </sly>
+    <sly data-sly-test="${!properties.metaImage && inheritedPageProperties.siteName=='hotlink-site'}">
+        <meta property="og:image" content="${domain}/etc/designs/hotlink/images/hotlink-logo.svg" />
+    </sly>
+</sly>
+
+<meta name="keywords"  content="${properties.metaKeywords}" />
+<!--<sly data-sly-call="${headlibRenderer.headlibs @ designPath=head.designPath}" />-->
+<sly data-sly-include="author.html" />
+<sly data-sly-include="/libs/cq/cloudserviceconfigs/components/servicelibs/servicelibs.jsp" />
+<sly data-sly-include="customheaderlibs.html" />
+<sly data-sly-test.faviconpath="${head.faviconPath}">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="${faviconpath}">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="${faviconpath}">
+</sly>
+
+<title>${pageTitle} ${inheritedPageProperties.brandTitle}</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<sly data-sly-resource="${ @path = 'contexthub' ,resourceType='granite/contexthub/components/contexthub'}"/>
+<sly data-sly-resource="${ @path = 'cloudservices' ,resourceType='cq/cloudserviceconfigs/components/servicecomponents'}"/>
+<output data-sly-call="${clientLib.css @ categories='com.mxs.main'}" data-sly-unwrap></output>
+<sly data-sly-include="redirect.jsp" />
+<sly data-sly-include="analyticsscript.html" />

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Column Control"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.color.wheel,maxis.dialogutils.radiobutton]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Column Layout"
+                                name="./columns">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <col1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1-Column (100%)"
+                                        value="type-a"/>
+                                    <col2_x0028_6_x002b_6_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2-Column (50% 50%)"
+                                        value="type-b"/>
+                                    <col2_x0028_9_x002b_3_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2-Column (25% 75%)"
+                                        value="type-c"/>
+                                    <col2_x0028_3_x002b_9_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2-Column (75% 25%)"
+                                        value="type-d"/>
+                                    <col2_x0028_33_x002b_67_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2-Column (33% 67%)"
+                                        value="type-e"/>
+                                    <col2_x0028_67_x002b_33_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2-Column (67% 33%)"
+                                        value="type-f"/>
+                                    <col3_x0028_33_x002b_33_x002b_33_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="3-Column (33% 33% 33%)"
+                                        value="type-g"/>
+                                    <col3_x0028_43_x002b_13_x002b_43_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="3-Column (43% 13% 43%)"
+                                        value="type-i"/>
+                                    <col4_x0028_25_x002b_25_x002b_25_x002b_25_x0029_
+                                        jcr:primaryType="nt:unstructured"
+                                        text="4-Column (25% 25% 25% 25%)"
+                                        value="type-h"/>
+                                </items>
+                            </columns>
+                            <color
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldLabel="Colour Type"
+                                name="./colourType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Default"
+                                        value="default">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="color_wheel,maxis_color_palette,hotlink_color_palette"
+                                            toggle=""/>
+                                    </default>
+                                    <maxis-color-pallate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Maxis Color Palette"
+                                        value="maxiscolourpalette">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="hotlink_color_palette,color_wheel"
+                                            show="maxis_color_palette"
+                                            toggle=""/>
+                                    </maxis-color-pallate>
+                                    <hotlink-colour-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Hotlink Colour Palette"
+                                        value="hotlinkcolourpalette">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="color_wheel,maxis_color_palette"
+                                            show="hotlink_color_palette"
+                                            toggle=""/>
+                                    </hotlink-colour-palette>
+                                    <colour-wheel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Colour Wheel"
+                                        value="colourwheel">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="maxis_color_palette,hotlink_color_palette"
+                                            show="color_wheel"
+                                            toggle=""/>
+                                    </colour-wheel>
+                                </items>
+                            </color>
+                            <maxis-color-palette-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="maxis_color_palette"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <maxis-color-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                        editType="{Boolean}true"
+                                        fieldLabel="Maxis Colour Palette"
+                                        freestylePaletteType="{Boolean}true"
+                                        name="./maxisColorPalette"/>
+                                </items>
+                            </maxis-color-palette-container>
+                            <color-wheel-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="color_wheel"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color-wheel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/custom-colorpicker"
+                                        fieldLabel="Colour Wheel"
+                                        name="./colorWheel"/>
+                                </items>
+                            </color-wheel-container>
+                            <hotlink-color-palette-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="hotlink_color_palette"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <hotlink-color-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                        editType="{Boolean}true"
+                                        fieldLabel="Hotlink Color Palette"
+                                        freestylePaletteType="{Boolean}true"
+                                        name="./hotlinkColorPalette"/>
+                                </items>
+                            </hotlink-color-palette-container>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <gutter
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./addGutter"
+                                text="Add Gutter"
+                                value="true"/>
+                            <border
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./addBorder"
+                                text="Border"
+                                value="bordered"/>
+                            <divider
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Divider Configuration"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <divider-type
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Divider type"
+                                        name="./dividerType">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="None"
+                                                value=""/>
+                                            <small
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Full Line"
+                                                value="divider"/>
+                                            <medium
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Dotted Line"
+                                                value="divider ddashed"/>
+                                        </items>
+                                    </divider-type>
+                                    <divider-text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Divider Text"
+                                        name="./dividerText"/>
+                                    <hide-in-mobile
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./hideDividerOnMobile"
+                                        text="Hide Divider on Mobile View"
+                                        value="true"/>
+                                </items>
+                            </divider>
+                            <mobileVariation
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Mobile Column Variation"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <secondary
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./secondaryCheckbox"
+                                        text="Retain Checkbox"
+                                        value="secondary"/>
+                                    <reverse
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./reverseCheckbox"
+                                        text="Reverse Checkbox"
+                                        value="reverse"/>
+                                </items>
+                            </mobileVariation>
+                            <padding
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Padding"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <vertical
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Vertical Padding"
+                                        name="./verticalPadding">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="None"
+                                                value=""/>
+                                            <smallest
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Smallest (10px)"
+                                                value="ver-padding-xs"/>
+                                            <small
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Small (20px)"
+                                                value="ver-padding-sm"/>
+                                            <medium
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Medium (40px)"
+                                                value="ver-padding-md"/>
+                                            <large
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Large (60px)"
+                                                value="ver-padding-lg"/>
+                                        </items>
+                                    </vertical>
+                                    <horizontal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Horizontal Padding"
+                                        horizontalPadding="none"
+                                        name="./horizontalPadding">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="None"
+                                                value=""/>
+                                            <smallest
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Smallest (10px)"
+                                                value="side-padding-xs"/>
+                                            <small
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Small (20px)"
+                                                value="side-padding-sm"/>
+                                            <medium
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Medium (40px)"
+                                                value="side-padding-md"/>
+                                            <large
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Large (60px)"
+                                                value="side-padding-lg"/>
+                                        </items>
+                                    </horizontal>
+                                </items>
+                            </padding>
+                            <wrapper
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Wrapper"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <horizontal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Horizontal Wrapper"
+                                        horizontalPadding="none"
+                                        name="./horizontalWrapper">
+                                        <items jcr:primaryType="cq:WidgetCollection">
+                                            <none
+                                                jcr:primaryType="nt:unstructured"
+                                                text="None"
+                                                value=""/>
+                                            <small
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Small (20px)"
+                                                value="side-margin-sm"/>
+                                            <medium
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Medium (40px)"
+                                                value="side-margin-md"/>
+                                            <large
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Large (60px)"
+                                                value="side-margin-lg"/>
+                                        </items>
+                                    </horizontal>
+                                </items>
+                            </wrapper>
+                        </items>
+                    </column>
+                </items>
+            </advanced>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    storePath="">
+    <section-container
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/section-container"
+        alignment="d-flex justify-content-center"
+        colourType="default"
+        width="50">
+        <container
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/title"
+                colourType="default"
+                textIsRich="true"
+                title="&lt;h2 style=&quot;text-align: center;&quot;>Find a Maxis center near you&lt;br>&#xd;&#xa;&lt;/h2>&#xd;&#xa;"/>
+            <dropdown
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/dropdown"
+                defaultValue="Select State"
+                dropdownType="multilist"
+                label=" "
+                name="selectState"
+                textIsRich="true"/>
+            <dropdown_964700979
+                jcr:lastModified="{Date}2018-07-06T17:44:21.697+08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/dropdown"
+                defaultValue="Select Town"
+                dropdownType="multilist"
+                label=" "
+                name="selectTown"
+                textIsRich="true"/>
+            <text
+                jcr:lastModified="{Date}2018-07-06T17:46:52.714+08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/text"
+                text="&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>What are you looking for:&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+            <columncontrol
+                jcr:lastModified="{Date}2018-07-06T17:40:23.863+08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/columnControl"
+                colourType="default"
+                columns="type-b">
+                <col0
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <checkbox
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/form-elements/checkbox"
+                        name="mobile-and-home"
+                        singleList="\{&quot;title&quot;:&quot;&lt;b>Mobile and Home Products&lt;/b>&lt;br>&#xa;&quot;,&quot;path&quot;:&quot;&quot;,&quot;description&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;checked&quot;:&quot;true&quot;,&quot;disabled&quot;:&quot;&quot;}"
+                        textIsRich="[true,true]"/>
+                </col0>
+                <col1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <checkbox
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/form-elements/checkbox"
+                        name="business-and-sme"
+                        singleList="\{&quot;title&quot;:&quot;&lt;b>Business and SMEs Products&lt;/b>&lt;br>&#xa;&quot;,&quot;path&quot;:&quot;&quot;,&quot;description&quot;:&quot;&quot;,&quot;id&quot;:&quot;&quot;,&quot;checked&quot;:&quot;&quot;,&quot;disabled&quot;:&quot;&quot;}"
+                        textIsRich="[true,true]"/>
+                </col1>
+            </columncontrol>
+        </container>
+    </section-container>
+    <divider1
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/divider"
+        dividerStyle="normal"/>
+    <divider2
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/divider"
+        dividerStyle="normal"/>
+</jcr:root>

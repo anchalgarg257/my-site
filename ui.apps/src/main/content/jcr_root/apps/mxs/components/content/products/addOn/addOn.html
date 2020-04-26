@@ -1,0 +1,32 @@
+<sly data-sly-use.model="com.mxs.core.models.PriceTableModel"/>
+<sly data-sly-test.priceTable="${model.priceTable}"/>
+<sly data-sly-test="${wcmmode.edit && ((!priceTable.title || properties.headerHide!='true') && !priceTable.list.size)}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Add On"></div>
+</sly>
+<sly data-sly-test="${priceTable.list.size || (priceTable.title && properties.headerHide=='true')}">
+    <div class="price-table-add-on"
+         style="background-color: ${priceTable.bodyBackgroundColourType @context='styleString'};">
+        <sly data-sly-test="${properties.headerHide=='true' && priceTable.title}">
+            <div class="header-price"
+                 style="background-color: ${priceTable.headerColor @context='styleString'};">
+                ${priceTable.title @context='html'}
+            </div>
+        </sly>
+        <sly data-sly-list="${priceTable.list}">
+            <article>
+                <sly data-sly-test="${item.title}">
+                    <p><strong>${item.title @context='html'}</strong></p>
+                </sly>
+                <sly data-sly-test.parname="${'item{0}' @ format=itemList.count}"/>
+                <div data-sly-resource="${parname @ resourceType='wcm/foundation/components/parsys'}"></div>
+                <sly data-sly-test="${item.id}">
+                    <span class="sp-divider"><em
+                            style="background-color: ${priceTable.bodyBackgroundColourType @context='styleString'};">${item.id}</em></span>
+                </sly>
+                <sly data-sly-test="${item.description}">
+                    <p class="sub">${item.description @context='html'}</p>
+                </sly>
+            </article>
+        </sly>
+    </div>
+</sly>

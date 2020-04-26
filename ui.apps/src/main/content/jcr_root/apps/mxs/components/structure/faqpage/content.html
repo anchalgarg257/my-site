@@ -1,0 +1,41 @@
+<sly data-sly-list="${currentPage.listChildren}">
+	<sly data-sly-test.childTempList="${itemList.count}" />
+</sly>
+
+<main>
+    <div data-sly-resource="${'top-par' @ resourceType='wcm/foundation/components/iparsys'}"></div>
+    <div class="section-container">
+        <div class="container full">
+            <div class="d-flex justify-content-center">
+                <div style="width:90%">
+                    <div class="container">
+                        <div class="columnControl">
+                            <div class="column-control type-a side-padding-sm">
+                                <div class="row">
+						            <div class="col-md-3 left-column">
+						                <div data-sly-resource="${'left-par' @ resourceType='wcm/foundation/components/iparsys'}"></div>
+						            </div>
+						            <div class="col-md-9 right-column ${childTempList ? 'd-none d-sm-block' : ''} ">
+						                <div data-sly-resource="${'right-top-par' @ resourceType='wcm/foundation/components/iparsys'}"></div>
+						                <div class="${!wcmmode.edit?'faq-accordion-list':''} ${childTempList ? '' : 'faq-hide'} ">
+						                	<div data-sly-resource="${'right-par' @ resourceType='wcm/foundation/components/parsys'}"></div>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-md-12">
+						                <div data-sly-resource="${'mid-par' @ resourceType='wcm/foundation/components/parsys'}"></div>
+						            </div>
+						        </div>
+						    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-sly-resource="${'bottom-par' @ resourceType='wcm/foundation/components/iparsys'}"></div>
+  	<sly data-sly-include="live-chat.html"/>
+</main>
+

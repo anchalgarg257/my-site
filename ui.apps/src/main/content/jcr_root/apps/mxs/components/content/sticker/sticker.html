@@ -1,0 +1,33 @@
+<sly data-sly-test="${wcmmode.edit && !properties.title}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Sticker Component"></div>
+</sly>
+<sly data-sly-test.bgcolourType="${properties.bgColourType}"/>
+<sly data-sly-test.bgcolor=""/>
+<sly data-sly-test.colourType="${properties.fontColourType}"/>
+<sly data-sly-test.color=""/>
+<sly data-sly-test="${bgcolourType=='colourwheel'}">
+	<sly data-sly-test.bgcolor="${properties.bgColourWheel}"/>
+</sly>
+
+<sly data-sly-test="${bgcolourType=='maxiscolourpalette'}">
+	<sly data-sly-test.bgcolor="${properties.bgMaxisColorPalette}"/>
+</sly>
+
+<sly data-sly-test="${bgcolourType=='hotlinkcolourpalette'}">
+	<sly data-sly-test.bgcolor="${properties.bgHotlinkColorPalette}"/>
+</sly>
+<sly data-sly-test="${colourType=='colourwheel'}">
+	<sly data-sly-test.color="${properties.colorWheel}"/>
+</sly>
+<sly data-sly-test="${colourType=='maxiscolourpalette'}">
+	<sly data-sly-test.color="${properties.maxisColorPalette}"/>
+</sly>
+<sly data-sly-test="${colourType=='hotlinkcolourpalette'}">
+	<sly data-sly-test.color="${properties.hotlinkColorPalette}"/>
+</sly>
+<sly data-sly-test="${properties.title}">
+    <div class="d-flex flex-wrap">
+	<div class="stickers" style="background-color: ${bgcolor @context='styleString'}; color: ${color @context='styleString'};"> ${properties.title}</div>
+</div>
+</sly>
+

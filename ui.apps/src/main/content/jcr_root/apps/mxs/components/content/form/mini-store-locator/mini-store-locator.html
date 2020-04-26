@@ -1,0 +1,27 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Mini Store Locator Form"></div>
+</sly>
+<script type="text/javascript">
+    var service_url = '/bin/api/storelocator';
+    var store_path = '${resource.path @ context='scriptComment'}';
+    var success_geo_message = '${properties.successGeoOnMsg @ context='scriptComment'}';
+    var success_message = '${properties.successGeoOffMsg @ context='scriptComment'}';
+    var failed_message = '${properties.failedMsg @ context='scriptComment'}';
+    var failed_geo_message = '${properties.failedGeoMsg @ context='scriptComment'}';
+    var button_text = '${properties.ctaText @ context='scriptComment'}';
+    var ga_category = 'Mini Store';
+    var ga_action = 'Google Map Link';
+</script>
+
+<div class="store-locator container">
+    <div data-sly-resource="${'section-container' @ resourceType='mxs/components/content/section-container'}"></div>
+    <div data-sly-resource="${'divider1' @ resourceType='mxs/components/content/divider'}"></div>
+    <div id="store-results">
+        <div class="column-control type-h ver-padding-sm">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+    <div data-sly-resource="${'divider2' @ resourceType='mxs/components/content/divider'}"></div>
+</div>

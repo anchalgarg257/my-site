@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <realview-container
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/columnControl"
+        addGutter="true"
+        colourType="default"
+        columns="type-e"
+        horizontalPadding="side-padding-md"
+        verticalPadding="ver-padding-sm">
+        <col0
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <image
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/image"
+                fileReference="/content/dam/projects/media/cover"
+                imageAlignment="center"
+                imageAltText="initial alt text"/>
+        </col0>
+        <col1
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/title"
+                colourType="default"
+                textIsRich="true"
+                title="&lt;h2>Where to buy?&lt;/h2>&#xd;&#xa;"/>
+            <text
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/text"
+                text="&lt;div id='pdp-properties'>&lt;/div>&#xd;&#xa;"
+                textIsRich="true"/>
+            <text_description
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/text"
+                text="&lt;p>Please tell us a little more so we can recommend the nearest Maxis Stores that has this device in the specifications you want.&lt;/p>"
+                textIsRich="true"/>
+            <dropdown
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/dropdown"
+                defaultValue="Select State"
+                dropdownType="multilist"
+                label="Select State"
+                name="selectState"
+                textIsRich="true"/>
+            <dropdown_819858232
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/dropdown"
+                defaultValue="Select Town"
+                dropdownType="multilist"
+                label="Select Town"
+                name="selectTown"
+                textIsRich="true"/>
+            <columncontrol
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/columnControl"
+                colourType="default"
+                columns="type-b">
+                <col0
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <columncontrol
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/columnControl"
+                        addGutter="true"
+                        colourType="default"
+                        columns="type-b">
+                        <col0 jcr:primaryType="nt:unstructured">
+                            <cta_button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/cta-button"
+                                ctaActionType="link"
+                                ctaAlignment="text-left"
+                                ctaButtonFill="outline"
+                                ctaButtonSize="medium"
+                                ctaButtonStyleOutline="btn-primary"
+                                ctaText="Search Now"
+                                ctaURL="#search-now"
+                                fullwidth="btn-block"/>
+                        </col0>
+                        <col1 jcr:primaryType="nt:unstructured">
+                            <cta_button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/cta-button"
+                                ctaActionType="link"
+                                ctaAlignment="text-left"
+                                ctaButtonFill="outline"
+                                ctaButtonSize="medium"
+                                ctaButtonStyleOutline="btn-primary"
+                                ctaText="Buy in store now"
+                                ctaURL="#buy-store"
+                                fullwidth="btn-block"/>
+                        </col1>
+                    </columncontrol>
+                </col0>
+                <col1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys"/>
+                <col2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys"/>
+            </columncontrol>
+        </col1>
+    </realview-container>
+    <divider
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/divider"
+        dividerStyle="normal"/>
+</jcr:root>

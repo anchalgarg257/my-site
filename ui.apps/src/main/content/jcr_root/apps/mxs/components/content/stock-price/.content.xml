@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="This is a stock price component that pulls the stock price of maxis from the API and show it on a page"
+    jcr:primaryType="cq:Component"
+    jcr:title="Stock Price"
+    componentGroup="Maxis : General"/>

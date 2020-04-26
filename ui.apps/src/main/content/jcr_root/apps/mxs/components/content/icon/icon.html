@@ -1,0 +1,35 @@
+
+<sly data-sly-test.colourType="${properties.fontColourType}"/>
+<sly data-sly-test.color=""/>
+<sly data-sly-test="${colourType=='colourwheel'}">
+    <sly data-sly-test.color="${properties.colorWheel}"/>
+</sly>
+<sly data-sly-test="${colourType=='maxiscolourpalette'}">
+    <sly data-sly-test.color="${properties.maxisColorPalette}"/>
+</sly>
+<sly data-sly-test="${colourType=='hotlinkcolourpalette'}">
+    <sly data-sly-test.color="${properties.hotlinkColorPalette}"/>
+</sly>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Icon"></div>
+</sly>
+<sly data-sly-test.iconType="${properties.iconType == 'google-material-icon'}">
+    <sly data-sly-use.iconModel="com.mxs.core.models.IconModel"/>
+    <sly data-sly-test="${iconModel.iconName}">
+    <span class="mxs-icon ${properties.iconAlignment}">
+    	<i class="material-icons ${properties.iconSize}" style="color:${color @context='styleString'}">${iconModel.iconName}</i>
+	</span>
+    </sly>
+    <sly data-sly-test="${iconModel.iconName==''}">
+        Either Icon path is empty or icon path is wrong.
+    </sly>
+</sly>
+<sly data-sly-test.iconType="${properties.iconType == 'image'}">
+    <sly data-sly-test.assetPath="${properties.assetPath}">
+        <span style="color:${color @context='styleString'}" class="mxs-icon ${properties.isOffer} ${properties.iconAlignment}">
+            <img class="svg-icon ${properties.iconSize}" src="${assetPath}"/></span>
+    </sly>
+    <sly data-sly-test="${!assetPath}">
+        Image Path is Empty, Please choose an SVG Image
+    </sly>
+</sly>

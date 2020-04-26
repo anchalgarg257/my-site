@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Image"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.image.required,maxis.dialog]">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <image
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Image"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget image-required"
+                                fieldLabel="Upload Image *"
+                                fileNameParameter="./fileName"
+                                fileReferenceParameter="./fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./file"
+                                required="{Boolean}true"
+                                title="Upload Image Asset"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <imagealttext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Image Alt Text"
+                                name="./imageAltText"
+                                required="{Boolean}true"/>
+                            <imagecaption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./imagecaption"
+                                text="Image Caption?"
+                                value="true"/>
+                            <imagealignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Image Alignment"
+                                name="./imageAlignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <alignment1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="left"/>
+                                    <alignment2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="center"/>
+                                    <alignment3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="right"/>
+                                </items>
+                            </imagealignment>
+                            <imageURL
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                fieldLabel="Image/Store URL"
+                                name="./url"
+                                rootPath="/content"/>
+                            <openNewWindow
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./isNewWindow"
+                                text="Open in New Tab"
+                                value="_blank"/>
+                            <deeplink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".appurl-showhide-target"
+                                name="./isDeeplink"
+                                text="Deeplink App?"
+                                value="true"/>
+                            <showHideContainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide appurl-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <appURL
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldLabel="App URL"
+                                        name="./appURL"
+                                        rootPath="/content"/>
+                                </items>
+                            </showHideContainer>
+                        </items>
+                    </column>
+                </items>
+            </image>
+        </items>
+    </content>
+</jcr:root>

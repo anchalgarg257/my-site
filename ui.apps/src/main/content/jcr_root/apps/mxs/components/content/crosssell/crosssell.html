@@ -1,0 +1,26 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Cross Sell"></div>
+</sly>
+<sly data-sly-use.crossSellList="com.mxs.core.models.MultiFIeldModel"/>
+<sly data-sly-test="${crossSellList.footerLinkList.size>0}">
+    <div class="cross-sell">
+        <sly data-sly-list="${crossSellList.footerLinkList}">
+            <div class="slide" data-gaTitle="${item.title}" data-desktop-src="${item.assetPath}" data-isCrossSell="CrossSell" data-href="${item.path}">
+                <sly data-sly-test="${item.assetPath}">
+                    <sly data-sly-test.isNewTab="${item.newTab?'_blank':''}"/>
+                    <a onclick="gaEvents.pushInDataLayer(this,'Cross Sell','${item.title @context='scriptComment'}','${item.title @context='scriptComment'}', '${itemList.count @context='scriptComment'}')"
+                       href="${item.path}${isNewTab?'':'.html'}" target="${item.isNewWindow}">
+                        <div class="box" style="background-image:url('${item.assetPath @context='styleString'}');">
+                            <div class="overlay">
+                                <article>
+                                    <div class="title"><p>${item.title}</p></div>
+                                    <div class="text"><p>${item.description}</p></div>
+                                </article>
+                            </div>
+                        </div>
+                    </a>
+                </sly>
+            </div>
+        </sly>
+    </div>
+</sly>

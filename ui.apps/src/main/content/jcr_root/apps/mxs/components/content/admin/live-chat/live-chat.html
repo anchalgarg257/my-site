@@ -1,0 +1,24 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Live Chat"></div>
+</sly>
+<sly data-sly-test="${properties}">
+    <sly data-sly-test.isBlankTemplate="${currentPage.template.path == '/apps/mxs/templates/blankpage'}"/>
+    <sly data-sly-test.display="${isBlankTemplate?'block':'none'}"/>
+    <div class="live-chat-panel" style="display: ${display @context='styleString'};">
+        <div class="chat-header" style="background-image:url('${properties.fileReference @context='styleString'}');">
+            <div data-sly-resource="${'chat-header' @resourceType = 'wcm/foundation/components/parsys'}"></div>
+            <a class="close-live-chat">
+                <i class="material-icons">
+                    close
+                </i>
+            </a>
+        </div>
+
+        <div class="chat-body" data-sly-list.item="${ [1,2,3,4] }">
+            <div class="lc-body" data-sly-test="${properties.placeholder>=item}">
+                <sly data-sly-test.parName="chat-body${itemList.count}"/>
+                <div data-sly-resource="${@path= parName, resourceType ='wcm/foundation/components/parsys'}"></div>
+            </div>
+        </div>
+    </div>
+</sly>

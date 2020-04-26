@@ -1,0 +1,23 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Trade In, Safe Device or Flexi Share"></div>
+</sly>
+
+<sly data-sly-test.formType="${properties.formType}"/>
+<sly data-sly-test.masterPath="${properties.masterPath}">
+<sly data-sly-test.list=""/>
+<sly data-sly-test="${properties.masterPath}">
+     <sly data-sly-use.lib="templateLib.html">
+     	<sly data-sly-test="${formType=='trade-in'}">
+        	<sly data-sly-use.model="${'com.mxs.core.models.MasterDataModel' @ formType=formType}"/>
+        	<sly data-sly-call="${lib.tradeIn @ brandList=model.tradeUpBrandList, modelList=model.tradeUpModalList}"></sly>
+        </sly>
+        <sly data-sly-test="${formType=='safe-device'}">
+        	<sly data-sly-use.model="${'com.mxs.core.models.MasterDataModel' @ formType='trade-in'}"/>
+        	<sly data-sly-call="${lib.safeDevice @ list=model.resultList}"></sly>
+        </sly>
+        <sly data-sly-test="${formType=='flexi-share'}">
+        	<sly data-sly-use.model="${'com.mxs.core.models.MasterDataModel' @ formType=formType}"/>
+        	<sly data-sly-call="${lib.flexiShare @ list=model.resultList}"></sly>
+        </sly>
+    </sly>
+</sly>

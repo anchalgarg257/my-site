@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic jcr:primaryType="nt:unstructured">
+                        <layout jcr:primaryType="nt:unstructured"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <idd-roaming
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="IDD and Roaming"
+                                        sling:orderBefore="moretitles"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <source-country
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Source Country"
+                                                name="./sourceCountry">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="/bin/api/countryList"/>
+                                            </source-country>
+                                            <network-operator
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Network Operator"
+                                                name="./networkOperator"/>
+                                        </items>
+                                    </idd-roaming>
+                                    <custom-configuration
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:hideResource="{Boolean}true"/>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

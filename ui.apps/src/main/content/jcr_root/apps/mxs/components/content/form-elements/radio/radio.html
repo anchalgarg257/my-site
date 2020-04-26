@@ -1,0 +1,67 @@
+<sly data-sly-use.id="com.mxs.core.models.FormWidgetModel"/>
+<sly data-sly-test.labelFor="${component.name}${id.hashCode}"/>
+<sly data-sly-test.name="${properties.name}"/>
+<sly data-sly-test.required="${properties.required}"/>
+<sly data-sly-test.requiredMessage="${properties.requiredMessage}"/>
+<sly data-sly-test.disabled="${properties.disabled}"/>
+<sly data-sly-test.encryptField="${properties.encryptField}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Form Radio Button"></div>
+</sly>
+<sly data-sly-test="${name}">
+    <sly data-sly-use.multifieldModel="com.mxs.core.models.MultifieldModelWithChildren"/>
+    <!-- /*  This is for Radio Button having Round Radio Button Type */-->
+   <sly data-sly-test="${properties.typeofRadio == 'round'}">
+       <div class="radio">
+           <sly data-sly-test="${properties.label}">
+           <div class="title">${properties.label}</div>
+           </sly>
+           <div class="rdo-group-cont ${properties.type}">
+               <sly data-sly-list="${multifieldModel.list}">
+                   <div class="rdo-cont">
+                       <sly data-sly-test.id="${item.id}"/>
+                       <sly data-sly-test="${!id}">
+                           <sly data-sly-test.id="${labelFor}${itemList.index}"/>
+                       </sly>
+                       <sly data-sly-test="${itemList.index==0}">
+                           <input data-encrypt="${properties.encryptField}" class="form-rdo-input" type="radio" name="${name}" id="${id}"
+                                  value="${item.path}" data-sly-attribute.required="${required=='true'}"
+                                  data-sly-attribute.disabled="${item.disabled =='true'}"
+                                  data-sly-attribute.checked="${item.checked=='true'}">
+                       </sly>
+                       <sly data-sly-test="${itemList.index!=0}">
+                           <input data-encrypt="${properties.encryptField}" class="form-rdo-input" type="radio" name="${name}" id="${id}"
+                                  value="${item.path}" data-sly-attribute.disabled="${item.disabled =='true'}"
+                                  data-sly-attribute.checked="${item.checked=='true'}">
+                       </sly>
+                       <label class="form-rdo-label" for="${id}">${item.title
+                           @context='html'}</label>
+                       <sly data-sly-test.description="${item.description}">
+                           <small>${description @context='html'}</small>
+                       </sly>
+                   </div>
+               </sly>
+           </div>
+           <sly data-sly-test="${required && requiredMessage}">
+               <div class="invalid-feedback">
+                   ${requiredMessage}
+               </div>
+           </sly>
+       </div>
+   </sly>
+
+    <!-- /*  This is for Radio Button having Toggle Radio Button Type */-->
+   <sly data-sly-test="${properties.typeofRadio == 'toggle'}">
+       <div class="radio toggle-buttons">
+           <p class="as-label">${properties.label}</p>
+           <ul class="boxed-toggle-buttons single-select" data-sly-list="${multifieldModel.list}">
+               <sly data-sly-test="${item.checked}">
+                   <input type="hidden" name="${name}" value="${item.path}">
+               </sly>
+               <li class="${item.checked=='true'?'selected':''}">
+                   <button data-toggle="${name}" data-value="${item.path}" data-sly-attribute.disabled="${item.disabled =='true'}">${item.title @context='html'}</button>
+               </li>
+           </ul>
+       </div>
+   </sly>
+</sly>

@@ -1,0 +1,12 @@
+<sly data-sly-test.templateName="${pageProperties.cq:template}"/>
+<sly data-sly-test.mode="${templateName == '/apps/mxs/templates/homepage' ? 'edit' : 'disabled'}"/>
+<sly data-sly-test="${!inheritedPageProperties.rootPath}">
+    <sly data-sly-use.rootPathModel="com.mxs.core.models.RootPathModel"/>
+</sly>
+
+<sly data-sly-test.rootPath="${inheritedPageProperties.rootPath}">
+    <sly data-sly-test.header="${rootPath}/jcr:content/header"/>
+    <header>
+        <sly data-sly-resource="${ @path= header, resourceType='mxs/components/content/header', wcmmode=mode}"></sly>
+    </header>
+</sly>

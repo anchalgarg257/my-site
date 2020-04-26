@@ -1,0 +1,29 @@
+<sly data-sly-use.model ="${'com.mxs.core.models.ResourceUtil' @ path=properties.url}"/>
+<sly data-sly-test.newTab="${model.newTab?'_blank':''}"/>
+<sly data-sly-test.image="${properties.fileReference}"/>
+<sly data-sly-test.isDeeplink="${properties.isDeeplink}"/>
+<sly data-sly-test="${wcmmode.edit && !image}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Image"></div>
+</sly>
+<sly  data-sly-test.image="${image}">
+	<sly data-sly-test="${isDeeplink!='true'}">
+        <a href="${model.path}" target="${properties.isNewWindow}">
+            <div class="mxs-img text-${properties.imageAlignment}">
+                <img src="${image}" alt="${properties.imageAltText}"  />
+            </div>
+            <sly data-sly-test="${properties.imagecaption=='true'}">
+                <div class="mt-3" data-sly-resource="${'caption-text' @ resourceType='mxs/components/content/text'}"></div>
+            </sly>
+        </a>
+    </sly>
+    <sly data-sly-test="${isDeeplink=='true'}">
+     <a href="javascript:void(0)" class="deeplink-image downloadButton" data-app-url="${properties.appURL}" data-store-url="${properties.url}" target="${newTab?'_blank':properties.isNewWindow}">
+            <div class="mxs-img text-${properties.imageAlignment}">
+                <img src="${image}" alt="${properties.imageAltText}"  />
+            </div>
+            <sly data-sly-test="${properties.imagecaption=='true'}">
+                <div class="mt-3" data-sly-resource="${'caption-text' @ resourceType='mxs/components/content/text'}"></div>
+            </sly>
+        </a>
+    </sly>    
+</sly>

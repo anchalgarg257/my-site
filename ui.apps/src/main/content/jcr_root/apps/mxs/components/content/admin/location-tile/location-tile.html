@@ -1,0 +1,49 @@
+<sly data-sly-use.model="com.mxs.core.models.LocationTile"/>
+<sly data-sly-test.stickers="${model.stickerTags}"/>
+<sly data-sly-test.storeTitle="${properties.storeName}"/>
+<sly data-sly-test="${wcmmode.edit && !storeTitle}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Location Tile"></div>
+</sly>
+<div class="location-tile" data-sly-test="${storeTitle}">
+    <div class="location-content">
+        <div class="store-name">
+            <h6>${properties.title}</h6>
+            <div class="sticker-container" data-sly-list="${stickers}">
+                <div class="stickers"
+                     style="background-color: ${item.stickerBgColor @ context='styleToken'}; color: #ffffff">
+                    ${item.StickerTagTitle}
+                </div>
+            </div>
+        </div>
+        <div class="display-title">
+            <p>${properties.storeName}</p>
+        </div>
+        <div class="store-address">
+            <p>${properties.address}</p>
+        </div>
+        <div class="store-hours">
+            ${properties.openingHours @context='html'}<br/>
+            <p> Store/Dealer Code : ${properties.dealerCode}<br/>
+                Real View Code: ${properties.realViewCode}
+            </p>
+            <p> Lattitude: ${properties.latitude}<br/>
+                Longitude: ${properties.longitude}
+            </p>
+            <sly data-sly-test="${properties.isNewStore}">
+                <b>This is a new store.</b> <br/>
+            </sly>
+            <sly data-sly-test="${properties.isMiniStore}">
+                <b>This is a mini store.</b> <br/>
+            </sly>
+            <sly data-sly-test="${properties.selfCollection}">
+                <b>This is a Self Collection store.</b>
+            </sly>
+        </div>
+    </div>
+    <div class="text-center" data-sly-test="${properties.googleMapLink}">
+        <a href="${properties.googleMapLink}" target="_blank"
+           class="btn btn-primary">
+            Open Google Map Link
+        </a>
+    </div>
+</div>

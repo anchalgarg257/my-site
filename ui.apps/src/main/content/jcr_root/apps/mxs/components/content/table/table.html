@@ -1,0 +1,11 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Table"></div>
+</sly>
+<sly data-sly-use.table="com.mxs.core.models.TableModel"/>
+<div class="container">
+    <div class="mxs-table" data-head-bg="${table.headerbgColourType}" data-body-bg="${table.bodybgColourType}" data-head-font="${table.headerFontColourType}" data-body-font="${table.bodyFontColourType}" data-opacity="${properties.isOpacity}">
+        <div class="${properties.isLock} blue-color-heading default-css">
+            ${properties.tableData @context='html'}
+        </div>
+    </div>
+</div>

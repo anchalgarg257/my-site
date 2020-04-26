@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Live Chat"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.image.required]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <channel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        emptyText="MMAzxcvbnm"
+                        fieldLabel="Channel"
+                        name="./channel"/>
+                    <language
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                        emptyText="en"
+                        fieldLabel="Language"
+                        name="./languge"/>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                        allowUpload="{Boolean}false"
+                        autoStart="{Boolean}false"
+                        class="cq-droptarget"
+                        fieldLabel="Live Chat Header Image"
+                        fileNameParameter="./fileName"
+                        fileReferenceParameter="./fileReference"
+                        mimeTypes="[image]"
+                        multiple="{Boolean}false"
+                        name="./file"
+                        title="Upload Image Asset"
+                        uploadUrl="${suffix.path}"
+                        useHTML5="{Boolean}true"/>
+                    <placeholder
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                        fieldLabel="Number of Placeholder"
+                        max="4"
+                        min="1"
+                        name="./placeholder"/>
+                    <placeholder_type
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/hidden"
+                        name="./placeholder@TypeHint"
+                        value="Long"/>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

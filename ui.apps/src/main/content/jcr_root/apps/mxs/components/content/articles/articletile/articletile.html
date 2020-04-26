@@ -1,0 +1,28 @@
+<sly data-sly-use.model="${'com.mxs.core.models.ArticleTileModel'}"/>
+<sly data-sly-test.mediaType="${model.articleTile.articleType == 'type-video' ? 'video_library' : 'collections' }"/>
+<sly data-sly-test.setType="${model.articleTile.articleType == 'type-video' || model.articleTile.articleType == 'type-image' ? mediaType : ''}"/>
+<sly data-sly-test="${wcmmode.edit && !articleTile}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Article Tile"></div>
+</sly>
+
+<sly data-sly-test.articleTile="${model.articleTile}"/>
+<article data-sly-test="${articleTile}" class="article-tile ${properties.articlePath && !properties.articleText?'js-article-pulled':''}">
+    <div class="article-content">
+        <div class="article-img ${properties.opacity}" style="background-image: url(${articleTile.fileReference @ context='styleString'}) ">
+            <i class="material-icons">${setType}</i>
+            <img src="${articleTile.fileReference}" alt="${articleTile.imageAltText}">
+        </div>
+        <div class="desc">
+            <div class="title">
+                <h6>${articleTile.title}</h6>
+            </div>
+            <div class="text">
+                <p> ${articleTile.description @context='html'}</p>
+            </div>
+        </div>
+    </div>
+    <p class="text-center" data-sly-test="${properties.ctaText && articleTile.path}">
+        <sly data-sly-test.isNewTab="${properties.isNewWindow}"/>
+        <a href="${articleTile.path}" class="btn btn-primary-outline" target="${isNewTab}">${properties.ctaText}</a>
+    </p>
+</article>

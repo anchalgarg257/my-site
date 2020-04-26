@@ -1,0 +1,83 @@
+<sly data-sly-use.id="com.mxs.core.models.FormWidgetModel"/>
+<sly data-sly-test.labelFor="${component.name}${id.hashCode}"/>
+<sly data-sly-test.label="${properties.label}"/>
+<sly data-sly-test.name="${properties.name}"/>
+<sly data-sly-test.inputType="${properties.inputType}"/>
+<sly data-sly-test.placeholder="${properties.placeholder}"/>
+<sly data-sly-test.required="${properties.required}"/>
+<sly data-sly-test.requiredMessage="${properties.requiredMessage}"/>
+<sly data-sly-test.regExpression="${properties.regularExpression}"/>
+<sly data-sly-test.regExpMessage="${properties.regularExpressionMessage}"/>
+<sly data-sly-test.description="${properties.description}"/>
+<sly data-sly-test.disabled="${properties.disabled}"/>
+<sly data-sly-test.defaultvalue="${properties.defaultValue}"/>
+<sly data-sly-test.encryptField="${properties.encryptField}"/>
+
+<sly data-sly-test.maxLength="${properties.characterLimit? properties.characterLimit : ''}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Form - TextField"></div>
+</sly>
+<sly data-sly-test.selector="${request.requestPathInfo.selectors[0]}"/>
+<sly data-sly-test="${name}">
+    <sly data-sly-test="${inputType=='text' || inputType=='email'}">
+        <div class="text-input form-group ${selector[0] && !wcmmode.edit?'dropdown-trigger':''}" data-regex="${regExpression}" data-regex-msg="${regExpMessage}" data-dropdown-option="${selector}">
+            <label for="${labelFor}">${label}</label>
+            <input data-encrypt="${properties.encryptField}" type="${inputType}" data-attribute-gen="${properties.isName}" data-attribute-email="${inputType=='email'?'email-field':''}" class="form-control" id="${labelFor}" placeholder="${placeholder}"
+                   data-sly-attribute.required="${required=='true'}" data-sly-attribute.readOnly="${disabled=='true'}"
+                   name="${name}" value="${defaultvalue}" maxlength="${maxLength}">
+            <sly data-sly-test="${description}">
+                <small>${description @context='html'}</small>
+            </sly>
+            <sly data-sly-test="${requiredMessage || regExpMessage}">
+                <div class="invalid-feedback">${requiredMessage}</div>
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${inputType=='textarea'}">
+        <div class="text-input form-group  ${selector[0] && !wcmmode.edit?'dropdown-trigger':''}" data-dropdown-option="${selector}">
+            <label for="${labelFor}">${label}</label>
+            <textarea class="form-control" id="${labelFor}" placeholder="${placeholder}"
+                      data-sly-attribute.required="${required=='true'}" data-sly-attribute.readOnly="${disabled=='true'}"
+                      name="${name}" value="${defaultvalue}" maxlength="${maxLength}" rows="${properties.row}"></textarea>
+            <sly data-sly-test="${description}">
+                <small>${description @context='html'}</small>
+            </sly>
+            <sly data-sly-test="${requiredMessage}">
+                <div class="invalid-feedback">${requiredMessage}</div>
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${inputType=='hidden'}">
+        <sly data-sly-test="${wcmmode.edit}">
+            ${properties.label}: ${defaultvalue}
+        </sly>
+        <div class="text-input form-group">
+            <input type="hidden" class="form-control" id="${labelFor}"
+                   name="${name}" value="${defaultvalue}" maxlength="${maxLength}">
+        </div>
+    </sly>
+    <sly data-sly-test="${inputType=='ic-num' || inputType=='tel-num'}">
+        <div class="text-input ${inputType} form-group ${selector[0] && !wcmmode.edit?'dropdown-trigger':''}" data-regex="${regExpression}" data-regex-msg="${regExpMessage}" data-dropdown-option="${selector}">
+            <label for="${labelFor}">${label}</label>
+            <sly data-sly-test="${inputType=='tel-num'}">
+                <div class="mxs-tel">
+                    <span class="placeholder-number">60</span>
+                    <input data-encrypt="${properties.encryptField}" type="text" class="form-control" data-attribute-field="${inputType}" id="${labelFor}" placeholder="${placeholder}"
+                           data-sly-attribute.required="${required=='true'}" data-sly-attribute.readOnly="${disabled=='true'}"
+                           name="${name}" value="${defaultvalue}"  minlength="9" maxlength="${properties.characterLimit<9?9:maxLength}">
+                </div>
+            </sly>
+            <sly data-sly-test="${inputType=='ic-num'}">
+                <input type="text" class="form-control" id="${labelFor}" data-attribute-field="${inputType}" placeholder="${placeholder}"
+                       data-sly-attribute.required="${required=='true'}" data-sly-attribute.readOnly="${disabled=='true'}"
+                       name="${name}" value="${defaultvalue}" maxlength="${maxLength}">
+            </sly>
+            <sly data-sly-test="${description}">
+                <small>${description @context='html'}</small>
+            </sly>
+            <sly data-sly-test="${requiredMessage || regExpMessage}">
+                <div class="invalid-feedback">${requiredMessage}</div>
+            </sly>
+        </div>
+    </sly>
+</sly>

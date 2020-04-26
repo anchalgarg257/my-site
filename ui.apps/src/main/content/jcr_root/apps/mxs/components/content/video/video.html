@@ -1,0 +1,16 @@
+<sly data-sly-test.type="${properties.type}"/>
+<sly data-sly-test.damVideo="${properties.damVideo}"/>
+<sly data-sly-test.youtubeVideo="${properties.youtubeVideo}"/>
+<sly data-sly-test.isAutoPlay="${properties.isAutoPlay}"/>
+<sly data-sly-test="${wcmmode.edit && !damVideo && !youtubeVideo}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Video"></div>
+</sly>
+<sly data-sly-test="${type=='youtube-video'}">
+    <div class="mxs-vplyr" data-plyr-provider="youtube" data-plyr-embed-id="${youtubeVideo}" data-video-autoplay="${wcmmode.edit?'':isAutoPlay}"></div>
+</sly>
+<sly data-sly-test="${type=='dam-video'}">
+    <video class="mxs-vplyr" playsinline controls data-video-autoplay="${wcmmode.edit?'':isAutoPlay}">
+        <source src="${properties.damVideo}" type="video/mp4">
+    </video>
+</sly>
+

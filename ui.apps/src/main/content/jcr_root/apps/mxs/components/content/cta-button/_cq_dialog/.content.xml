@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="CTA Button"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <ctaButtonSize
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".text-image-hide-show"
+                                fieldDescription="CTA Description field will appear only if CTA Button size is large."
+                                fieldLabel="CTA Button Size"
+                                name="./ctaButtonSize"
+                                text="CTA Button Size">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Small"
+                                        value=""/>
+                                    <medium
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Medium"
+                                        value="medium"/>
+                                    <large
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Large"
+                                        value="large"/>
+                                </items>
+                            </ctaButtonSize>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="large">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <ctaDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                class="hide text-image-hide-show"
+                                                fieldLabel="CTA Description"
+                                                name="./ctaDescription"
+                                                showhidetargetvalue="large"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </description>
+                            <ctaButtonFill
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".white-selection-hide-show"
+                                fieldLabel="CTA Button Fill"
+                                name="./ctaButtonFill"
+                                required="{Boolean}true"
+                                text="CTA Button Fill">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Solid"
+                                        value="solid"/>
+                                    <medium
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Outline"
+                                        value="outline"/>
+                                </items>
+                            </ctaButtonFill>
+                            <solidStyling
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide white-selection-hide-show"
+                                showhidetargetvalue="solid">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <ctaButtonStyle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="CTA Button Style"
+                                        name="./ctaButtonStyleSolid"
+                                        required="{Boolean}true"
+                                        text="CTA Button Style">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <primary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Primary"
+                                                value="btn-primary"/>
+                                            <secondary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Secondary"
+                                                value="btn-secondary"/>
+                                            <warning
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Warning"
+                                                value="btn-warning"/>
+                                            <error
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Error"
+                                                value="btn-error"/>
+                                            <disabled
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Disabled"
+                                                value="disabled"/>
+                                        </items>
+                                    </ctaButtonStyle>
+                                </items>
+                            </solidStyling>
+                            <outlineStyling
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide white-selection-hide-show"
+                                showhidetargetvalue="outline">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <ctaButtonStyle2
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="CTA Button Style"
+                                        name="./ctaButtonStyleOutline"
+                                        required="{Boolean}true"
+                                        text="CTA Button Style">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <primary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Primary"
+                                                value="btn-primary"/>
+                                            <secondary
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Secondary"
+                                                value="btn-secondary"/>
+                                            <warning
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Warning"
+                                                value="btn-warning"/>
+                                            <error
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Error"
+                                                value="btn-error"/>
+                                            <disabled
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Disabled"
+                                                value="disabled"/>
+                                            <white
+                                                jcr:primaryType="nt:unstructured"
+                                                text="White"
+                                                value="btn-white"/>
+                                        </items>
+                                    </ctaButtonStyle2>
+                                </items>
+                            </outlineStyling>
+                            <full-width
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./fullwidth"
+                                text="CTA Full Width Button"
+                                value="btn-block"/>
+                            <ctaAlignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="CTA Button Alignment"
+                                name="./ctaAlignment"
+                                required="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <alignment1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="text-center"/>
+                                    <alignment2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="text-left"/>
+                                    <alignment3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="text-right"/>
+                                </items>
+                            </ctaAlignment>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <ctaType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".cta-button-hide-show"
+                                fieldDescription="Optional : Select the action type for this button"
+                                fieldLabel="CTA Type"
+                                name="./ctaActionType"
+                                text="CTA Type">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <link
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Link"
+                                        value="link"/>
+                                    <modal
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Modal"
+                                        value="modal"/>
+                                    <submit
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Submit"
+                                        value="submit"/>
+                                    <video
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Video"
+                                        value="video"/>
+                                    <live-chat
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Live Chat"
+                                        value="live-chat"/>
+                                    <real-view
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Real View"
+                                        value="real-view"/>
+                                </items>
+                            </ctaType>
+                            <ctaText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="CTA Label *"
+                                name="./ctaText"
+                                required="{Boolean}true"/>
+                            <ctaID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./ctaID"/>
+                            <ctaLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide cta-button-hide-show"
+                                showhidetargetvalue="link">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <ctaURL
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldDescription="For anchorID, insert # followed by anchordID - e.g. /content/page.html#anchorid"
+                                                fieldLabel="CTA URL"
+                                                name="./ctaURL"
+                                                rootPath="/content"/>
+                                            <openNewWindow
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                name="./isNewWindow"
+                                                text="Open in New Tab"
+                                                value="_blank"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </ctaLink>
+                            <modalLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide cta-button-hide-show"
+                                showhidetargetvalue="modal">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <modelPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldDescription="Configure the page on which model pop is being configured."
+                                                fieldLabel="Modal Popup Page"
+                                                name="./modelPath"
+                                                rootPath="/content"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </modalLink>
+                            <videoLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide cta-button-hide-show"
+                                showhidetargetvalue="video">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <videoLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                emptyText="https://www.youtube.com/watch?v=z4-JDRhmXNw"
+                                                fieldLabel="Youtube Embed URL"
+                                                name="./videoLink"
+                                                rootPath="/content"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </videoLink>
+                            <live-chat
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide cta-button-hide-show"
+                                showhidetargetvalue="live-chat">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <ctaURL
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                emptyText="/content/mxs/en/admin/modal/livechat/jcr:content/content/live-chat.json"
+                                                fieldLabel="Live Chat URL"
+                                                name="./livechatPath"
+                                                rootPath="/content"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </live-chat>
+                            <real-view
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide cta-button-hide-show"
+                                showhidetargetvalue="real-view">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <ctaURL
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldLabel="Real View Page Path"
+                                                name="./realViewPath"
+                                                rootPath="/content"/>
+                                            <openNewWindow
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                name="./isNewWindowForReal"
+                                                text="Open in New Tab"
+                                                value="_blank"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </real-view>
+                        </items>
+                    </column>
+                </items>
+            </advanced>
+            <ga
+                jcr:primaryType="nt:unstructured"
+                jcr:title="GA Properties"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <gaLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Required for analytics usage."
+                                fieldLabel="GA Label*"
+                                name="./gaLabel"
+                                required="{Boolean}true"/>
+                            <ctaGACategory
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                cq-dialog-dropdown-showhide-target=".text-image-hide-show"
+                                fieldDescription="Determine usage of CTA (for GA tracking) by category."
+                                fieldLabel="CTA GA Category"
+                                name="./gaCategory"
+                                text="CTA GA Category">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="Default CTA Button"
+                                        value="CTA Button"/>
+                                    <herobanner
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Hero Banner CTA Button"
+                                        value="Hero Banner"/>
+                                    <imagetile
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Image Tile CTA Button"
+                                        value="Image Tile"/>
+                                    <product-switch-navigation
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product Switch Navigation"
+                                        value="Product Switch Navigation"/>
+                                    <product-switch-navigation-with-switch-nav
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product Switch Navigation with Switch Navigation"
+                                        value="Product Switch Navigation with Switch Navigation"/>
+                                    <stock-price
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Stock Price"
+                                        value="Stock Price"/>
+                                    <live-chat
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Live Chat"
+                                        value="Live Chat"/>
+                                    <real-view
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Real View"
+                                        value="Real View"/>
+                                    <leadsForm
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Leads Form"
+                                        value="Leads"/>
+                                </items>
+                            </ctaGACategory>
+                            <gaAction
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="GA Action property need to popped up if the page is in another language and it should be mapped with the value in English Page."
+                                fieldLabel="GA Action"
+                                name="./gaAction"/>
+                        </items>
+                    </column>
+                </items>
+            </ga>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,24 @@
+.dialog-width-50rem{
+ width:50rem;
+}
+
+.coral--dark + .dialog-width-50rem{
+    width:100%;
+}
+
+.coral--dark + .dialog-width-50rem .column-full-width{
+    width:60%;
+}
+
+.column-full-width{
+    width:95%;
+}
+
+.column-full-width .coral-Form-fieldlabel{
+    width:15%;
+}
+
+/* Dialog width in multified widget without Tab */
+.cq-dialog-floating .coral-Form-field.full-width.no-tab.coral-Multifield {
+    width: 507px;
+}

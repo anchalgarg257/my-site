@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Notification"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.color.wheel,maxis.dialogutils.radiobutton]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items
+                            jcr:primaryType="nt:unstructured"
+                            sling:hideChildren="description">
+                            <notificationType
+                                jcr:primaryType="nt:unstructured"
+                                sling:orderBefore="label"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".text-image-hide-show"
+                                fieldLabel="Notification Type"
+                                name="./notificationType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value="none"/>
+                                    <inline
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Inline"
+                                        value="inline"/>
+                                    <popup
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Modal"
+                                        value="modal"/>
+                                </items>
+                            </notificationType>
+                            <modalLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="modal">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <modalPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldDescription="Point to the page on which modal content has been configured."
+                                                fieldLabel="Modal Content Page"
+                                                name="./modelPath"
+                                                rootPath="/content"/>
+                                        </items>
+                                    </well>
+                                </items>
+                            </modalLink>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fontColour
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Notification Font Colour"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Colour Type"
+                                        name="./fontColourType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <default
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Default"
+                                                value="default">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="color_wheel,maxis_color_palette,hotlink_color_palette"
+                                                    toggle=""/>
+                                            </default>
+                                            <maxis-color-pallate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Maxis Color Palette"
+                                                value="maxiscolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="hotlink_color_palette,color_wheel"
+                                                    show="maxis_color_palette"
+                                                    toggle=""/>
+                                            </maxis-color-pallate>
+                                            <hotlink-colour-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Hotlink Colour Palette"
+                                                value="hotlinkcolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="color_wheel,maxis_color_palette"
+                                                    show="hotlink_color_palette"
+                                                    toggle=""/>
+                                            </hotlink-colour-palette>
+                                            <colour-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Colour Wheel"
+                                                value="colourwheel">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="maxis_color_palette,hotlink_color_palette"
+                                                    show="color_wheel"
+                                                    toggle=""/>
+                                            </colour-wheel>
+                                        </items>
+                                    </color>
+                                    <maxis-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="maxis_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <maxis-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Maxis Colour Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./maxisColorPalette"/>
+                                        </items>
+                                    </maxis-color-palette-container>
+                                    <color-wheel-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="color_wheel"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <color-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/custom-colorpicker-two"
+                                                fieldLabel="Colour Wheel"
+                                                name="./colorWheel"/>
+                                        </items>
+                                    </color-wheel-container>
+                                    <hotlink-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="hotlink_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hotlink-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Hotlink Color Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./hotlinkColorPalette"/>
+                                        </items>
+                                    </hotlink-color-palette-container>
+                                </items>
+                            </fontColour>
+                            <bgColour
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Notification Background Colour"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Colour Type"
+                                        name="./bgColourType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <default
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Default"
+                                                value="default">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_color_wheel,bg_maxis_color_palette,bg_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </default>
+                                            <maxis-color-pallate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Maxis Color Palette"
+                                                value="maxiscolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_hotlink_color_palette,bg_color_wheel"
+                                                    show="bg_maxis_color_palette"
+                                                    toggle=""/>
+                                            </maxis-color-pallate>
+                                            <hotlink-colour-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Hotlink Colour Palette"
+                                                value="hotlinkcolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_color_wheel,bg_maxis_color_palette"
+                                                    show="bg_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </hotlink-colour-palette>
+                                            <colour-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Colour Wheel"
+                                                value="colourwheel">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_maxis_color_palette,bg_hotlink_color_palette"
+                                                    show="bg_color_wheel"
+                                                    toggle=""/>
+                                            </colour-wheel>
+                                        </items>
+                                    </color>
+                                    <maxis-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_maxis_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <maxis-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Maxis Colour Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bgMaxisColorPalette"/>
+                                        </items>
+                                    </maxis-color-palette-container>
+                                    <color-wheel-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_color_wheel"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <color-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/custom-colorpicker"
+                                                fieldLabel="Colour Wheel"
+                                                name="./bgColourWheel"/>
+                                        </items>
+                                    </color-wheel-container>
+                                    <hotlink-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_hotlink_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hotlink-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Hotlink Color Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bgHotlinkColorPalette"/>
+                                        </items>
+                                    </hotlink-color-palette-container>
+                                </items>
+                            </bgColour>
+                        </items>
+                    </column>
+                </items>
+                <closeable
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                    name="./closeable"
+                    text="Closeable"
+                    value="true">
+                    <items jcr:primaryType="nt:unstructured">
+                        <well
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                            <layout
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                            <items jcr:primaryType="nt:unstructured">
+                                <closeable
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                    name="./closeable"
+                                    text="Closeable"
+                                    value="true"/>
+                            </items>
+                        </well>
+                    </items>
+                </closeable>
+            </advanced>
+        </items>
+    </content>
+</jcr:root>

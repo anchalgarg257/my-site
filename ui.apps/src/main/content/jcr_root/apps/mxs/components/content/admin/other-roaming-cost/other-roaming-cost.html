@@ -1,0 +1,13 @@
+<sly data-sly-test.planType="${properties.planType}"/>
+<sly data-sly-test.roamingPrice="${properties.roamingPrice}"/>
+<sly data-sly-test="${wcmmode.edit && !planType && !roamingPrice}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Other Countries Roaming Cost"></div>
+</sly>
+    <div class="container" data-sly-test="${planType}">
+        <p><small>Plan Type:</small> <strong>${planType}</strong></p>
+        <p><small>Roaming Price:</small> <strong>${properties.roamingPrice}</strong></p>
+        <p><small>Target Countries:</small></p>
+        <ul data-sly-list="${properties.targetCountries }">
+            <li> <strong>${item} </strong></li>
+        </ul>
+    </div>

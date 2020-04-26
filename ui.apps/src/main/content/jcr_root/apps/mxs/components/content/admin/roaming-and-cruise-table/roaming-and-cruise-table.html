@@ -1,0 +1,29 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Roaming and Cruise Table"></div>
+</sly>
+<sly data-sly-use.roamingModel="com.mxs.core.models.RoamingCostInfoModel"/>
+<div class="row-fluid roaming-cruise-table">
+    <div class="col">
+        ${properties.featureName @ context='html'}
+    </div>
+    <div class="col">
+        <div class="class-price">
+            ${properties.description @ context='html'}
+            <sly data-sly-test="${properties.isRoamingCost == 'roaming-cost'}">
+                <div class="roaming-to">
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <p class="amount"><strong></strong>/min</p>
+                        <p class="from"><span>${roamingModel.currentCountry}</span> to</p>
+                    </div>
+                    <div class="selector">
+                        <div class="dropdown-select form-group">
+                            <select class="selectpicker" name="" data-sly-list="${roamingModel.list}">
+                                <option value="${item.roamingPrice}"> ${item.country}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </div>
+</div>

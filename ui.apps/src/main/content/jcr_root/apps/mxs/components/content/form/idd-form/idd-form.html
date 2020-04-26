@@ -1,0 +1,19 @@
+<sly data-sly-test="${wcmmode.edit}">
+   <div class="cq-placeholder cq-marker-start" data-emptytext="IDD Form"></div>
+</sly>
+<sly data-sly-use.model="${'com.mxs.core.models.MasterDataModel' @ formType='idd'}"/>
+<sly data-sly-test.resultList="${model.resultList}"/>
+<div class="column-control type-a idd-container">
+   <div class="row">
+      <div class="col">
+         <div data-sly-resource="${'title' @ resourceType='mxs/components/content/title'}"></div>
+         <div class="dropdown-select form-group">
+            <select class="selectpicker" name="idd-dropdown" data-sly-list="${resultList}">
+               <option value="${item.path}">${item.title}</option>
+            </select>
+         </div>
+      </div>
+   </div>
+   <div class="row idd-template">
+   </div>
+</div>

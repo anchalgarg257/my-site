@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Table"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.color.wheel,maxis.dialogutils.radiobutton]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <lock-column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./isLock"
+                                text="Lock Column"
+                                value="freeze-col"/>
+                            <opacity
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./isOpacity"
+                                text="Opacity"
+                                value="true"/>
+                            <header-background-color
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Table Header Background Color"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Colour Type"
+                                        name="./headerbgColourType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <default
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Default"
+                                                value="default">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_color_wheel,bg_maxis_color_palette,bg_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </default>
+                                            <maxis-color-pallate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Maxis Color Palette"
+                                                value="maxiscolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_hotlink_color_palette,bg_color_wheel"
+                                                    show="bg_maxis_color_palette"
+                                                    toggle=""/>
+                                            </maxis-color-pallate>
+                                            <hotlink-colour-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Hotlink Colour Palette"
+                                                value="hotlinkcolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_color_wheel,bg_maxis_color_palette"
+                                                    show="bg_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </hotlink-colour-palette>
+                                            <colour-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Colour Wheel"
+                                                value="colourwheel">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_maxis_color_palette,bg_hotlink_color_palette"
+                                                    show="bg_color_wheel"
+                                                    toggle=""/>
+                                            </colour-wheel>
+                                        </items>
+                                    </color>
+                                    <maxis-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_maxis_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <maxis-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Maxis Colour Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./headerbgColourType/maxiscolourpalette"/>
+                                        </items>
+                                    </maxis-color-palette-container>
+                                    <color-wheel-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_color_wheel"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <color-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/custom-colorpicker"
+                                                fieldLabel="Colour Wheel"
+                                                name="./headerbgColourType/colourwheel"/>
+                                        </items>
+                                    </color-wheel-container>
+                                    <hotlink-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_hotlink_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hotlink-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Hotlink Color Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./headerbgColourType/hotlinkcolourpalette"/>
+                                        </items>
+                                    </hotlink-color-palette-container>
+                                </items>
+                            </header-background-color>
+                            <body-background-color
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Table Body Background Color"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Colour Type"
+                                        name="./bodybgColourType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <default
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Default"
+                                                value="default">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="body_color_wheel,body_maxis_color_palette,body_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </default>
+                                            <maxis-color-pallate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Maxis Color Palette"
+                                                value="maxiscolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="body_hotlink_color_palette,body_color_wheel"
+                                                    show="body_maxis_color_palette"
+                                                    toggle=""/>
+                                            </maxis-color-pallate>
+                                            <hotlink-colour-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Hotlink Colour Palette"
+                                                value="hotlinkcolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="body_color_wheel,body_maxis_color_palette"
+                                                    show="body_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </hotlink-colour-palette>
+                                            <colour-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Colour Wheel"
+                                                value="colourwheel">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="body_maxis_color_palette,body_hotlink_color_palette"
+                                                    show="body_color_wheel"
+                                                    toggle=""/>
+                                            </colour-wheel>
+                                        </items>
+                                    </color>
+                                    <maxis-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="body_maxis_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <maxis-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Maxis Colour Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bodybgColourType/maxiscolourpalette"/>
+                                        </items>
+                                    </maxis-color-palette-container>
+                                    <color-wheel-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="body_color_wheel"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <color-wheel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/custom-colorpicker-two"
+                                                fieldLabel="Colour Wheel"
+                                                name="./bodybgColourType/colourwheel"/>
+                                        </items>
+                                    </color-wheel-container>
+                                    <hotlink-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="body_hotlink_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hotlink-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Hotlink Color Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bodybgColourType/hotlinkcolourpalette"/>
+                                        </items>
+                                    </hotlink-color-palette-container>
+                                </items>
+                            </body-background-color>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <header-font-color
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Table Header Font Color"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Colour Type"
+                                        name="./headerFontColourType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <default
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Default"
+                                                value="default">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="header_font_color_wheel,header_font_maxis_color_palette,header_font_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </default>
+                                            <maxis-color-pallate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Maxis Color Palette"
+                                                value="maxiscolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="header_font_hotlink_color_palette,header_font_color_wheel"
+                                                    show="header_font_maxis_color_palette"
+                                                    toggle=""/>
+                                            </maxis-color-pallate>
+                                            <hotlink-colour-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Hotlink Colour Palette"
+                                                value="hotlinkcolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="header_font_color_wheel,header_font_maxis_color_palette"
+                                                    show="header_font_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </hotlink-colour-palette>
+                                        </items>
+                                    </color>
+                                    <maxis-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="header_font_maxis_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <maxis-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Maxis Colour Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./headerFontColourType/maxiscolourpalette"/>
+                                        </items>
+                                    </maxis-color-palette-container>
+                                    <hotlink-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="header_font_hotlink_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hotlink-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Hotlink Color Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./headerFontColourType/hotlinkcolourpalette"/>
+                                        </items>
+                                    </hotlink-color-palette-container>
+                                </items>
+                            </header-font-color>
+                            <body-font-color
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Table Body Font Color"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Colour Type"
+                                        name="./bodyFontColourType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <default
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Default"
+                                                value="default">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="body_font_color_wheel,body_font_maxis_color_palette,body_font_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </default>
+                                            <maxis-color-pallate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Maxis Color Palette"
+                                                value="maxiscolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="body_font_hotlink_color_palette,body_font_color_wheel"
+                                                    show="body_font_maxis_color_palette"
+                                                    toggle=""/>
+                                            </maxis-color-pallate>
+                                            <hotlink-colour-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Hotlink Colour Palette"
+                                                value="hotlinkcolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="body_font_color_wheel,body_font_maxis_color_palette"
+                                                    show="body_font_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </hotlink-colour-palette>
+                                        </items>
+                                    </color>
+                                    <maxis-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="body_font_maxis_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <maxis-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Maxis Colour Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bodyFontColourType/maxiscolourpalette"/>
+                                        </items>
+                                    </maxis-color-palette-container>
+                                    <hotlink-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="body_font_hotlink_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hotlink-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Hotlink Color Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bodyFontColourType/hotlinkcolourpalette"/>
+                                        </items>
+                                    </hotlink-color-palette-container>
+                                </items>
+                            </body-font-color>
+                        </items>
+                    </column>
+                </items>
+            </advanced>
+        </items>
+    </content>
+</jcr:root>

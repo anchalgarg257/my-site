@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    storePath="">
+    <section-container
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/section-container"
+        alignment="d-flex justify-content-center"
+        colourType="default"
+        width="50">
+        <container
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <title
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/title"
+                colourType="default"
+                textIsRich="true"
+                title="&lt;h2 style=&quot;text-align: center;&quot;>Find a Maxis center near you&lt;br>&#xd;&#xa;&lt;/h2>&#xd;&#xa;"/>
+            <dropdown
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/dropdown"
+                defaultValue="Select State"
+                dropdownType="multilist"
+                label=" "
+                name="selectState"
+                textIsRich="true"/>
+            <dropdown_964700979
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/dropdown"
+                defaultValue="Select Town"
+                dropdownType="multilist"
+                label=" "
+                name="selectTown"
+                textIsRich="true"/>
+        </container>
+    </section-container>
+    <divider1
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/divider"
+        dividerStyle="normal"/>
+    <divider2
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/divider"
+        dividerStyle="normal"/>
+</jcr:root>

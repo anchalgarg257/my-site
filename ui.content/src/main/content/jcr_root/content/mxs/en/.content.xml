@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2019-07-18T20:53:16.871+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/mxs/templates/homepage"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="English"
+        sling:resourceType="mxs/components/structure/homepage"
+        priority="0"
+        rootPath="/content/mxs/en">
+        <header
+            jcr:lastModified="{Date}2019-07-18T20:53:16.862+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mxs/components/content/header"
+            cartUrl="/content/we-retail/us/en"
+            drawerList="[{&quot;title&quot;:&quot;Mobile Plans&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;singleList&quot;:[{&quot;title&quot;:&quot;Switch to Maxis&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;MaxisOne Plan&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Refer Friend&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;eSIM&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}]},{&quot;title&quot;:&quot;Roaming &amp; IDD&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Services&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;&quot;}]"
+            rootPath="/content/we-retail/us/en"
+            singleList="[{&quot;title&quot;:&quot;Business PlansGDIUAFGCAYGXIUASCGIUASFXYAUFXIUASGVIDUGVUSAFC&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;_blank&quot;},{&quot;title&quot;:&quot;Prepaid Plans&quot;\,&quot;path&quot;:&quot;/content/we-retail/us/en&quot;\,&quot;isNewWindow&quot;:&quot;_blank&quot;}]">
+            <header-logo
+                jcr:lastModified="{Date}2019-07-15T20:44:05.212+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/image"
+                fileReference="/content/dam/mxs/Maxis Logo.svg"
+                imageAlignment="left"
+                imageAltText="Img"/>
+            <notification
+                jcr:primaryType="nt:unstructured"
+                bgColourType="default"
+                closeable="true"
+                fontColourType="default"
+                stateful="true">
+                <notif-text
+                    jcr:lastModified="{Date}2019-07-16T07:01:11.412+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mxs/components/content/text"
+                    text="&lt;p>Important Notice&lt;br>&#xd;&#xa;Beware of fake websites / scam emails offering fake deals from Maxis.&lt;br>&#xd;&#xa;Please ensure that you are on the genuine Maxis website when responding to any surveys, deals or contests before providing your personal&amp;nbsp;information. For more information on how to differentiate between a genuine Maxis website and scam websites, click&amp;nbsp;&lt;a href=&quot;https://www.maxis.com.my/phishing-scam.html&quot;>here&lt;/a>&lt;i>.&lt;/i>&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+            </notification>
+        </header>
+        <footer
+            jcr:lastModified="{Date}2019-07-16T06:57:46.363+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mxs/components/content/footer"
+            footerLinkList="[{&quot;title&quot;:&quot;Maxis&quot;\,&quot;singleList&quot;:[{&quot;title&quot;:&quot;About Maxis&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Newsroom&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Careers&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Hotlink&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Business&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}]},{&quot;title&quot;:&quot;Support&quot;\,&quot;singleList&quot;:[{&quot;title&quot;:&quot;Contact Us&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Find A Store&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;FAQ&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Terms &amp; Conditions&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}]},{&quot;title&quot;:&quot;Quick Links&quot;\,&quot;singleList&quot;:[{&quot;title&quot;:&quot;Postpaid Plans&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Prepaid Plans&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Business Plans&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}\,{&quot;title&quot;:&quot;Our Network&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;\,&quot;isNewWindow@Delete&quot;:&quot;&quot;}]}]"
+            singleList="[{&quot;title&quot;:&quot;Privacy Policy&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Terms of Use&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Phishing and Scam Protection&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;},{&quot;title&quot;:&quot;SKMM Notificaion&quot;\,&quot;path&quot;:&quot;/content/we-retail/us&quot;\,&quot;isNewWindow&quot;:&quot;&quot;}]"
+            socialIconList="[{&quot;title&quot;:&quot;icon-facebook&quot;\,&quot;path&quot;:&quot;https://www.facebook.com/maxis&quot;},{&quot;title&quot;:&quot;icon-instagram&quot;\,&quot;path&quot;:&quot;https://www.facebook.com/maxis&quot;},{&quot;title&quot;:&quot;icon-youtube&quot;\,&quot;path&quot;:&quot;https://www.facebook.com/maxis&quot;},{&quot;title&quot;:&quot;icon-twitter&quot;\,&quot;path&quot;:&quot;https://www.facebook.com/maxis&quot;},{&quot;title&quot;:&quot;icon-google-plus&quot;\,&quot;path&quot;:&quot;https://www.facebook.com/maxis&quot;}]"
+            socialLabel="Follow us">
+            <footer-logo
+                jcr:lastModified="{Date}2019-07-15T20:56:40.070+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/image"
+                fileReference="/content/dam/mxs/maxis-logo-white.svg"
+                imageAlignment="left"
+                imageAltText="Img"/>
+            <disclamer-text
+                jcr:lastModified="{Date}2019-07-16T20:28:18.726+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/text"
+                text="&lt;p style=&quot;text-align: right;&quot;>Price stated may be subject to Service Tax.&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: right;&quot;>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p style=&quot;text-align: right;&quot;>Redress your complaints at the Consumer Forum Malaysia (CFM)&lt;br>&#xd;&#xa;&lt;a href=&quot;http://www.complaint.cfm.org.my/&quot;>www.complaint.cfm.org.my&lt;/a>&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+            <footer-text
+                jcr:lastModified="{Date}2019-07-16T06:54:05.574+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/text"
+                text="&lt;p>Best viewed with the latest version of Chrome, Firefox, Safari, and Edge.&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+            <parsys
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/parsys">
+                <text
+                    jcr:created="{Date}2019-07-16T20:24:43.988+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2019-07-16T20:25:09.688+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mxs/components/content/text"
+                    text="&lt;p>Download MyMaxis App&lt;/p>&#xd;&#xa;"
+                    textIsRich="true"/>
+                <columncontrol
+                    jcr:created="{Date}2019-07-16T20:20:36.992+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2019-07-16T20:21:01.842+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mxs/components/content/columnControl"
+                    colourType="default"
+                    columns="type-b">
+                    <col0
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/parsys">
+                        <image_copy
+                            jcr:created="{Date}2019-07-16T20:19:59.702+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2019-07-16T20:22:50.442+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mxs/components/content/image"
+                            fileReference="/content/dam/mxs/Apple App Download.png"
+                            imageAlignment="left"
+                            imageAltText="App store"/>
+                    </col0>
+                    <col1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/foundation/components/parsys">
+                        <image_copy
+                            jcr:created="{Date}2019-07-16T20:19:59.702+05:30"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2019-07-16T20:23:12.771+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mxs/components/content/image"
+                            fileReference="/content/dam/mxs/Android App Download.png"
+                            imageAlignment="left"
+                            imageAltText="Google play"/>
+                    </col1>
+                </columncontrol>
+            </parsys>
+        </footer>
+    </jcr:content>
+    <home/>
+    <test/>
+    <maxisonebroadband/>
+</jcr:root>

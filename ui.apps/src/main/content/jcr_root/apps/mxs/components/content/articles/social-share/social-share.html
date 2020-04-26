@@ -1,0 +1,16 @@
+<sly data-sly-test.shareList="${currentStyle.socialShareList}"/>
+<sly data-sly-test="${properties.socialShareList}">
+	<sly data-sly-test.shareList="${properties.socialShareList}"/>
+</sly>
+<sly data-sly-test="${wcmmode.edit && !shareList}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Social Share Component"></div>
+</sly>
+<sly data-sly-test.shareList="${shareList}">
+    <div class="social-share">
+        <ul>
+            <sly data-sly-list="${shareList}">
+                <li class="${item}"></li>
+            </sly>
+        </ul>
+    </div>
+</sly>

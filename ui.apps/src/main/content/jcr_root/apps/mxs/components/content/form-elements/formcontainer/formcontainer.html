@@ -1,0 +1,31 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Form - Container"></div>
+</sly>
+<sly data-sly-test.endpointConfig="${properties.endPointConfig}"/>
+<sly data-sly-test="${endpointConfig}">
+    <form class="${properties.sasType} needs-validation" novalidate data-service-url="/bin/api/${endpointConfig}"
+          data-success-title="${properties.successMsgTitle}" data-success-msg="${properties.successMsg}"
+          data-error-title="${properties.errorMsgTitle}" data-error-msg="${properties.errorMsg}" data-duplicateid-title="${properties.duplicateIDTitle}"
+          data-duplicateid-msg="${properties.duplicateIDMsg}" data-email-template="${properties.emailTemplate}"
+          data-email_trigger="${properties.emailTrigger}" data-email_body_message="${properties.emailMsg}"
+          data-subject="${properties.emailSubject}">
+        <sly data-sly-test="${endpointConfig == 'sas'}">
+            <input type="hidden" class="form-control"
+                   name="${properties.cataelogIDName}" value="${properties.cataelogIDValue}">
+            <input type="hidden" class="form-control"
+                   name="${properties.serviceName}" value="${properties.serviceValue}">
+            <sly data-sly-test="${properties.cataelogTypeValue}">
+                <input type="hidden" class="form-control"
+                       name="${properties.cataelogTypeName}" value="${properties.cataelogTypeValue}">
+            </sly>
+            <input type="hidden" class="form-control" name="page-path">
+        </sly>
+        <sly data-sly-test="${properties.endPointConfig == 'cmss'}">
+            <input type="hidden" class="form-control" value="${properties.transactionIDValue}" name="tranxId">
+            <input type="hidden" class="form-control" name="msisdn">
+            <input type="hidden" class="form-control" value="${properties.applnType}" name="appInType">
+        </sly>
+        <input type="hidden" class="form-control" value="${properties.formName}" name="formName">
+        <sly data-sly-resource="${ @path='par', resourceType='wcm/foundation/components/parsys'}"/>
+    </form>
+</sly>

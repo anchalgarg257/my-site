@@ -1,0 +1,123 @@
+<sly data-sly-test="${wcmmode.edit && (!properties.ctaText)}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="CTA Button"></div>
+</sly>
+<sly data-sly-use.resourceModel="${'com.mxs.core.models.ResourceUtil' @ path=properties.ctaURL,videoLink=properties.videoLink}"/>
+<sly data-sly-test.uuid="${resourceModel.uuid}"/>
+<sly data-sly-use.modelPopUp="com.mxs.core.models.ModalPopModel"/>
+<sly data-sly-test.newTab="${resourceModel.newTab?'_blank':''}"/>
+<sly data-sly-test.description="${properties.ctaDescription}"/>
+<sly data-sly-test.buttonFill="${properties.ctaButtonFill == 'solid' ? '' : 'outline'}"/>
+<sly data-sly-test.isOutline="${buttonFill == 'outline' ? '-' : ''}"/>
+<sly data-sly-test.buttonStyle="${buttonFill == 'outline' ? properties.ctaButtonStyleOutline : properties.ctaButtonStyleSolid}"/>
+<sly data-sly-test.wtext="${properties.ctaButtonSize=='large' && description?'wtext':''}"/>
+<sly data-sly-test.ctaButtonSize="${properties.ctaButtonSize}"/>
+<sly data-sly-test.gaCategory="${properties.gaCategory ? properties.gaCategory : 'CTA Button' }"/>
+<sly data-sly-test.gaLabel="${properties.gaLabel ? properties.gaLabel : properties.ctaText}"/>
+<sly data-sly-test.gaAction="${properties.gaAction ? properties.gaAction : properties.ctaText}"/>
+
+<sly data-sly-test="${properties.ctaText}">
+    <sly data-sly-test="${buttonStyle!='disabled'}">
+        <sly data-sly-test="${!properties.isPopUpWindow}">
+            <div class="${properties.ctaAlignment}" data-sly-test="${properties.ctaActionType == 'link'}">
+                <a data-sly-test="${gaCategory == 'Real View'}" href="${resourceModel.path}" target="${properties.isNewWindow}"  data-gacategory="${gaCategory}"
+                   class="btn ${buttonStyle}${isOutline}${buttonFill} ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}">
+                    ${properties.ctaText}
+                    <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                        <span>${description}</span>
+                    </sly>
+                </a>
+                <a data-sly-test="${gaCategory != 'Real View'}" href="${resourceModel.path}" target="${properties.isNewWindow}" data-gacategory="${gaCategory}"
+                   onclick="gaEvents.pushInDataLayer(this,'${gaCategory @context='scriptComment'}','${gaAction @context='scriptComment'}','${gaLabel @context='scriptComment'}')"
+                   class="btn ${buttonStyle}${isOutline}${buttonFill} ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}">
+                    ${properties.ctaText}
+                    <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                        <span>${description}</span>
+                    </sly>
+                </a>
+            </div>
+            <div class="${properties.ctaAlignment}" data-sly-test="${properties.ctaActionType == 'real-view'}">
+                <sly data-sly-test="${pageProperties.cq:template == '/apps/mxs/templates/productpage'}">
+                    <a data-ga-label="${properties.gaLabel}" href="${properties.realViewPath}.html?title=${currentPage.title}&articleModel=${pageProperties.deviceModel}" target="${properties.isNewWindowForReal}"
+                       onclick="gaEvents.pushInDataLayer(this,'${gaCategory @context='scriptComment'}','${gaAction @context='scriptComment'}','${gaLabel @context='scriptComment'}')"
+                       class="btn ${buttonStyle}${isOutline}${buttonFill} ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}">
+                    ${properties.ctaText}
+                    <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                        <span>${description}</span>
+                    </sly>
+                </a>
+            </sly>
+                <sly data-sly-test="${pageProperties.cq:template != '/apps/mxs/templates/productpage'}">
+                    Please Use Real View option Only in Product Detail Template
+                </sly>
+            </div>
+        </sly>
+        <div class="${properties.ctaAlignment}" data-sly-test="${properties.ctaActionType == 'live-chat'}">
+            <sly data-sly-test.pagePath="${request.scheme}://${request.serverName}:${request.serverPort.toString=='80'?'':request.serverPort}${currentPage.path}.html"/>
+            <a href="${properties.livechatPath}?page=" onclick="gaEvents.pushInDataLayer(this,'${gaCategory @context='scriptComment'}','${gaAction @context='scriptComment'}','${gaLabel @context='scriptComment'}');window.open(this.href+window.location.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,left=100,top=100,width=370,height=500');return false;"
+               class="btn ${buttonStyle}${isOutline}${buttonFill} ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}">
+                ${properties.ctaText}
+                <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                    <span>${description}</span>
+                </sly>
+            </a>
+        </div>
+        <div class="${properties.ctaAlignment}" data-sly-test="${properties.ctaActionType == 'modal'}">
+            <button onclick="gaEvents.pushInDataLayer(this, '${gaCategory @context='scriptComment'}','${gaAction @context='scriptComment'}','${gaLabel @context='scriptComment'}')" class="btn ${buttonStyle}${isOutline}${buttonFill} ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}"
+                    data-toggle="modal" data-target="#${modelPopUp.id}">
+                ${properties.ctaText}
+                <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                    <span>${description}</span>
+                </sly>
+            </button>
+        </div>
+        <div class="${properties.ctaAlignment}" data-sly-test="${properties.ctaActionType == 'submit'}">
+            <button id="${properties.ctaID}" data-gacategory="${gaCategory}"
+                    class="btn ${buttonStyle}${isOutline}${buttonFill} d-none ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}"
+                    type="submit">
+                ${properties.ctaText}
+                <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                    <span>${description}</span>
+                </sly>
+            </button>
+        </div>
+        <div class="${properties.ctaAlignment}" data-sly-test="${properties.ctaActionType == 'video'}">
+            <button data-target="#${currentNode.name}${uuid}" data-gaAction="${gaAction}" data-galabel="${gaLabel}" data-toggle="modal"
+               class="video-popup btn ${buttonStyle}${isOutline}${buttonFill} ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}">
+                ${properties.ctaText}
+                <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                    <span>${description}</span>
+                </sly>
+            </button>
+        </div>
+    </sly>
+    <sly data-sly-test="${buttonStyle=='disabled'}">
+        <div class="${properties.ctaAlignment}">
+            <button class="btn ${buttonFill} ${properties.ctaButtonSize} ${wtext} ${properties.fullwidth}"
+                    disabled="">${properties.ctaText}
+                <sly data-sly-test="${description && ctaButtonSize=='large'}">
+                    <span>${description}</span>
+                </sly>
+            </button>
+        </div>
+    </sly>
+</sly>
+<sly data-sly-test="${properties.ctaActionType == 'modal'}">
+    ${modelPopUp.modelHTML @context='unsafe'}
+</sly>
+<sly data-sly-test="${properties.ctaActionType == 'video' && resourceModel.videoId}">
+    <div class="modal fade mxs-modal video-modal" id="${currentNode.name}${uuid}" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:70%; height:80%;">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons" aria-hidden="true">close</i>
+                </button>
+                <div class="modal-body d-flex justify-content-center align-content-center">
+                    <iframe id="player" type="text/html" width="100%" height="auto"
+                            src="${'https://www.youtube.com/embed/' @ appendPath=resourceModel.videoId}?autoplay=1"
+                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>

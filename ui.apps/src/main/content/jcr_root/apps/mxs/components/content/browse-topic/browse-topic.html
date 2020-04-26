@@ -1,0 +1,28 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Browse Topic"></div>
+</sly>
+<sly data-sly-use.listing="com.mxs.core.models.MultiFIeldModel"/>
+
+<div class="topic" id="browse-topic-anchor" >
+    <div class="text parbase">
+        <h3>
+             ${!properties.title ? currentstyle.title : properties.title @context="html"}
+        </h3>
+    </div>
+    <ul class="topic-box">
+    	<sly data-sly-list="${listing.designList}">
+        	<li>
+            	<sly data-sly-test.isNewTab="${item.isNewWindow?'_blank':''}"/>
+                <a href="${item.path}.html" target="${isNewTab?'_blank':item.isNewWindow}"> 
+                    <span style="color:#43A047" class="mxs-icon align-center">
+                        <img class="svg-icon md" src="${item.assetPath @context='unsafe'}"/>
+                    </span>
+                    <div class="text parbase">
+                        <p style="text-align: center;" ><span><b>${item.title @context='unsafe'}</b></span><br>
+                    </div>
+                </a>
+            </li>
+        </sly>
+    </ul>
+    <div style="clear:both"></div>
+</div>

@@ -1,0 +1,36 @@
+<sly data-sly-use.filter="com.mxs.core.models.FilterModel"/>
+<sly data-sly-test="${wcmmode.edit && filter.listMap.size==0}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Filter"></div>
+</sly>
+<sly data-sly-test="${filter.listMap.size>0}">
+    <div class="filter-wrapper">
+        <div class="filter">
+            <span class="close"><i class="material-icons">clear</i></span>
+            <div class="apply-filter">
+                <button class="btn btn-primary">${properties.mFilterLabel}</button>
+            </div>
+            <div class="top">
+                <span>${properties.title}</span>
+                <a href="" id="clear-filter">Clear All</a>
+            </div>
+            <div class="content">
+                <sly data-sly-list.key="${filter.listMap}">
+                    <div class="title">${key}</div>
+                    <ul data-group="${keyList.count}_group" data-params="g${keyList.count}">
+                        <sly data-sly-list.tag="${filter.listMap[key]}">
+                            <li>
+                                <div class="checkbox">
+                                    <div class="chk-cont">
+                                        <input id="${tag.name}" type="checkbox" data-params="${tag.title}" name="${tag.tagID}">
+                                        <label for="${tag.name}">${tag.title}</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </sly>
+                    </ul>
+                </sly>
+            </div>
+        </div>
+        <div class="filter-cta-mobile"><a href="">Filter</a></div>
+    </div>
+</sly>

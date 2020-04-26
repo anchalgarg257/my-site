@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <layout jcr:primaryType="nt:unstructured"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <basic jcr:primaryType="nt:unstructured">
+                        <layout jcr:primaryType="nt:unstructured"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <moretitles jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <brandtitle
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="pagetitle"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                allowBulkEdit="{Boolean}true"
+                                                fieldDescription="Automatically add Brand Title as suffix of Page Title e.g, PageTitle|Maxis"
+                                                fieldLabel="Brand Title"
+                                                name="./brandTitle"
+                                                renderReadOnly="{Boolean}true"/>
+                                        </items>
+                                    </moretitles>
+                                    <custom-configuration jcr:primaryType="nt:unstructured">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <liveChatIcon
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="enable-live-chat"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldLabel="Live Chat Icon"
+                                                name="./liveChatIcon"
+                                                rootPath="/content/dam"/>
+                                        </items>
+                                    </custom-configuration>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

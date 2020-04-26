@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Form - Container"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.rte.height,maxis.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <form-name
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Form Name"
+                                name="./formName"
+                                required="{Boolean}true"/>
+                            <endpoint
+                                jcr:primaryType="nt:unstructured"
+                                sling:orderBefore="label"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".text-image-hide-show"
+                                fieldLabel="End Point Name"
+                                fieldRequired="{Boolean}true"
+                                name="./endPointConfig">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <sas
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Consumer Lead Form (SAS)"
+                                        value="sas"/>
+                                    <cmss
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Business Lead Form (CMSS)"
+                                        value="cmss"/>
+                                    <db
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Database"
+                                        value="db"/>
+                                </items>
+                            </endpoint>
+                            <sas
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="sas">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <type
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="label"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="SAS Form Type"
+                                                fieldRequired="{Boolean}true"
+                                                name="./sasType">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <general
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="General"
+                                                        value="general"/>
+                                                    <maxis-one-prime
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Maxis One Prime"
+                                                        value="form-maxisone-prime"/>
+                                                    <hotlink-flex
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Hotlink Postpaid Flex"
+                                                        value="form-flex"/>
+                                                </items>
+                                            </type>
+                                            <catalogID
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Catalog ID"
+                                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <name
+                                                        granite:class="cmp-form--elements-name"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Name*"
+                                                        name="./cataelogIDName"
+                                                        validation="cq-dialog-name"/>
+                                                    <value
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Value*"
+                                                        name="./cataelogIDValue"/>
+                                                </items>
+                                            </catalogID>
+                                            <catalogType
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Catalog Type"
+                                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <name
+                                                        granite:class="cmp-form--elements-name"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Name*"
+                                                        name="./cataelogTypeName"
+                                                        validation="cq-dialog-catalogTypeName"/>
+                                                    <value
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Value*"
+                                                        name="./cataelogTypeValue"/>
+                                                </items>
+                                            </catalogType>
+                                            <serviceType
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Service Type"
+                                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <name
+                                                        granite:class="cmp-form--elements-name"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Name*"
+                                                        name="./serviceName"
+                                                        validation="cq-dialog-serviceName"/>
+                                                    <value
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Value*"
+                                                        name="./serviceValue"/>
+                                                </items>
+                                            </serviceType>
+                                        </items>
+                                    </well>
+                                </items>
+                            </sas>
+                            <cmss
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="cmss">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <transactionID
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Transaction ID"
+                                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <appInType
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="AppInTyp*"
+                                                        name="./applnType"/>
+                                                    <value
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        fieldLabel="Transaction ID*"
+                                                        name="./transactionIDValue"/>
+                                                </items>
+                                            </transactionID>
+                                        </items>
+                                    </well>
+                                </items>
+                            </cmss>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <email
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Email"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <email
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        class="cq-dialog-checkbox-showhide"
+                                        cq-dialog-checkbox-showhide-target=".hidefilter-showhide-target"
+                                        name="./emailTrigger"
+                                        text="Email Triggered"
+                                        value="true"/>
+                                    <showHideContainer
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container"
+                                        class="hide hidefilter-showhide-target"
+                                        showhidetargetvalue="true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <emailSubject
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Email Subject"
+                                                name="./emailSubject"/>
+                                            <emailMsg
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                fieldLabel="Success Email Message"
+                                                name="./emailMsg"/>
+                                            <email-template
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                fieldLabel="Email Template Type"
+                                                name="./emailTemplate">
+                                                <datasource
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="acs-commons/components/utilities/genericlist/datasource"
+                                                    path="/etc/acs-commons/lists/mxs-revamp-generic-lists/form-email-templates"/>
+                                            </email-template>
+                                        </items>
+                                    </showHideContainer>
+                                </items>
+                            </email>
+                            <resultMessage
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Result Message"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <successMsgTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Success  Message Title"
+                                        name="./successMsgTitle"
+                                        required="{Boolean}true"/>
+                                    <successMsg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldLabel="Success Prompt Message"
+                                        name="./successMsg"
+                                        required="{Boolean}true"/>
+                                    <errorMsgTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Error Message Title"
+                                        name="./errorMsgTitle"
+                                        required="{Boolean}true"/>
+                                    <errorMsg
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldLabel="Error Feedback Form Message"
+                                        name="./errorMsg"
+                                        required="{Boolean}true"/>
+                                </items>
+                            </resultMessage>
+                            <sas
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide text-image-hide-show"
+                                showhidetargetvalue="sas">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <well
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <layout
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <duplicateIDMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Duplicate ID Message"
+                                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <duplicateIDTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Duplicate ID Title*"
+                                                        name="./duplicateIDTitle"/>
+                                                    <duplicateIDMessage
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                        fieldLabel="Duplicate ID Message*"
+                                                        name="./duplicateIDMsg"/>
+                                                </items>
+                                            </duplicateIDMessage>
+                                        </items>
+                                    </well>
+                                </items>
+                            </sas>
+                        </items>
+                    </column>
+                </items>
+            </advanced>
+        </items>
+    </content>
+</jcr:root>

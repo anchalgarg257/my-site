@@ -1,0 +1,132 @@
+<sly data-sly-test.statefulClass=""/>
+<sly data-sly-test.wcmEditMode="false"/>
+
+<sly data-sly-test="${wcmmode.edit && properties.notificationType == 'none'}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Notification Component"></div>
+</sly>
+
+<sly data-sly-test="${wcmmode.edit == true
+						&& request.requestParameterMap['wcmmode'][0].toString != 'disabled'}">
+    <sly data-sly-test.wcmEditMode="true" />
+</sly>
+
+<!--/*
+  Note: Don't interchange the sequence of the codes below
+  		The first code is use to initialize the value of (stateful, and closeable) properties.
+  		Creation/initialization of event cookie is done in FE (note: BE and FE must be sync).
+
+  Start Code Sequence
+  */-->
+<sly data-sly-test="${properties.notificationType != 'none'}">
+    <sly data-sly-use.modelNotification="${'com.mxs.core.models.NotificationModel' @ homePageTemplate='/apps/mxs/templates/homepage'
+											, eventCookie='notifCookie', wcmEditMode=wcmEditMode}"/>
+
+    <sly data-sly-test.isHomePage="${modelNotification.isHomePage @context='unsafe'}"/>
+    <sly data-sly-test.isHiddenState="${modelNotification.isHidden @context='unsafe'}"/>
+    <sly data-sly-test.isCurrentPageWcmEditMode ="${modelNotification.isCurrentPageWcmEditMode @context='unsafe'}"/>
+    <sly data-sly-test.isHidden="${isHiddenState && properties.stateful == 'true'}"/>
+
+    <sly data-sly-test="${properties.stateful=='true'}">
+        <sly data-sly-test.statefulClass="stateful"/>
+    </sly>
+    <!--/*  End Code sequence */-->
+
+    <sly data-sly-use.modelPopUp="com.mxs.core.models.ModalPopModel"/>
+    <sly data-sly-test.bgcolourType="${properties.bgColourType}"/>
+    <sly data-sly-test.bgcolor=""/>
+    <sly data-sly-test.colourType="${properties.fontColourType}"/>
+    <sly data-sly-test.color=""/>
+    <sly data-sly-test="${bgcolourType=='colourwheel'}">
+        <sly data-sly-test.bgcolor="${properties.bgColourWheel}"/>
+    </sly>
+
+    <sly data-sly-test="${bgcolourType=='maxiscolourpalette'}">
+        <sly data-sly-test.bgcolor="${properties.bgMaxisColorPalette}"/>
+    </sly>
+
+    <sly data-sly-test="${bgcolourType=='hotlinkcolourpalette'}">
+        <sly data-sly-test.bgcolor="${properties.bgHotlinkColorPalette}"/>
+    </sly>
+    <sly data-sly-test="${colourType=='colourwheel'}">
+        <sly data-sly-test.color="${properties.colorWheel}"/>
+    </sly>
+    <sly data-sly-test="${colourType=='maxiscolourpalette'}">
+        <sly data-sly-test.color="${properties.maxisColorPalette}"/>
+    </sly>
+    <sly data-sly-test="${colourType=='hotlinkcolourpalette'}">
+        <sly data-sly-test.color="${properties.hotlinkColorPalette}"/>
+    </sly>
+
+    <!--/*  Check if inline notification values have been set. */-->
+    <sly data-sly-list="${resource.listChildren}">
+        <sly data-sly-test="${item.name == 'notif-text' || item.name == 'notif-image'}">
+            <sly data-sly-test.hasInlineValue="true" />
+        </sly>
+    </sly>
+    <!--/* End - check if inline notification values have been set. */-->
+
+    <sly data-sly-test="${wcmEditMode != 'true'}">
+        <sly data-sly-test="${((!properties.notificationType || properties.notificationType == 'inline') && !hasInlineValue)
+    						|| (properties.notificationType == 'modal' && !properties.modelPath)
+    						|| isHidden}">
+            <div style="display:none">
+        </sly>
+    </sly>
+
+    <sly data-sly-test="${(!properties.notificationType || properties.notificationType == 'inline')}">
+
+        <div class="alert-notification ${(wcmEditMode != 'true') ? statefulClass : ''}" style="background-color: ${bgcolor @context='styleString'};">
+            <div class="alert-notification-content">
+
+                <div class="image-notif" style="">
+                    <sly data-sly-resource="${'notif-image' @ resourceType='mxs/components/content/image'}"/>
+                </div>
+
+                <sly data-sly-test="${properties.closeable == 'true'}">
+                    <button class="close-button">
+                        <i class="material-icons" style="color:${color @context='styleString'}">close</i>
+                    </button>
+                </sly>
+
+                <div class="text" style="color:${color @context='styleString'}">
+                    <sly data-sly-resource="${'notif-text' @ resourceType='mxs/components/content/text'}"/>
+                </div>
+            </div>
+        </div>
+    </sly>
+
+    <sly data-sly-test="${properties.notificationType == 'modal'}">
+        <sly data-sly-test="${wcmEditMode == 'true'}">
+            <div class="alert-notification" style="background-color: ${bgcolor @context='styleString'};">
+                Modal Notification
+                <!--/* Modal notification is applicable in home page template only */-->
+                <sly data-sly-test="${!isHomePage}">
+                    <div style="color:red">
+                        Error: Modal notification is only applicable in home page!
+                    </div>
+                </sly>
+                <sly data-sly-test="${isHomePage && !properties.modelPath}">
+                    <div style="color:red">
+                        Error: 'Modal page path' property has not been set!
+                    </div>
+                </sly>
+            </div>
+        </sly>
+        <!--/* Modal */-->
+        <sly data-sly-test="${wcmEditMode != 'true' && !isCurrentPageWcmEditMode}">
+            <div class="modal-notification ${statefulClass}">
+                ${modelPopUp.modelHTML @context='unsafe'}
+            </div>
+        </sly>
+    </sly>
+
+    <!--/*  Check if notification values have been set.*/-->
+    <sly data-sly-test="${wcmEditMode != 'true'}">
+        <sly data-sly-test="${((!properties.notificationType || properties.notificationType == 'inline') && !hasInlineValue)
+    || (properties.notificationType == 'modal' && !properties.modelPath)
+    || isHidden}">
+            </div>
+        </sly>
+    </sly>
+    <!--/*  End - check if notification values have been set. */-->
+</sly>

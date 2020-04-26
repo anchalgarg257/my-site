@@ -1,0 +1,66 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Article Listing"></div>
+</sly>
+<sly data-sly-test.hideFilter="${properties.hideFilter}"/>
+<sly data-sly-test.articleType="${properties.articleListType}${'-article-list'}"/>
+
+<div class="media-center-list one" data-res-path="${resource.path}"
+     data-filter-service-url="${resource.path}.filters.set"
+     data-service-url="${resource.path}.results" data-limit="${properties.articleLimit}"
+     data-no-article-msg="${properties.responseMessage}">
+
+    <form class="filters" data-sly-test="${!properties.hideFilter}">
+        <p class="sub">Filter by</p>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="dropdown-select form-group">
+                    <label for="">
+                        <div data-sly-resource="${'categoryLabel' @ resourceType='mxs/components/content/text'}"></div>
+                    </label>
+                    <select class="selectpicker" title="" name="articleCategory">
+                        <option value="all">ALL</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="dropdown-select form-group">
+                    <label for="">
+                        <div data-sly-resource="${'yearLabel' @ resourceType='mxs/components/content/text'}"></div>
+                    </label>
+                    <select class="selectpicker" title="Select Year" name="articleYear">
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-6">
+                <div class="dropdown-select form-group">
+                    <label for="">
+                        <div data-sly-resource="${'monthLabel' @ resourceType='mxs/components/content/text'}"></div>
+                    </label>
+                    <select class="selectpicker" title="Select Month" name="articleMonth">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+    <sly data-sly-test="${properties.articlesubTitle}">
+    <h6 class="subtitle">${properties.articlesubTitle}</h6>
+    </sly>
+    <div class="column-control ver-padding-sm type-h ${properties.wideTileSelection}">
+        <div class="row article-container"></div>
+    </div>
+
+    <!--/* Modal */-->
+    <div class="modal fade mxs-modal video-modal" id="videoModalID" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="width:70%; height:80%;">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="material-icons" aria-hidden="true">close</i>
+                </button>
+                <div class="modal-body d-flex justify-content-center align-content-center">
+                    <iframe id="player" type="text/html" width="100%" height="auto" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,22 +1,22 @@
 package com.adobe.aem.guides.nirvana.core.pojo;
 
 public class MultifieldPojo {
+    String image;
     String link;
-    String text;
     String openInNewTab;
 
-    public MultifieldPojo(String link, String text, String openInNewTab) {
+    public MultifieldPojo(String image, String link, String openInNewTab) {
+        this.image = image;
         this.link = link;
-        this.text = text;
         this.openInNewTab = openInNewTab;
     }
 
-    public String getOpenInNewTab() {
-        return openInNewTab;
+    public String getImage() {
+        return image;
     }
 
-    public void setOpenInNewTab(String openInNewTab) {
-        this.openInNewTab = openInNewTab;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getLink() {
@@ -27,11 +27,11 @@ public class MultifieldPojo {
         this.link = link;
     }
 
-    public String getText() {
-        return text;
+    public String getOpenInNewTab() {
+        return openInNewTab;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setOpenInNewTab(String openInNewTab) {
+        this.openInNewTab = openInNewTab;
     }
 }

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Article Listing"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <wideoption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Wide Tile Option"
+                                name="./wideTileSelection"
+                                text="Wide Tile Option">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <option1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1 wide tile"
+                                        value="one-wide"/>
+                                    <option2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2 wide tiles"
+                                        value="two-wide"/>
+                                    <option3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="3 wide tiles"
+                                        value="three-wide"/>
+                                    <option4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value=""/>
+                                </items>
+                            </wideoption>
+                            <articleLimit
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                default="0"
+                                fieldLabel="Article Limit"
+                                min="0"
+                                name="./articleLimit"/>
+                            <articlesPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Article Path"
+                                name="./articlesPath"
+                                rootPath="/content"/>
+                            <failed-message
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Message that will be shown when no article/s are found"
+                                fieldLabel="No Article/s Found Message"
+                                name="./responseMessage"
+                                value="No Article/s found"/>
+                            <article-category
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/common/tagspicker"
+                                emptyText="Categories to be displayed on Filter"
+                                fieldLabel="Article Category"
+                                name="./stickers"/>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <hide-filter-dropdown
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".category-showhide-target"
+                                name="./hideFilter"
+                                text="Hide Article Category"
+                                value="true"/>
+                            <showHideContainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide category-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <articleListType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="cq-dialog-dropdown-showhide cq-dialog-dropdown-showhide-multival"
+                                        cq-dialog-dropdown-showhide-multival-target=".article-months-hide-show"
+                                        cq-dialog-dropdown-showhide-target=".article-tags-hide-show"
+                                        fieldLabel="Article List Type"
+                                        name="./articleListType"
+                                        text="Article List Type">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <option1
+                                                jcr:primaryType="nt:unstructured"
+                                                selected="true"
+                                                text="Latest Post"
+                                                value="latest"/>
+                                            <option2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Popular Post"
+                                                value="popular"/>
+                                            <option3
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Tags"
+                                                value="tags"/>
+                                        </items>
+                                    </articleListType>
+                                    <showHideContainer1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container"
+                                        class="hide article-months-hide-show"
+                                        showhidetargetmultivalue="latest,popular">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <monthsPublication
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                defaultValue="6"
+                                                fieldLabel="Articles from last {x} month/s:"
+                                                name="./monthsPublication"/>
+                                        </items>
+                                    </showHideContainer1>
+                                </items>
+                            </showHideContainer>
+                            <showHideContainer2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide article-tags-hide-show"
+                                showhidetargetvalue="tags">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <set-article-category
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/common/tagspicker"
+                                        emptyText="Only Tagged Articles will be displayed"
+                                        fieldLabel="Tagged Articles"
+                                        name="./categoriesSelected"/>
+                                </items>
+                            </showHideContainer2>
+                            <article-subtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Article SubTitle"
+                                name="./articlesubTitle"/>
+                        </items>
+                    </column>
+                </items>
+            </advanced>
+        </items>
+    </content>
+</jcr:root>

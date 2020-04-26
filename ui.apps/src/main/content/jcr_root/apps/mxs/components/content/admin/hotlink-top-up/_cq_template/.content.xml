@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    placeholder="{Long}1">
+    <chat-body1
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/foundation/components/parsys">
+        <text
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mxs/components/content/text"
+            text="&lt;p style=&quot;text-align: center;&quot;>&lt;span class=&quot;small&quot;>Select an amount to top up&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+            textIsRich="true"/>
+        <cta_button
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mxs/components/content/cta-button"
+            ctaActionType="submit"
+            ctaAlignment="text-center"
+            ctaButtonStyleOutline="btn-primary"
+            ctaButtonStyleSolid="btn-primary"
+            ctaText="Top Up"/>
+        <text_copy
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mxs/components/content/text"
+            text="&lt;p>&lt;span class=&quot;smaller&quot;>After submitting, you will be brought to Maxis Pay to complete the transaction. Please ensure that you have popups enabled on your browser.&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+            textIsRich="true"/>
+    </chat-body1>
+</jcr:root>

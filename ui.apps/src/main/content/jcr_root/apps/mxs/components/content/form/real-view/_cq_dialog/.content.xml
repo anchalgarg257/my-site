@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Real View"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <real-view
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Iframe"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <devicepath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Device Root Path"
+                                name="./deviceRootPath"
+                                required="{Boolean}true"
+                                rootPath="/content"/>
+                            <storepath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Store Path"
+                                name="./storePath"
+                                required="{Boolean}true"
+                                rootPath="/content"/>
+                            <resultMessage
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Result Message"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <stores-found-message
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        emptyText="e.g. We found {x} Maxis Stores with this device in stock"
+                                        fieldLabel="Result Message"
+                                        name="./storesFoundMessage"
+                                        value="We found {x} Maxis Stores with this device in stock. Visit us to get your device today!"/>
+                                    <failed-message
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldDescription="Message that will be shown when no device/s are found"
+                                        fieldLabel="No Stock Result Message"
+                                        name="./failedMessage"
+                                        value="No device/s found"/>
+                                </items>
+                            </resultMessage>
+                            <storestocklimit
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                defaultValue="5"
+                                fieldLabel="Limited Stock Value"
+                                name="./storeStockLimit"/>
+                            <ctaButtonTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="CTA Button Title"
+                                name="./ctaText"
+                                required="{Boolean}true"/>
+                            <onlineStoreURL
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Online Store URL"
+                                name="./onlineURL"
+                                required="{Boolean}true"
+                                value="https://store.maxis.com.my/maxis/personal/devices"/>
+                        </items>
+                    </column>
+                </items>
+            </real-view>
+        </items>
+    </content>
+</jcr:root>

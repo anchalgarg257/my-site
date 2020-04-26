@@ -1,0 +1,32 @@
+<sly data-sly-use.id="com.mxs.core.models.FormWidgetModel"/>
+<sly data-sly-test.labelFor="${component.name}${id.hashCode}"/>
+<sly data-sly-test.required="${properties.required}"/>
+<sly data-sly-test.disabled="${properties.disabled}"/>
+<sly data-sly-test.requiredMessage="${properties.requiredMessage}"/>
+<sly data-sly-test.description="${properties.description}"/>
+<sly data-sly-test.name="${properties.name}"/>
+<sly data-sly-use.date="${'dateformatter.js' @ startDate=properties.startDate.time, endDate=properties.endDate.time,defaultDate=properties.defaultValue}"/>
+<sly data-sly-test.dateEnd="${date.endDate}"/>
+<sly data-sly-test.encryptField="${properties.encryptField}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Form DateField"></div>
+</sly>
+<sly data-sly-test="${name}">
+    <div class="date-input form-group" data-start-date="${date.startDate}" data-end-date="${!dateEnd?'today':dateEnd}">
+        <label for="${labelFor}">${properties.label}</label>
+        <div class="mxs-dtpckr">
+            <input data-encrypt="${properties.encryptField}" data-toggle="datepicker" id="${labelFor}" name="${properties.name}" class="form-control"
+                   value="${date.defaultDate}" aria-describedby="inputtext" placeholder="${properties.placeholder}"
+                   data-sly-attribute.required="${required=='true'}" data-sly-attribute.disabled="${disabled=='true'}">
+            <i class="material-icons">date_range</i>
+        </div>
+        <sly data-sly-test="${description}">
+            <small>${description @context='html'}</small>
+        </sly>
+        <sly data-sly-test="${required && requiredMessage}">
+            <div class="invalid-feedback">
+                ${requiredMessage}
+            </div>
+        </sly>
+    </div>
+</sly>

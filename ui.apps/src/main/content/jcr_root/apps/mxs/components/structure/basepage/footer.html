@@ -1,0 +1,8 @@
+<sly data-sly-test.templateName="${pageProperties.cq:template}"/>
+<sly data-sly-test.mode="${templateName == '/apps/mxs/templates/homepage' ? 'edit' : 'disabled'}"/>
+<sly data-sly-test.rootPath="${inheritedPageProperties.rootPath}">
+    <sly data-sly-test.footer="${rootPath}/jcr:content/footer"/>
+<footer>
+    <sly data-sly-resource="${ @path= footer, resourceType='mxs/components/content/footer', wcmmode=mode}"/>
+</footer>
+</sly>

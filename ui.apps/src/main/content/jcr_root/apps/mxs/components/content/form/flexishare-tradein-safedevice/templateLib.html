@@ -1,0 +1,65 @@
+<template data-sly-template.tradeIn="${@ brandList,modelList}">
+<div class="container">
+   <div data-sly-resource="${'tradeIn-title' @ resourceType='mxs/components/content/title'}"></div>
+    <div data-sly-resource="${'tradeIn-text' @ resourceType='mxs/components/content/text'}"></div>
+    <div class="row trade-in-template">
+        <div class="col-md-6">
+            <div class="dropdown-select form-group">
+                <label for=""><div data-sly-resource="${'tradeInBrandtext' @ resourceType='mxs/components/content/text'}"></div></label>
+                <select class="selectpicker" name="tradein-brand-dropdown" data-sly-list="${brandList}">
+                    <option value="${item.title}">${item.title}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="dropdown-select form-group">
+                <label for=""><div data-sly-resource="${'tradeInModeltext' @ resourceType='mxs/components/content/text'}"></div></label>
+                <select class="selectpicker" title="" name="tradein-model-dropdown">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="trade-in-tmp"></div>
+    <script type="text/javascript">
+           var tradeIn_data = '${modelList @ context='scriptComment'}';
+    </script>
+    </div>
+</template>
+
+<template data-sly-template.safeDevice="${@ list}">
+    <div data-sly-resource="${'safeDevice-title' @ resourceType='mxs/components/content/title'}"></div>
+    <div data-sly-resource="${'safeDevice-text' @ resourceType='mxs/components/content/text'}"></div>
+    <div class="row trade-in-template">
+        <div class="col-md-8 offset-md-2">
+            <div class="dropdown-select form-group">
+                <label for="">
+                    <div data-sly-resource="${'safeDevicePriceText' @ resourceType='mxs/components/content/text'}"></div>
+                </label>
+                <select class="selectpicker" name="safe-device-dropdown" data-sly-list="${list}">
+                    <option value="${item.path}">${item.title}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row safe-device-tmp"></div>
+</template>
+
+<template data-sly-template.flexiShare="${@ list}">
+    <div data-sly-resource="${'flexiShare-title' @ resourceType='mxs/components/content/title'}"></div>
+    <div data-sly-resource="${'flexiShare-text' @ resourceType='mxs/components/content/text'}"></div>
+    <div class="slider-price-table pl-4 pr-4">
+        <div class="range-slidr">
+            <p class="slider-value text-center">0</p>
+            <input class="r-slidr" type="text" data-slider-value="0"/>
+            <div class="row slider-label">
+                <div class="col text-left min">start</div>
+                <div class="col text-right max">end</div>
+            </div>
+        </div>
+        <div id="slider-template"></div>
+    </div>
+    <script type="text/javascript">
+           var slider_data = '${list @ context='scriptComment'}';
+
+    </script>
+</template>

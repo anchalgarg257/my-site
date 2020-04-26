@@ -1,0 +1,37 @@
+<sly data-sly-use.stockPriceModel="com.mxs.core.models.StockPriceModel"/>
+<sly data-sly-test.dao="${stockPriceModel.stockPriceDTO}"/>
+<sly data-sly-test.status="${stockPriceModel.status}"/>
+<div class="container">
+    <div class="d-flex justify-content-center stock-contianer">
+        <div class="stock-date align-self-center">
+            <p>
+                <span class="smaller">${properties.text}</span>
+            </p>
+            <p>
+                Updated: <strong>${dao.datetime}</strong>
+            </p>
+        </div>
+        <div class="stock-status align-self-center">
+            <p class="text-center mb-0">
+                <span class="stock-unit"><small>${dao.currency}</small> <span>${dao.lastdone}</span></span>
+                <sly data-sly-test="${status == 'increased'}">
+                    <span class="stock-rate increased"><i
+                            class="material-icons">arrow_upward</i> <span>${dao.change} (${dao.percentchange}%)</span> </span>
+                </sly>
+                <sly data-sly-test="${status == 'decreased'}">
+                    <span class="stock-rate decreased"><i
+                            class="material-icons">arrow_downward</i> <span>${dao.change} (${dao.percentchange}%)</span> </span>
+                </sly>
+                <sly data-sly-test="${status == 'same'}">
+                    <span class="stock-rate same"><i
+                            class="material-icons">drag_handle</i> <span>${dao.change} (${dao.percentchange}%)</span> </span>
+                </sly>
+            </p>
+        </div>
+        <div class="align-self-center">
+            <p class="text-center mb-0">
+            <div data-sly-resource="${'cta-button' @resourceType = '/apps/mxs/components/content/cta-button'}"></div>
+            </p>
+        </div>
+    </div>
+</div>

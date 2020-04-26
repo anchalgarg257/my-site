@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Container"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.color.wheel,maxis.dialogutils.radiobutton]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <width
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                fieldLabel="Width"
+                                name="./width"
+                                text="Width"/>
+                            <alignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Alignment"
+                                name="./alignment">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="d-flex justify-content-start"/>
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Center"
+                                        value="d-flex justify-content-center"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="d-flex justify-content-end"/>
+                                </items>
+                            </alignment>
+                            <color
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldLabel="Colour Type"
+                                name="./colourType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Default"
+                                        value="default">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="color_wheel,maxis_color_palette,hotlink_color_palette"
+                                            toggle=""/>
+                                    </default>
+                                    <maxis-color-pallate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Maxis Colour Palette"
+                                        value="maxiscolourpalette">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="hotlink_color_palette,color_wheel"
+                                            show="maxis_color_palette"
+                                            toggle=""/>
+                                    </maxis-color-pallate>
+                                    <hotlink-colour-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Hotlink Colour Palette"
+                                        value="hotlinkcolourpalette">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="color_wheel,maxis_color_palette"
+                                            show="hotlink_color_palette"
+                                            toggle=""/>
+                                    </hotlink-colour-palette>
+                                    <colour-wheel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Colour Wheel"
+                                        value="colourwheel">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="maxis_color_palette,hotlink_color_palette"
+                                            show="color_wheel"
+                                            toggle=""/>
+                                    </colour-wheel>
+                                </items>
+                            </color>
+                            <maxis-color-palette-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="maxis_color_palette"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <maxis-color-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                        editType="{Boolean}true"
+                                        fieldLabel="Maxis Colour Palette"
+                                        freestylePaletteType="{Boolean}true"
+                                        name="./maxisColorPalette"/>
+                                </items>
+                            </maxis-color-palette-container>
+                            <color-wheel-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="color_wheel"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <color-wheel
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/custom-colorpicker"
+                                        fieldLabel="Colour Wheel"
+                                        name="./colorWheel"/>
+                                </items>
+                            </color-wheel-container>
+                            <hotlink-color-palette-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="hotlink_color_palette"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <hotlink-color-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                        editType="{Boolean}true"
+                                        fieldLabel="Hotlink Color Palette"
+                                        freestylePaletteType="{Boolean}true"
+                                        name="./hotlinkColorPalette"/>
+                                </items>
+                            </hotlink-color-palette-container>
+                            <horizontal-note
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/note"
+                                note="Horizontal Wrapper Configuration is only for Mobile.For &quot;Desktop Horizontal Wrapper&quot; use Width Configuration."/>
+                            <horizontal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Horizontal Wrapper"
+                                horizontalPadding="none"
+                                name="./horizontalWrapper">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value=""/>
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Small (20px)"
+                                        value="side-margin-sm"/>
+                                    <medium
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Medium (40px)"
+                                        value="side-margin-md"/>
+                                    <large
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Large (60px)"
+                                        value="side-margin-lg"/>
+                                </items>
+                            </horizontal>
+                            <vertical-note
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/note"
+                                note="Vertical Padding is for both Mobile and Desktop."/>
+                            <vertical
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Vertical Padding"
+                                name="./verticalPadding">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value=""/>
+                                    <smallest
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Smallest (10px)"
+                                        value="ver-padding-xs"/>
+                                    <small
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Small (20px)"
+                                        value="ver-padding-sm"/>
+                                    <medium
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Medium (40px)"
+                                        value="ver-padding-md"/>
+                                    <large
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Large (60px)"
+                                        value="ver-padding-lg"/>
+                                </items>
+                            </vertical>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <advanced
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Advanced"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <modalPopUpOtions
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Modal Pop Up Options"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <modal
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./isModal"
+                                        text="Pop Up Modal"
+                                        value="global-modal"/>
+                                    <fullWidth
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        name="./fullWidth"
+                                        text="Full Width Pop Up Modal"
+                                        value="true"/>
+                                    <modelCloseType
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        fieldLabel="Pop Up Modal Close Type"
+                                        name="./modelClose">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <close
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Close"
+                                                value="close"/>
+                                            <xicon
+                                                jcr:primaryType="nt:unstructured"
+                                                text="X Icon"
+                                                value="x"/>
+                                        </items>
+                                    </modelCloseType>
+                                </items>
+                            </modalPopUpOtions>
+                            <campaign-catalogue-options
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Campaign Catalogue Options"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <campaign-catalogue-options-note
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:orderBefore="label"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/note"
+                                        note="If you want to see &quot;Select Phones&quot; drop Down in Campaign Catalogue, use the below option as &quot;yes&quot; and in the Form:Drop Down name property must be &quot;campaign-catalog-filter&quot; and for Recommanded Phones the value will be &quot;all&quot; in Multi List Drop Down Fields."/>
+                                    <campaign-catalogue
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/switch"
+                                        fieldLabel="Is it a Campaign Catalogue Container?"
+                                        name="./isCampaign"
+                                        offText="No"
+                                        onText="Yes"
+                                        value="true"/>
+                                </items>
+                            </campaign-catalogue-options>
+                        </items>
+                    </column>
+                </items>
+            </advanced>
+        </items>
+    </content>
+</jcr:root>

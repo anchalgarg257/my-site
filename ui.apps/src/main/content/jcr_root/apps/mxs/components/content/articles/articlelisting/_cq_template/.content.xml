@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <categoryLabel
+        jcr:lastModified="{Date}2018-08-21T16:01:39.285+08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/text"
+        text="&lt;p>Select Category :&lt;/p>&#xd;&#xa;"
+        textIsRich="true"/>
+    <yearLabel
+        jcr:lastModified="{Date}2018-08-21T16:01:53.939+08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/text"
+        text="&lt;p>Year :&lt;/p>&#xd;&#xa;"
+        textIsRich="true"/>
+    <monthLabel
+        jcr:lastModified="{Date}2018-08-21T16:02:05.916+08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/text"
+        text="&lt;p>Month :&lt;/p>&#xa;"
+        textIsRich="true"/>
+</jcr:root>

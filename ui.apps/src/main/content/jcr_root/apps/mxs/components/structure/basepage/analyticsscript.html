@@ -1,0 +1,19 @@
+<!--/* Insert in <head> tag */-->
+
+<sly data-sly-test="${inheritedPageProperties.kruxScript || pageProperties.kruxScript}">
+    <sly data-sly-test.kruxConfigured="${pageProperties.kruxScript ? pageProperties.kruxScript : inheritedPageProperties.kruxScript}"/>
+    <sly data-sly-test="${kruxConfigured}">
+        ${kruxConfigured @context='scriptComment'}
+    </sly>
+</sly>
+
+<sly data-sly-test="${inheritedPageProperties.gaScript || pageProperties.gaScript}">
+    <sly data-sly-test.gaConfigured="${pageProperties.gaScript ? pageProperties.gaScript : inheritedPageProperties.gaScript}"/>
+    <sly data-sly-test="${gaConfigured}">
+        ${gaConfigured @context='scriptComment'}
+    </sly>
+</sly>
+
+<sly data-sly-test.genericConfigured="${pageProperties.genericScript}">
+    ${genericConfigured @context='scriptComment'}
+</sly>

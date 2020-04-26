@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Radio Button"
+    sling:resourceSuperType="mxs/components/content/form-elements/base/cq:dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        class="dialog-width-50rem">
+        <layout jcr:primaryType="nt:unstructured"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic jcr:primaryType="nt:unstructured">
+                <layout jcr:primaryType="nt:unstructured"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        class="column-full-width">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset jcr:primaryType="nt:unstructured">
+                                <layout jcr:primaryType="nt:unstructured"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured">
+                                        <items
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:hideChildren="[description]">
+                                            <type-of-radio-button
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="label"
+                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                class="cq-dialog-dropdown-showhide"
+                                                cq-dialog-dropdown-showhide-target=".text-image-hide-show"
+                                                fieldLabel="Radio Button Type"
+                                                name="./typeofRadio">
+                                                <items jcr:primaryType="cq:WidgetCollection">
+                                                    <round
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Round"
+                                                        value="round"/>
+                                                    <toggle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Toggle "
+                                                        value="toggle"/>
+                                                </items>
+                                            </type-of-radio-button>
+                                            <encryptField
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                name="./encryptField"
+                                                text="Encrypt Field"
+                                                value="true"/>
+                                            <round-type
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:orderBefore="label"
+                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                class="hide text-image-hide-show"
+                                                showhidetargetvalue="round">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                        <layout
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <desktop-display-type
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:orderBefore="label"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                fieldLabel="Desktop Display Type"
+                                                                name="./type">
+                                                                <items jcr:primaryType="cq:WidgetCollection">
+                                                                    <vertical
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Vertical"
+                                                                        value="align-vertical"/>
+                                                                    <horizontal
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Horizontal"
+                                                                        value="horizontal"/>
+                                                                </items>
+                                                            </desktop-display-type>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </round-type>
+                                            <defaultValue
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:hideResource="{Boolean}true"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Default Value"
+                                                name="./defaultValue"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <constraints jcr:primaryType="nt:unstructured">
+                <layout jcr:primaryType="nt:unstructured"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column jcr:primaryType="nt:unstructured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset jcr:primaryType="nt:unstructured">
+                                <layout jcr:primaryType="nt:unstructured"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured">
+                                        <items
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:hideChildren="[read-only]"/>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </column>
+                </items>
+            </constraints>
+            <initialValues
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Initial Values"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <fieldset
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <singleList
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldDescription="Click + to add a new page"
+                                                fieldLabel="Radio Items">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./singleList">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <label
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                            fieldLabel="Text"
+                                                            name="./title"
+                                                            useFixedInlineToolbar="{Boolean}true">
+                                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                                <format
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <links
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <styles
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*">
+                                                                    <styles jcr:primaryType="nt:unstructured">
+                                                                        <semi-bold
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="semi-bold"
+                                                                            text="Semi Bold"/>
+                                                                        <strikethrough
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="strikethrough"
+                                                                            text="Strikethrough"/>
+                                                                        <small
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="small"
+                                                                            text="Small (14 px)"/>
+                                                                        <smaller
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="smaller"
+                                                                            text="Smaller(12 px)"/>
+                                                                    </styles>
+                                                                </styles>
+                                                                <experience-aem
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                            </rtePlugins>
+                                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                                <cui jcr:primaryType="nt:unstructured">
+                                                                    <inline
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        toolbar="[#format,links#modifylink,links#unlink,links#anchor,#styles]">
+                                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                                            <styles
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="styles:getStyles:styles-pulldown"
+                                                                                ref="styles"/>
+                                                                            <format
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="[format#bold,format#italic,format#underline]"
+                                                                                ref="format"/>
+                                                                        </popovers>
+                                                                    </inline>
+                                                                    <dialogFullScreen
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink,links#anchor,#styles,experience-aem#colorPicker]">
+                                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                                            <styles
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="styles:getStyles:styles-pulldown"
+                                                                                ref="styles"/>
+                                                                        </popovers>
+                                                                    </dialogFullScreen>
+                                                                </cui>
+                                                            </uiSettings>
+                                                            <htmlRules jcr:primaryType="nt:unstructured">
+                                                                <blockHandling
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    removeSingleParagraphContainer="{Boolean}true"/>
+                                                            </htmlRules>
+                                                        </label>
+                                                        <value
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            fieldLabel="Value"
+                                                            name="./path"/>
+                                                        <description
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                            fieldLabel="Description"
+                                                            name="./description"
+                                                            useFixedInlineToolbar="{Boolean}true">
+                                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                                <format
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <links
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*"/>
+                                                                <styles
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*">
+                                                                    <styles jcr:primaryType="nt:unstructured">
+                                                                        <semi-bold
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="semi-bold"
+                                                                            text="Semi Bold"/>
+                                                                        <strikethrough
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="strikethrough"
+                                                                            text="Strikethrough"/>
+                                                                        <small
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="small"
+                                                                            text="Small (14 px)"/>
+                                                                        <smaller
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            cssName="smaller"
+                                                                            text="Smaller(12 px)"/>
+                                                                    </styles>
+                                                                </styles>
+                                                            </rtePlugins>
+                                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                                <cui jcr:primaryType="nt:unstructured">
+                                                                    <inline
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink,links#anchor,#styles]">
+                                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                                            <styles
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="styles:getStyles:styles-pulldown"
+                                                                                ref="styles"/>
+                                                                        </popovers>
+                                                                    </inline>
+                                                                    <dialogFullScreen
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        toolbar="[format#bold,format#italic,format#underline,links#modifylink,links#unlink,links#anchor,#styles]">
+                                                                        <popovers jcr:primaryType="nt:unstructured">
+                                                                            <styles
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="styles:getStyles:styles-pulldown"
+                                                                                ref="styles"/>
+                                                                        </popovers>
+                                                                    </dialogFullScreen>
+                                                                </cui>
+                                                            </uiSettings>
+                                                            <htmlRules jcr:primaryType="nt:unstructured">
+                                                                <blockHandling
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    removeSingleParagraphContainer="{Boolean}true"/>
+                                                            </htmlRules>
+                                                        </description>
+                                                        <id
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                            fieldDescription="The Price only need to be configured in case of MaxisOne Prime Form."
+                                                            fieldLabel="Price"
+                                                            name="./id"/>
+                                                        <checked
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:orderBefore="read-only"
+                                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                            name="./checked"
+                                                            text="Checked"
+                                                            value="true"/>
+                                                        <disabled
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                            name="./disabled"
+                                                            text="Disabled"
+                                                            value="true"/>
+                                                    </items>
+                                                </field>
+                                            </singleList>
+                                        </items>
+                                    </column>
+                                </items>
+                            </fieldset>
+                        </items>
+                    </column>
+                </items>
+            </initialValues>
+        </items>
+    </content>
+</jcr:root>

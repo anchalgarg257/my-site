@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Coverage Checker"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.rte.height]">
+    <content
+        granite:class="cq-dialog-content-page"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <coverage-cheker
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Iframe"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <resultMessage
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Success Message"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <success-result-message
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldLabel="Success Result Message"
+                                        name="./successMsg"
+                                        useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <experience-aem
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <styles
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*">
+                                                <styles jcr:primaryType="nt:unstructured">
+                                                    <strikethrough
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="strikethrough"
+                                                        text="Strikethrough"/>
+                                                    <semi-bold
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="semi-bold"
+                                                        text="Semi Bold"/>
+                                                    <small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="small"
+                                                        text="Small (14 px)"/>
+                                                    <smaller
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="smaller"
+                                                        text="Smaller(12 px)"/>
+                                                    <smallest
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="smallest"
+                                                        text="Smallest(10 px)"/>
+                                                </styles>
+                                            </styles>
+                                        </rtePlugins>
+                                        <uiSettings jcr:primaryType="nt:unstructured">
+                                            <cui jcr:primaryType="nt:unstructured">
+                                                <inline
+                                                    jcr:primaryType="nt:unstructured"
+                                                    toolbar="[#format,#justify,#styles,experience-aem#colorPicker,#paraformat]">
+                                                    <popovers jcr:primaryType="nt:unstructured">
+                                                        <styles
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="styles:getStyles:styles-pulldown"
+                                                            ref="styles"/>
+                                                        <format
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="[format#bold,format#italic,format#underline]"
+                                                            ref="format"/>
+                                                    </popovers>
+                                                </inline>
+                                            </cui>
+                                        </uiSettings>
+                                    </success-result-message>
+                                    <success-cta-title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Success CTA Title"
+                                        name="./successctaTitle"/>
+                                    <success-cta-url
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Success CTA URL"
+                                        name="./successctaURL"
+                                        required="{Boolean}true"
+                                        rootPath="/content"/>
+                                </items>
+                            </resultMessage>
+                            <failedMessage
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Failed Message"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <failed-result-message
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldLabel="Failed Result Message"
+                                        name="./failedMsg"
+                                        useFixedInlineToolbar="{Boolean}true">
+                                        <rtePlugins jcr:primaryType="nt:unstructured">
+                                            <format
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <experience-aem
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*"/>
+                                            <styles
+                                                jcr:primaryType="nt:unstructured"
+                                                features="*">
+                                                <styles jcr:primaryType="nt:unstructured">
+                                                    <strikethrough
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="strikethrough"
+                                                        text="Strikethrough"/>
+                                                    <semi-bold
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="semi-bold"
+                                                        text="Semi Bold"/>
+                                                    <small
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="small"
+                                                        text="Small (14 px)"/>
+                                                    <smaller
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="smaller"
+                                                        text="Smaller(12 px)"/>
+                                                    <smallest
+                                                        jcr:primaryType="nt:unstructured"
+                                                        cssName="smallest"
+                                                        text="Smallest(10 px)"/>
+                                                </styles>
+                                            </styles>
+                                        </rtePlugins>
+                                        <uiSettings jcr:primaryType="nt:unstructured">
+                                            <cui jcr:primaryType="nt:unstructured">
+                                                <inline
+                                                    jcr:primaryType="nt:unstructured"
+                                                    toolbar="[#format,#justify,#styles,experience-aem#colorPicker,#paraformat]">
+                                                    <popovers jcr:primaryType="nt:unstructured">
+                                                        <styles
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="styles:getStyles:styles-pulldown"
+                                                            ref="styles"/>
+                                                        <format
+                                                            jcr:primaryType="nt:unstructured"
+                                                            items="[format#bold,format#italic,format#underline]"
+                                                            ref="format"/>
+                                                    </popovers>
+                                                </inline>
+                                            </cui>
+                                        </uiSettings>
+                                    </failed-result-message>
+                                    <failed-cta-title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Failed CTA Title"
+                                        name="./failedctaTitle"/>
+                                    <failed-cta-url
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Failed CTA URL"
+                                        name="./failedctaURL"
+                                        required="{Boolean}true"
+                                        rootPath="/content"/>
+                                </items>
+                            </failedMessage>
+                        </items>
+                    </column>
+                </items>
+            </coverage-cheker>
+        </items>
+    </content>
+</jcr:root>

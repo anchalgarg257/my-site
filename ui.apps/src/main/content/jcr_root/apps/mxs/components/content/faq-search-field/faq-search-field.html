@@ -1,0 +1,24 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="FAQ Search Component"></div>
+</sly>
+
+<div class="container-fiuld">
+    <!-- start of search  component -->
+	<div class="tile-image-comp">
+        <div class="faq-search bg-cover para-api faq-image-tile" data-result-url="${properties.faqResultPath}.html" data-search-url="/bin/api/searchfaq" data-search-suggest-url="/bin/api/suggestionfaq" data-resource-path="${properties.faqPath}" data-tag-path="${properties.tagPath}"
+            data-m-height="${properties.imageHeight}" data-d-height="${properties.imageHeight}" data-desktop-src="${properties.backgroundImage @ context='unsafe'}" data-mobile-src="${properties.mblBackgroundImage ? properties.mblBackgroundImage : properties.backgroundImage @ context='unsafe'}"
+            style="background-image:url('${properties.backgroundImage @ context='unsafe'}');">
+
+            <div class="search-box search-box-${properties.imageHeight} d-flex justify-content-center">
+                <div class="search-input form-group">
+                    <h2>${properties.title}</h2>
+                    <div class="mxs-search">
+                        <i class="material-icons">search</i>
+                        <input type="text" class="form-control" id="searchinput2" name="faq-search" aria-describedby="" placeholder="${properties.ghostText}" autocomplete="off" >
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <!-- end of search result component -->
+</div>

@@ -1,0 +1,19 @@
+.cq-dialog-floating .product-field, .cq-dialog-floating .field-full-width {
+    width: 90%;
+}
+
+.coral-Form--aligned .coral-Form-fieldwrapper .coral-Form-fieldinfo, .coral-Form--aligned .coral-Form-fieldwrapper .coral-Form-fielderror{
+    float: right;
+}
+
+.cq-dialog-floating .cq-dialog-content.coral-TabPanel > .coral-TabPanel-content, .cq-dialog-floating .cq-dialog-content > .coral-TabPanel > .coral-TabPanel-content{
+    height: 27rem;
+}
+
+.cq-dialog-floating .cq-dialog-content .auto-height, .cq-dialog-floating .cq-dialog-content > .auto-height{
+    height: auto;
+}
+
+.scaffold-host-wizard .richtext-container .coral-RichText-toolbar, .cq-dialog .richtext-container .coral-RichText-toolbar{
+    position : inherit !important;
+}

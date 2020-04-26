@@ -1,0 +1,15 @@
+<sly data-sly-test="${wcmmode.edit && (!properties.name ||  !properties.label)}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Search Input"></div>
+</sly>
+<sly data-sly-test="${properties.name || properties.label}">
+    <div class="search-input form-group">
+          <div class="title">${properties.label @context='html'}</div>
+        	<div class="mxs-search">
+            <i class="material-icons ${properties.iconAlignment}">search</i>
+            <input type="text" class="form-control" id="searchinput" name="${properties.name}" aria-describedby="" placeholder="${properties.placeholder}"/>
+        </div>
+            <sly data-sly-test.description="${properties.description}">
+                <small>${description @context='html'}</small>
+            </sly>
+    </div>
+</sly>

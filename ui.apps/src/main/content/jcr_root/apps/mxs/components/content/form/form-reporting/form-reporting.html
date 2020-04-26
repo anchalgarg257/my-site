@@ -1,0 +1,13 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="Form Reporting"></div>
+</sly>
+
+
+<script type="text/javascript">
+    var dropdown_values = '${resource.path @ context='scriptString'}.selections.formtype';
+    var report_path = '${resource.path @ context='scriptString'}.download.report?formName=';
+</script> 
+
+<div class="form-report container">
+    <div data-sly-resource="${'section-container' @ resourceType='mxs/components/content/section-container'}"></div>
+</div>

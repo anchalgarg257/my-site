@@ -1,0 +1,27 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder" data-emptytext="Real View Form"></div>
+</sly>
+
+<sly data-sly-test.articleModel="${request.requestParameterMap['articleModel'][0]}"/>
+<sly data-sly-test.title="${request.requestParameterMap['title'][0]}"/>
+<sly data-sly-test.hideDiv="${wcmmode.edit || (articleModel && title) ? '' : 'd-none'}"/>
+<sly data-sly-use.cta="realview.js"/>
+
+<script type="text/javascript">
+    var service_url = '/bin/api/storelocator';
+    var store_path = '${resource.path @ context='scriptString'}';
+    var store_limit = '${properties.storeStockLimit @ context='scriptComment'}';
+    var real_view = '${resource.path @ context='scriptString'}.handset';
+    var failed_message = '${properties.failedMessage @ context='scriptComment'}';
+    var success_message = '${properties.storesFoundMessage @ context='scriptComment'}';
+    var button_in_store = '${cta.buttonInStore @ context='scriptComment'}';
+    var button_text = '${properties.ctaText @ context='scriptComment'}';
+    var product_description = '${cta.productDescription @ context='scriptString'}';
+    var online_url = '${properties.onlineURL @ context='scriptComment'}';
+</script> 
+
+<div class="container">
+    <div  class="${hideDiv}" data-sly-resource="${'realview-container' @ resourceType='mxs/components/content/columnControl'}"></div>
+    <div data-sly-resource="${'divider' @ resourceType='mxs/components/content/divider'}"></div>
+    <div  class="${hideDiv}" id="stock-results"></div>
+</div>

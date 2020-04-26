@@ -1,0 +1,57 @@
+<div id="scrolldetect"></div>
+<div class="summary-price-bar"> 
+                    <hr class="normal">
+                    <div class="column-control type-b secondary">
+                        <div class="row">
+                            <div class="col align-self-center">
+                                <p class="total-cost-lbl text-left">Total Cost</p>
+                            </div>
+                            <div class="col align-self-center">
+                                <p class="total-cost price text-right">RM466/mth</p>
+                                <p class="upfront-pay text-right "></p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="doubled">
+                </div>
+            <div class="summary-price">
+                <div data-sly-resource="${'summary' @ resourceType='mxs/components/content/text'}"></div>
+                    <div class="column-control type-b secondary">
+                        <div class="row">
+                            <div class="col">
+                                <div data-sly-resource="${'mobile-plan' @ resourceType='mxs/components/content/text'}"></div>
+                                <div class="mobile-plan val" data-sly-resource="${'plan' @ resourceType='mxs/components/content/text'}"></div>
+                            </div>
+                            <div class="col text-right">
+                                <p class="mobile-plan price">RM237/mth</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div data-sly-resource="${'fibre-plan' @ resourceType='mxs/components/content/text'}"></div>
+                                <div class="fibre-plan val">100 Mbps</div>
+                            </div>
+                            <div class="col text-right"> 
+                                <p class="fibre-plan price">RM229/mth</p>
+                            </div>
+                        </div>
+                        <div class="row ${wcmmode.edit?'':'hidden'} device-addon-container">
+                            <div class="col">
+                                <div data-sly-resource="${'device-addOn' @ resourceType='mxs/components/content/text'}"></div>
+                                <div class="device-addon val">Samsung 65 4K Ultra HD Smart TV (Model: UA65MU6100)</div>
+                            </div>
+                            <div class="col text-right">
+                                <p class="device-addon price">RM203/mth</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="total-cost">Total cost</div>
+                            </div>
+                            <div class="col text-right">
+                                <p class="total-cost price">RM669/mth</p>
+                                <p class="upfront-pay"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>

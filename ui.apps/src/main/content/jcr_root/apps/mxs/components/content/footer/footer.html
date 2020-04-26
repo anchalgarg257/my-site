@@ -1,0 +1,95 @@
+<sly data-sly-use.footer="com.mxs.core.models.FooterNavigationModel"/>
+<sly data-sly-use.formatter="${'date.js' @mask='yyyy'}"/>
+<sly data-sly-test.currentYear="${formatter.formattedDate}"/>
+<sly data-sly-test.lastItem=""></sly>
+<div class="row footer-top">
+    <div class="col">
+        <div class="row row-separator">
+            <div class="col-lg-6">
+                <div class="row" data-sly-list="${footer.footerNavigationList}">
+                    <sly data-sly-test="${!itemList.last && itemList.count>2 || itemList.count<=2}">
+                        <div class="nav-list col-lg-6 col-md-6 col-xs-12">
+                            <p class="subtitle">${item.title}</p>
+                            <ul data-sly-list.listItem="${item.singleList}">
+                                <sly data-sly-test.isNewTab="${listItem.newTab?'_blank':''}"/>
+                                <sly data-sly-test="${listItem.title == 'Live Chat'}">
+                                    <sly data-sly-test.pagePath="${request.scheme}://${request.serverName}:${request.serverPort}${currentPage.path}.html"/>
+                                    <li><a href="${listItem.path}?page=${pagePath}"
+                                           onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,left=100,top=100,width=370,height=500');return false;">${listItem.title}</a>
+                                    </li>
+                                </sly>
+                                <sly data-sly-test="${listItem.title != 'Live Chat'}">
+                                    <li><a href="${listItem.path}${isNewTab?'':'.html'}"
+                                           target="${listItem.isNewWindow}">${listItem.title}</a>
+                                    </li>
+                                </sly>
+                            </ul>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${itemList.last && itemList.count>2}">
+                        <sly data-sly-test.lastItem="${item}"/>
+                    </sly>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <sly data-sly-test="${lastItem}">
+                        <div class="nav-list col-lg-6 col-md-6 col-xs-12">
+                            <p class="subtitle">${lastItem.title}</p>
+                            <ul data-sly-list.listItem="${lastItem.singleList}">
+                                <sly data-sly-test.isNewTab="${listItem.newTab?'_blank':''}"/>
+                                <li><a href="${listItem.path}${isNewTab?'':'.html'}"
+                                       target="${listItem.isNewWindow}">${listItem.title}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </sly>
+                    <div class="alwys-rght col-lg-6 col-md-6 col-xs-12">
+                        <div class="rt">
+                            <sly data-sly-resource="${'parsys' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+                        </div>
+                        <div class="hr"></div>
+                        <sly data-sly-test="${footer.socialIconList.size>0 && properties.socialLabel}">
+                            <div class="social-box">
+                                <p class="subtitle">${properties.socialLabel}</p>
+                                <ul class="social-icons" data-sly-list="${footer.socialIconList}">
+                                    <li><a onclick="gaEvents.pushInDataLayer(this,'Social Share','${item.title @context='scriptComment'}','${item.name @context='scriptComment'}')"
+                                            href="${item.path}" target="_blank"><i class="icon ${item.title}"></i></a>
+                                    </li>
+                                    <!--/*please use class names for social icons e.g. "icon-facebook"*/-->
+                                </ul>
+                            </div>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="hr"></div>
+<div class="row footer-bottom">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="footer-logo"
+             data-sly-resource="${'footer-logo' @ resourceType='mxs/components/content/image'}"></div>
+        <p class="copyr">
+            Copyright © ${currentYear} Maxis Bhd. All rights reserved.</p>
+        <sly data-sly-test="${footer.footerLinkList}">
+            <ul class="mini-nav" data-sly-list="${footer.footerLinkList}">
+                <sly data-sly-test.isNewTab="${item.newTab?'_blank':''}"/>
+                <li><a  href="${item.path}${isNewTab?'':'.html'}" target="${item.isNewWindow}">${item.title}</a>
+                </li>
+            </ul>
+        </sly>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 d-flex">
+        <div class="rt alwys-bttm align-self-end">
+            <sly data-sly-resource="${'disclamer-text' @ resourceType='mxs/components/content/text'}"></sly>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 d-flex px-3">
+        <div class="rt alwys-bttm align-self-end px-1">
+            <sly data-sly-resource="${'footer-text' @ resourceType='mxs/components/content/text'}"></sly>
+        </div>
+    </div>
+</div>

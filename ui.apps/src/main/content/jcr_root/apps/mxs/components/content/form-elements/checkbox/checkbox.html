@@ -1,0 +1,40 @@
+<sly data-sly-test.name="${properties.name}"/>
+<sly data-sly-use.model="com.mxs.core.models.FormWidgetModel"/>
+<sly data-sly-test.labelFor="${component.name}${model.hashCode}"/>
+<sly data-sly-test.required="${properties.required}"/>
+<sly data-sly-test.disabled="${properties.disabled}"/>
+<sly data-sly-test.checked="${properties.checked}"/>
+<sly data-sly-test.description="${properties.description}"/>
+<sly data-sly-test.requiredMessage="${properties.requiredMessage}"/>
+<sly data-sly-test.encryptField="${properties.encryptField}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Form CheckBox"></div>
+</sly>
+<sly data-sly-test="${name}">
+    <sly data-sly-use.multifieldModel="com.mxs.core.models.MultifieldModelWithChildren"/>
+    <sly data-sly-test.lists="${multifieldModel.list}"/>
+    <sly data-sly-test.size="${lists.size}"/>
+    <div class="checkbox ${size==1?'':'multiple'}" data-sly-attribute.required="${required=='true' && size>1}">
+        <sly data-sly-test="${properties.label}">
+            <div class="title">${properties.label @context='html'}</div>
+        </sly>
+        <div class="chk-group-cont ${properties.type}" data-sly-list="${lists}">
+            <div class="chk-cont">
+                <sly data-sly-test.id="${labelFor}${itemList.index}"/>
+                <input data-encrypt="${properties.encryptField}" id="${id}" type="checkbox" name="${properties.name}" data-price="${item.id}" value="${item.path}"
+                       data-sly-attribute.checked="${item.checked=='true'}"
+                       data-sly-attribute.readOnly="${item.disabled=='true'}" data-sly-attribute.required="${required=='true' && size==1 }">
+                <label for="${id}">${item.title @context='html'}</label>
+                <sly data-sly-test.description="${item.description}">
+                    <small>${description @context='html'}</small>
+                </sly>
+            </div>
+        </div>
+        <sly data-sly-test="${required && requiredMessage}">
+            <div class="invalid-feedback">
+                ${requiredMessage}
+            </div>
+        </sly>
+    </div>
+    </sly>
+    </sly>

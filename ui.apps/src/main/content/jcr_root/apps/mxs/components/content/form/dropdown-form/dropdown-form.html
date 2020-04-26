@@ -1,0 +1,23 @@
+<sly data-sly-test="${wcmmode.edit}">
+   <div class="cq-placeholder cq-marker-start" data-emptytext="Dropdown Form"></div>
+</sly>
+<sly data-sly-use.multifieldModel="com.mxs.core.models.MultiFIeldModel"/>
+<sly data-sly-test.description="${properties.description}"/>
+<div data-sly-resource="${'text' @resourceType = 'mxs/components/content/text'}"></div>
+<div class="container ">
+   <div class="d-flex justify-content-center">
+      <div style="width: 400px;">
+         <div class="dropdown-select form-group">
+            <label for="${labelFor}">${properties.label}</label>
+            <select class="selectpicker" title="" name="dropdown-form" data-sly-list="${multifieldModel.list}">
+               <option value="${item.name}" data-dropdown-path1="${item.path}.html?wcmmode=disabled">${item.name}
+               </option>
+            </select>
+            <sly data-sly-test="${description}">
+               <small>${description @context='html'}</small>
+            </sly>
+         </div>
+      </div>
+   </div>
+   <div class="dropdown-form-template1"></div>
+</div>

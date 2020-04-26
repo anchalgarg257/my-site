@@ -1,0 +1,18 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Product Tile"></div>
+</sly>
+<sly data-sly-use.model="com.mxs.core.models.ProductTileModel"/>
+<sly data-sly-test.productTile="${model.productModel}"/>
+<sly data-sly-use.modelPopUp="com.mxs.core.models.ModalPopModel"/>
+<!--/* Here using basic and detailed templates located under temlatelib.html */-->
+<sly data-sly-use.lib="templatelib.html">
+    <sly data-sly-test="${properties.productTileType == 'basic'}">
+        <sly data-sly-call="${lib.basic @ productTile = productTile,modelPopUp=modelPopUp}"></sly>
+    </sly>
+    <sly data-sly-test="${properties.productTileType == 'detailed'}">
+        <sly data-sly-call="${lib.detailed @ productTile = productTile,modelPopUp=modelPopUp}"></sly>
+    </sly>
+</sly>
+<sly data-sly-test="${properties.ctaButtonAction=='modal'}">
+    ${modelPopUp.modelHTML @context='unsafe'}
+</sly>

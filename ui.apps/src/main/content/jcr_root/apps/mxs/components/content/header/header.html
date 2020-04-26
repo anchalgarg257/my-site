@@ -1,0 +1,119 @@
+<sly data-sly-use.header="com.mxs.core.models.HeaderNavigationModel"/>
+<sly data-sly-use.modelPopUp="com.mxs.core.models.ModalPopModel"/>
+<sly data-sly-use.resourceModel="${'com.mxs.core.models.ResourceUtil' @ path=properties.cartUrl}"/>
+
+<div class="row upper-header">
+    <!--/* Image Component */-->
+    <div class="col-6">
+        <div class="header_logo" data-sly-resource="${'header-logo' @ resourceType='mxs/components/content/image'}"></div>
+    </div>
+    <!--/* Account Control */-->
+    <sly data-sly-test="${!properties.hideSignIn || !properties.hideCart}">
+        <div class="col-6 header-account-control">
+            <div class="d-flex flex-row-reverse">
+                <sly data-sly-test="${!properties.hideCart}">
+                    <div class="p-2">
+                        <a target="${properties.isCartNewWindow}" href="${resourceModel.path}" class="cart-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+                                <g fill="none" fill-rule="evenodd" stroke="#737373" stroke-width="1.5">
+                                    <path d="M17.238 20.956H4.646a1.647 1.647 0 0 1-1.629-1.363L1.01 8.01a.553.553 0 0 1 .548-.647h18.808c.346 0 .61.308.549.647L18.87 19.597a1.655 1.655 0 0 1-1.632 1.36z"></path>
+                                    <path d="M5.557 7.818S6.292 1 10.697 1c4.407 0 5.184 6.818 5.184 6.818"></path>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </sly>
+                <!-- Sign In Component -->
+                <sly data-sly-test="${!properties.hideSignIn}">
+                    <div  class="p-2" data-sly-resource="${'sing-in' @ resourceType='mxs/components/content/header/sign-in'}">
+                    </div>
+                </sly>
+            </div>
+        </div>
+    </sly>
+</div>
+<div class="header_navigation">
+    <div class="row">
+        <div class="col-12">
+            <div id="side-drawer" class="${properties.drawerNavRendering}">
+                <div class="nav-drawer">
+                    <!-- Site Type -->
+                    <sly data-sly-test="${header.simpleDrawerList}">
+                        <div data-sly-list="${header.simpleDrawerList}" class="site-type">
+                            <sly data-sly-test="${itemList.first && inheritedPageProperties.siteName=='hotlink-site'}">
+                                <sly data-sly-use.model5="com.mxs.core.models.ResourceUtil">
+                                    <sly data-sly-test="${inheritedPageProperties.jcr:language=='en'}">
+                                        <a href="${model5.languagePage @ extension='html'}">Bahasa Malaysia</a>
+                                    </sly>
+                                    <sly data-sly-test="${inheritedPageProperties.jcr:language=='ms'}">
+                                        <a href="${model5.languagePage @ extension='html'}">English</a>
+                                    </sly>
+                                </sly>
+                            </sly>
+                            <sly data-sly-test.isNewTab="${item.newTab?'_blank':''}"/>
+                            <a onclick="gaEvents.pushInDataLayer(this,'Header Navigation Menu','Click Event','${item.title @context='scriptComment'}')" href="${item.path}${isNewTab?'':'.html'}" target="${item.isNewWindow}">${item.title}</a>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${!header.simpleDrawerList}">
+                        <div class="site-type">
+                            <sly data-sly-test="${inheritedPageProperties.siteName=='hotlink-site'}">
+                                <sly data-sly-use.model5="com.mxs.core.models.ResourceUtil">
+                                    <sly data-sly-test="${inheritedPageProperties.jcr:language=='en'}">
+                                        <a href="${model5.languagePage @ extension='html'}">Bahasa Malaysia</a>
+                                    </sly>
+                                    <sly data-sly-test="${inheritedPageProperties.jcr:language=='ms'}">
+                                        <a href="${model5.languagePage @ extension='html'}">English</a>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </sly>
+                    <!-- Drawer List-->
+                    <div data-sly-repeat="${header.nestedMultiFieldsList}" class="nav-list ${properties.drawerNavRendering}">
+                        <p class="subtitle">
+                            <sly data-sly-test.isNewTab="${item.newTab?'_blank':''}"/>
+                            <sly data-sly-test="${item.path}">
+                                <sly data-sly-test.path="${item.path}${isNewTab?'':'.html'}"/>
+                                <a onclick="gaEvents.pushInDataLayer(this,'Header Navigation Menu','Click Event','${item.title @context='scriptComment'}')" href="${path}" target="${item.isNewWindow}">${item.title}</a>
+                            </sly>
+                            <sly data-sly-test="${!item.path}">
+                                <a>${item.title}</a>
+                            </sly>
+                        </p>
+                        <ul data-sly-list.listItem="${item.singleList}">
+                            <li>
+                                <sly data-sly-test.isNewTab="${listItem.newTab?'_blank':''}"/>
+                                <a onclick="gaEvents.pushInDataLayer(this,'Header Navigation Menu','Click Event','${listItem.title @context='scriptComment'}')" href="${listItem.path}${isNewTab?'':'.html'}" target="${listItem.isNewWindow}"><p>${listItem.title}<p></p></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-list appended">
+                    </div>
+                </div>
+            </div>
+            <!-- Main Navigation -->
+            <nav class="nav">
+                <sly data-sly-test="${!properties.hideExplore}">
+                    <a class="nav-link d-flex flex-row open-drawer" href="#"> <i class="material-icons">menu</i> <span> Explore </span></a>
+                </sly>
+                <sly data-sly-list="${header.mainNavigationList}">
+                    <a onclick="gaEvents.pushInDataLayer(this,'Header Navigation Menu','Click Event','${item.title @context='scriptComment'}')" class="nav-link" href="${item.path}.html">${item.title}</a>
+                </sly>
+            </nav>
+            <sly data-sly-test="${!properties.hideSearch}">
+                <div class="search-container text-right">
+                    <button class="search-button" data-toggle="modal" data-target="#${modelPopUp.id}" ><i class="material-icons">search</i></button>
+                </div>
+            </sly>
+        </div>
+    </div>
+</div>
+<div>
+    <sly data-sly-resource="${'notification' @ resourceType='mxs/components/content/notification'}"/>
+</div>
+<div>
+    <sly data-sly-resource="${'content-header-par' @ resourceType='wcm/foundation/components/parsys'}"/>
+</div>
+<sly data-sly-test="${!properties.hideSearch && properties.modelPath}">
+    ${modelPopUp.modelHTML @context='unsafe'}
+</sly>

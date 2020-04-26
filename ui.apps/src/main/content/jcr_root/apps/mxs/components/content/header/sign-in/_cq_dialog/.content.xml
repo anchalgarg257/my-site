@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Sign In"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <list
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Sing In"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <otherSignInUrlOption
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".hidefilter-showhide-target"
+                                name="./otherSignInUrlOption"
+                                text="Non Digital ID Sign In"
+                                value="true"/>
+                            <showHideContainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide hidefilter-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <otherSignInUrlPath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                        fieldLabel="Other Sign In Url Path"
+                                        name="./otherSignInUrlPath"/>
+                                </items>
+                            </showHideContainer>
+                            <singleList
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                class="field-full-width"
+                                fieldLabel="Single List">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                    acs-commons-nested="JSON_STORE"
+                                    name="./singleList">
+                                    <layout
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                        method="absolute"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <title
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Title"
+                                                    name="./title"
+                                                    required="{Boolean}true"/>
+                                                <path
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="URL Path"
+                                                    name="./path"
+                                                    required="{Boolean}true"
+                                                    rootPath="/content"/>
+                                                <newTab
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                    name="./isNewWindow"
+                                                    text="Open in New Tab"
+                                                    value="true"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </singleList>
+                        </items>
+                    </column>
+                </items>
+            </list>
+        </items>
+    </content>
+</jcr:root>

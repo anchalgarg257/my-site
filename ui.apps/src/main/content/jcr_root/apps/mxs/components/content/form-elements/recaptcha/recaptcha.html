@@ -1,0 +1,12 @@
+<sly data-sly-use.reCaptchaModel="com.mxs.core.models.GoogleReCaptchaModel"/>
+<sly data-sly-test.sitekey="${reCaptchaModel.siteKey}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Form Recaptcha"></div>
+</sly>
+<sly data-sly-test="${siteKey}">
+    <div class="form-group">
+        <div id="recaptcha" class="g-recaptcha" data-sitekey="${siteKey}"
+                data-size="invisible">
+        </div>
+    </div>
+</sly>

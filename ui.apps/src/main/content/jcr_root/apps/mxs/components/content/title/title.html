@@ -1,0 +1,30 @@
+<sly data-sly-test.title="${properties.title}"/>
+<sly data-sly-test.heading="${properties.headingType}"/>
+<sly data-sly-test.colourType="${properties.colourType}"/>
+<sly data-sly-test.color=""/>
+
+<sly data-sly-test="${wcmmode.edit && !title}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Title"></div>
+</sly>
+
+<sly data-sly-test="${colourType=='colourwheel'}">
+    <sly data-sly-test.color="${properties.colorWheel}"/>
+</sly>
+
+<sly data-sly-test="${colourType=='maxiscolourpalette'}">
+    <sly data-sly-test.color="${properties.maxisColorPalette}"/>
+</sly>
+
+<sly data-sly-test="${colourType=='hotlinkcolourpalette'}">
+    <sly data-sly-test.color="${properties.hotlinkColorPalette}"/>
+</sly>
+
+<sly data-sly-test="${title}">
+<div class="${properties.isMargin}" style="color: ${color @context='styleString'}">
+	${title @context="html"}
+</div>
+</sly>
+
+
+
+

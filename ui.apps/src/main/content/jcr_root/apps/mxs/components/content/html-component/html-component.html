@@ -1,0 +1,17 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="HTML Component"></div>
+</sly>
+
+<sly data-sly-test.isVisibleInEditMode="${(wcmmode.edit && !properties.hideComponent) || wcmmode.disabled}"/>
+
+<sly data-sly-test.html="${isVisibleInEditMode && properties.html}">
+    ${html  @context = 'unsafe'}
+</sly>
+
+<sly data-sly-test.js="${isVisibleInEditMode && properties.js }">
+    ${js @context = 'unsafe'}
+</sly>
+
+<sly data-sly-test.style="${isVisibleInEditMode && properties.style}">
+    ${style  @context = 'unsafe'}
+</sly>

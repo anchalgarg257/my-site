@@ -1,0 +1,11 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Feedback"></div>
+</sly>
+
+<div class="rating my-5" data-service-url="${properties.api ? properties.api : '/bin/api/feedback'}">
+    <p class="subtitle">${!properties.title ? currentstyle.title : properties.title @context="html"}</p>
+    <div class="thumb">
+        <button class="like"><div class="d-table"><div class="d-table-cell"><i class="icon icon-thumbs-up"></i></div><div class="d-table-cell"><p>Yes</p></div></div></button>
+        <button class="dislike"><div class="d-table"><div class="d-table-cell flip"><i class="icon icon-thumbs-down"></i></div><div class="d-table-cell"><p>No</p></div></div></button>
+    </div>
+</div>

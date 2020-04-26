@@ -1,0 +1,68 @@
+<sly data-sly-use.model="com.mxs.core.models.ResourceUtil"/>
+<sly data-sly-use.viewModel="com.mxs.core.models.ArticlePageViewCount"/>
+<main>
+    <div class="section-container">
+        <div class="container full">
+            <div class="d-flex justify-content-center">
+                <div style="width:90%">
+                <div class="container">
+                <div class="article-details-wrapper">
+            <div class="column-control ver-padding-sm type-d">
+                <div class="row">
+                    <div class="col mb-less">
+                        <div class="title parbase" data-sly-resource="${'title' @ resourceType='mxs/components/content/title'}"></div>
+                        <div class="${wcmmode.edit?'':'sharer'}">
+                            <span class="date">
+                                <sly data-sly-test="${model.date}">
+                                    <i class="material-icons">schedule</i> ${model.date}
+                                </sly>
+                            </span>
+                            <div data-sly-resource="${'social-share' @ resourceType='mxs/components/content/articles/social-share'}"></div>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+            <div class="column-control type-d">
+                <div class="row">
+                    <div class="col article-container">
+                        <div class="overflow-image" data-sly-resource="${'fullwidth-par' @ resourceType='wcm/foundation/components/parsys'}"></div>
+                        <div class="overflow-image image" data-sly-resource="${'feature-image' @ resourceType='mxs/components/content/image'}"></div>
+                        <div data-sly-resource="${'content' @ resourceType='wcm/foundation/components/parsys'}"></div>
+                        <div class="column-control ver-padding-sm type-a">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    <sly data-sly-test.stickers="${model.stickerList}">
+                                        <p class="cat-text">Categories</p>
+                                        <div class="sticker-container">
+                                            <sly data-sly-list="${stickers}">
+                                                <div class="stickers"
+                                                     style="background-color: ${!item.stickerBgColor?'#00449d':item.stickerBgColor@context='styleString'}; color: #ffffff">
+                                                    ${item.stickerTagTitle}
+                                                </div>
+                                            </sly>
+                                        </div>
+                                    </sly>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-sly-resource="${'divider' @ resourceType='mxs/components/content/divider'}"></div>
+                        <div data-sly-resource="${'popular-posts' @ resourceType='mxs/components/content/articles/popular-posts'}"></div>
+                        <div data-sly-resource="${'bottom-par' @ resourceType='wcm/foundation/components/parsys'}"></div>
+                    </div>
+                    <div class="col">
+                        <div class="article-nav-wrapper">
+                            <div data-sly-resource="${'archives' @ resourceType='mxs/components/content/articles/archives-and-tags'}"></div>
+                            <div data-sly-resource="${'tags' @ resourceType='mxs/components/content/articles/archives-and-tags'}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sly data-sly-include="live-chat.html"></sly>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

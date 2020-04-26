@@ -1,0 +1,42 @@
+<sly data-sly-test.dropDownList="${properties.singleList}"/>
+
+<sly data-sly-use.multifieldModel="com.mxs.core.models.MultiFIeldModel"/>
+<sly data-sly-test.tabListSize="${multifieldModel.list.size}"/>
+<sly data-sly-test.formClass="${wcmmode.edit ? 'form-edit-container' : 'form-entry-container'}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Multiple Form Dropdown"></div>
+</sly>
+
+<!-- Multi Forms Dropdown -->
+<div class="multi-forms-dropdown" data-sly-test="${dropDownList}">
+    <div data-sly-resource="${'text' @resourceType = 'mxs/components/content/text'}"></div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-center">
+                <div class="dropdown-select form-group multi-dropdown-select d-flex justify-content-center">
+                    <select class="selectpicker" name="" id="" data-sly-list="${multifieldModel.list}">
+                        <option value="" selected data-sly-test="${itemList.first}">Please Select</option>
+                        <option value="${item.id}">${item.title}</option>
+                    </select>
+                    <!--<div class="invalid-feedback">Select a Form beforing submiting</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Forms Wrapper -->
+    <div class="forms-wrapper" data-sly-list.dropDown="${multifieldModel.list}">
+        <sly data-sly-test.count="${dropDownList.count}"/>
+        <sly data-sly-test.setContentDefault="${dropDownList.index == 0 ? 'show active' : ''}"/>
+        <sly data-sly-test.parName="par${count}"/>
+
+        <sly data-sly-test="${wcmmode.edit}"><h4>Form Entry ${count}</h4></sly>
+        <div class="${formClass}" data-formid="${dropDown.id}">
+            <sly data-sly-resource="${ dropDown.id @resourceType='wcm/foundation/components/parsys'}" />
+        </div>
+    </div>
+
+    <div data-sly-resource="${'recaptcha' @resourceType = 'mxs/components/content/form-elements/recaptcha'}"></div>
+    <!-- /Forms Wrapper -->
+</div>
+<!-- /END Multi Forms Dropdown -->

@@ -1,0 +1,6 @@
+<sly data-sly-test="${!properties.iframeURL && wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="iframe"></div>
+</sly>
+<sly data-sly-test.iframeurl="${properties.iframeURL}">
+    <iframe src="${iframeurl}" height="${properties.height}px" width="100%" scrolling="auto" frameborder="0"></iframe>
+</sly>

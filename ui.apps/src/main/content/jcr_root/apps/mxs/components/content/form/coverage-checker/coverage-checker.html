@@ -1,0 +1,20 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Coverage Checker Form"></div>
+</sly>
+<div class="row coverage-container mt-5">
+    <div class="col-1 p-0" data-sly-resource="${'tootTip' @ resourceType='mxs/components/content/toolTip'}"></div>
+    <div class="col-11 p-0"  data-sly-resource="${'search-input' @ resourceType='mxs/components/content/form-elements/search-input'}"></div>
+</div>
+<script type="text/javascript">
+			var res_path = '${resource.path @ context='scriptComment',extension='json'}';
+</script>
+<div class="coverage-results-tmp">
+    <div class="coverage-success d-none text-center mt-5 mb-5">
+        ${properties.successMsg @context="html"}
+        <a href="${properties.successctaURL @extension='html'}" class="btn btn-primary medium">${properties.successctaTitle }</a>
+    </div>
+    <div class="coverage-failed d-none text-center mt-5 mb-5">
+       ${properties.failedMsg @context="html"}
+        <a href="${properties.failedctaURL @extension='html'}" class="btn btn-primary medium">${properties.failedctaTitle}</a>
+    </div>
+</div>

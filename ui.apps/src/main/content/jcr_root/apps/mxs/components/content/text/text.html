@@ -1,0 +1,7 @@
+<sly data-sly-test.text="${properties.text}"/>
+<sly data-sly-test="${wcmmode.edit && !text}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Text"></div>
+</sly>
+<div data-sly-test="${text}" class="${properties.ignoreBrTag}">
+    ${properties.text @context="unsafe"}
+</div>

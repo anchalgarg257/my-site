@@ -1,0 +1,33 @@
+<sly data-sly-use.signInList="com.mxs.core.models.MultiFIeldModel"/>
+<sly data-sly-use.model='com.mxs.core.utils.ExternalUrl'/>
+<sly data-sly-test.domain="${model.domain}"/>
+
+
+<div class="account-control" data-sly-use.did="com.mxs.core.models.DIDModel">
+
+    <sly data-sly-test.redirect_uri="${domain}${did.returnUrl}?page=${currentPage.path}"/>
+
+    <sly data-sly-test.signInurl="${did.endpointUrl}/oidc/authorize?response_type=code&client_id=${did.clientId}&redirect_uri=${redirect_uri}"/>
+    <a data-sly-test="${!properties.otherSignInUrlOption}" class="singin-url"
+       href="${signInurl}"><span
+            id="signin">Sign In</span><i class="material-icons">account_circle</i></a>
+    <a data-sly-test="${properties.otherSignInUrlOption}" class="singin-url"
+       href="${properties.otherSignInUrlPath}"><span id="signin">Sign in</span><i
+            class="material-icons">account_circle</i></a>
+    <div class="sigin-list dropdown ">
+        <sly data-sly-test="${signInList.list && signInList.list.size>0}">
+            <ul data-sly-list="${signInList.list}">
+                <li class="${itemList.first?'active':''}">
+                    <a href="${item.path}${item.newTab?'':'.html'}" target="${item.isNewWindow}">${item.title}</a></li>
+                <sly data-sly-test="${itemList.last}">
+                    <li class="logout" style="display:none;"><a href="/bin/api/didauth?action=logout&pathName=${currentPage.path}">Log out</a></li>
+                </sly>
+            </ul>
+        </sly>
+        <sly data-sly-test="${signInList.list.size==0}">
+            <ul>
+                <li class="logout" style="display:none;"><a href="/bin/api/didauth?action=logout&pathName=${currentPage.path}">Log out</a></li>
+            </ul>
+        </sly>
+    </div>
+</div>

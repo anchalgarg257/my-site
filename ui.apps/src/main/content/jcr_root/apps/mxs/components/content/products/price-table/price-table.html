@@ -1,0 +1,44 @@
+<sly data-sly-use.model="com.mxs.core.models.PriceTableModel"/>
+<sly data-sly-test.priceTable="${model.priceTable}"/>
+<sly data-sly-test="${wcmmode.edit && ((!priceTable.title || properties.headerHide!='true') && !priceTable.list.size)}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Price Table"></div>
+</sly>
+<sly data-sly-test="${priceTable.list.size || priceTable.addOn=='true' || (priceTable.title && properties.headerHide=='true') || priceTable.paymentType}">
+    <div class="pricing-table">
+        <div class="price-table" style="background-color: ${priceTable.bodyBackgroundColourType @context='styleString'};">
+            <sly data-sly-test="${properties.headerHide=='true' && priceTable.title}">
+                <div class="header more-height"
+                     style="background-color: ${priceTable.headerColor @context='styleString'};">
+                    ${priceTable.title @context='html'}
+                </div>
+            </sly>
+            <h6>${priceTable.paymentType @context='html'}</h6>
+            <sly data-sly-test="${priceTable.promoPrice || priceTable.priceConfig}">
+                <h2>
+                    <sly data-sly-test="${priceTable.promoPrice && priceTable.priceConfig}">
+                        <del>${priceTable.priceConfig}</del>
+                        <span class="new-price">${priceTable.promoPrice}</span>
+                    </sly>
+                    <sly data-sly-test="${!priceTable.promoPrice && priceTable.priceConfig}">
+                        <span>${priceTable.priceConfig}</span>
+                    </sly>
+                </h2>
+            </sly>
+            <sly data-sly-list="${priceTable.list}">
+                <article>
+                    <sly data-sly-test="${item.title}">
+                        ${item.title @context='html'}
+                    </sly>
+                    <sly data-sly-test.parname="${'item{0}' @ format=itemList.count}"/>
+                    <div data-sly-resource="${parname @ resourceType='wcm/foundation/components/parsys'}"></div>
+                    <sly data-sly-test="${item.description}">
+                        ${item.description @context='html'}
+                    </sly>
+                </article>
+            </sly>
+        </div>
+        <sly data-sly-test="${priceTable.addOn=='true'}">
+            <div data-sly-resource="${'addon' @ resourceType='mxs/components/content/products/addOn'}"></div>
+        </sly>
+    </div>
+</sly>

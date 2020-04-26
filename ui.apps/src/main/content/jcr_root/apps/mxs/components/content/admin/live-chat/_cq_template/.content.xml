@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    placeholder="{Long}1">
+    <chat-body1
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/foundation/components/parsys">
+        <text
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mxs/components/content/text"
+            text="&lt;p>Start a conversation&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;small&quot;>The team typically replies in under 1h&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+            textIsRich="true"/>
+        <section_container
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mxs/components/content/section-container"
+            alignment="d-flex justify-content-start"
+            colourType="default"
+            isCampaign="false"
+            modelClose="close"
+            width="70">
+            <section_container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/section-container"
+                alignment="d-flex justify-content-start"
+                colourType="default"
+                isCampaign="false"
+                modelClose="close"
+                width="30">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/title"
+                        colourType="default"
+                        textIsRich="true"
+                        title="&lt;h4>&lt;b>Select Phone&lt;/b>&lt;br>&#xd;&#xa;&lt;/h4>&#xd;&#xa;"/>
+                    <dropdown_copy
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/form/dropdown"
+                        dropdownType="multilist"
+                        label=" "
+                        name="./list"
+                        singleList="[{&quot;title&quot;:&quot;Recommended Phones&quot;\,&quot;path&quot;:&quot;recomamnded phones&quot;},{&quot;title&quot;:&quot;Iphone&quot;\,&quot;path&quot;:&quot;iphone&quot;}]"
+                        textIsRich="true"/>
+                </container>
+            </section_container>
+            <container jcr:primaryType="nt:unstructured">
+                <cta_button
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mxs/components/content/cta-button"
+                    ctaActionType="live-chat"
+                    ctaAlignment="text-center"
+                    ctaButtonStyleOutline="btn-primary"
+                    ctaButtonStyleSolid="btn-primary"
+                    ctaText="Start The Coversation"
+                    livechatPath="/content/mxs/en/admin/modal/livechat/jcr:content/content/live_chat.json"/>
+            </container>
+        </section_container>
+    </chat-body1>
+</jcr:root>

@@ -1,0 +1,113 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Site Map"></div>
+</sly>
+<sly data-sly-use.sitemapmodel="com.mxs.core.models.SiteMapModel"/>
+<sly data-sly-test="${properties.layout=='sidebar' && sitemapmodel.sideBarNavigationList}">
+    <div class="sidebar-navigation d-none d-sm-none d-md-block">
+        <ul>
+            <sly data-sly-list.page="${sitemapmodel.sideBarNavigationList}">
+                <li class="${sitemapmodel.level==pageList.index?'active':''}">
+                    <sly data-sly-test.title="${page.navigationTitle}"/>
+                    <sly data-sly-test="${!title}">
+                        <sly data-sly-test.title="${page.title}"/>
+                    </sly>
+                    <sly data-sly-use.sitemap="${'sitemap.js' @ page=page}"/>
+                    <sly data-sly-test.pathLink = "${sitemap.redirectTarget ? sitemap.redirectPath : page.path}"/>
+                    <sly data-sly-use.resourceModel="${'com.mxs.core.models.ResourceUtil' @ path= pathLink}"/>
+                    <a href="${resourceModel.path}"
+                       target="${sitemap.redirectTarget?'_blank':''}">${title}</a>
+				</li>
+            </sly>
+        </ul>
+    </div>
+
+    <div class="dropdown-select form-group link-dropdown d-block d-sm-block d-md-none inside-pages-dropdown">
+        <select class="selectpicker" title="${currentPage.title}" name="">
+            <sly data-sly-test="${!sitemapmodel.isMobileViewDiff}">
+                <sly data-sly-list.page="${sitemapmodel.sideBarNavigationList}">
+                    <sly data-sly-test.title="${page.navigationTitle}"/>
+                    <sly data-sly-test="${!title}">
+                        <sly data-sly-test.title="${page.title}"/>
+                    </sly>
+                    <sly data-sly-use.sitemap="${'sitemap.js' @ page=page}"/>
+                    <option value="${sitemap.redirectTarget ? sitemap.redirectPath : page.path}.html">
+                        ${title}
+                    </option>
+                </sly>
+            </sly>
+            <sly data-sly-test="${sitemapmodel.isMobileViewDiff}">
+                <sly data-sly-list.key="${sitemapmodel.sideBarMobileNavigationList}">
+                    <optgroup label="${key}">
+                        <sly data-sly-list.page="${sitemapmodel.sideBarMobileNavigationList[key]}">
+                            <sly data-sly-test.title="${page.navigationTitle}"/>
+                            <sly data-sly-test="${!title}">
+                                <sly data-sly-test.title="${page.title}"/>
+                            </sly>
+                            <sly data-sly-use.sitemap="${'sitemap.js' @ page=page}"/>
+                            <option value="${sitemap.redirectTarget ? sitemap.redirectPath : page.path}.html">
+                                ${title}
+                            </option>
+                        </sly>
+                    </optgroup>
+                </sly>
+            </sly>
+        </select>
+    </div>
+</sly>
+<sly data-sly-test="${properties.layout=='list' && sitemapmodel.listMap}">
+    <div class="column-control type-g">
+        <div class="row">
+            <sly data-sly-list.key="${sitemapmodel.listMap}">
+                <div class="col">
+                    <div class="listing-components">
+                        <h6>${key}</h6>
+                        <ul>
+                            <sly data-sly-list.page="${sitemapmodel.listMap[key]}">
+                                <li>
+                                    <sly data-sly-test.title="${page.navigationTitle}"/>
+                                    <sly data-sly-test="${!title}">
+                                        <sly data-sly-test.title="${page.title}"/>
+                                    </sly>
+                                    <sly data-sly-use.sitemap="${'sitemap.js' @ page=page}"/>
+                                    <a href="${sitemap.redirectTarget ? sitemap.redirectPath : page.path}.html"
+                                       target="${sitemap.redirectTarget?'_blank':''}">${title}</a>
+                                </li>
+                            </sly>
+                        </ul>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </div>
+</sly>
+<sly data-sly-test="${properties.layout=='faq' && sitemapmodel.sideBarNavigationList}">
+    <div class="column-control">
+        <div class="row">
+            <div class="col">
+                <div class="listing-components pipe">
+                	<sly data-sly-list.header="${sitemapmodel.sideBarNavigationList}">
+                    	<sly data-sly-test="${headerList.index == 0} ">
+                    		<h6>${header.title}</h6>
+                        </sly>
+                    </sly>
+                    <ul>
+                    	<sly data-sly-list.page="${sitemapmodel.sideBarNavigationList}">
+                            <sly data-sly-test="${pageList.index != 0} ">
+                                <li>
+                                    <sly data-sly-test.title="${page.navigationTitle}"/>
+                                    <sly data-sly-test="${!title}">
+                                        <sly data-sly-test.title="${page.title}"/>
+                                    </sly>
+                                    <sly data-sly-use.sitemap="${'sitemap.js' @ page=page}"/>
+                                    <a href="${sitemap.redirectTarget ? sitemap.redirectPath : page.path}.html"
+                                       target="${sitemap.redirectTarget?'_blank':''}">${title}</a>
+                                </li>
+                            </sly>
+                         </sly>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</sly>

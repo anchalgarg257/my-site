@@ -1,0 +1,30 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="List and Accordian"></div>
+</sly>
+
+<sly data-sly-use.listAccordian="com.mxs.core.models.ListAndAccordianModel"/>
+
+
+<div class="sidebar-accordion">
+    <button class="title-content" data-toggle="collapse" href="#faqCollapse" role="button" aria-expanded="true" aria-controls="faqCollapse" disabled="true">
+        <div class="d-table-cell text-left"><span style="color:#43A047" class="mxs-icon offer-icon"><img class="svg-icon md" src="${properties.icon}"/></span></div>
+        <div class="d-table-cell w-100 text-left"><h4>${listAccordian.parentPage.title}</h4></div>
+        <div class="d-table-cell text-right"><span><i class="icon icon-angle-up"></i></span></div>
+    </button>
+
+    <div class="accNav-box collapse show" id="faqCollapse">
+        <ul>
+        	<sly data-sly-list="${listAccordian.child}">
+                <li class="${item.isActive ? 'active' : '' }">
+                    <div class="accNav">
+                        <a href="${item.path @ extension = 'html' }">${item.title }<span><i class="icon icon-angle-down"></i></span></a>
+                    </div>
+                    <div class="accListing"></div>
+                    <div class="hr"></div>
+                </li>
+            </sly>
+
+        </ul>
+    </div>
+    
+</div>

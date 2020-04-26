@@ -1,0 +1,32 @@
+<sly data-sly-test.bgImage=""/>
+<sly data-sly-test.damVideo=""/>
+<sly data-sly-test.youtubeVideo=""/>
+<sly data-sly-test.minWidth= "${wcmmode.edit?'150px':'0px'}"/>
+
+<sly data-sly-test.desktopVFocus3="${properties.desktopVerticalFocus == 'd-focus-top' ? 'Top' : properties.desktopVerticalFocus}"/>
+<sly data-sly-test.desktopVFocus2="${desktopVFocus3 == 'd-focus-middle' ? 'Middle' : desktopVFocus3}"/>
+<sly data-sly-test.desktopVFocus="${desktopVFocus2 == 'd-focus-bottom' ? 'Bottom' : desktopVFocus2}"/>
+
+<sly data-sly-test.desktopHFocus3="${properties.desktopHorizontalFocus == 'd-focus-left' ? 'Left' : properties.desktopHorizontalFocus}"/>
+<sly data-sly-test.desktopHFocus2="${desktopHFocus3 == 'd-focus-center' ? 'Center' : desktopHFocus3}"/>
+<sly data-sly-test.desktopHFocus="${desktopHFocus2 == 'd-focus-right' ? 'Right' : desktopHFocus2}"/>
+
+	<sly data-sly-test.bgImage="${properties.fileReference}"/>
+<sly data-sly-test="${properties.type=='video'}">
+	<sly data-sly-test.video="${properties.video}"/>
+</sly>
+<sly data-sly-test="${wcmmode.edit && !bgImage && !video}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Hero Banner"></div>
+</sly>
+<sly data-sly-test="${bgImage || video}">
+    <div class="hero-banner ${properties.desktopVerticalFocus} ${properties.desktopHorizontalFocus} ${properties.mobileVerticalFocus} ${properties.mobileHorizontalFocus}  ${properties.imageSize}" 
+    style="background-image:url('${bgImage @context='styleString'}');" data-video-bg="${video}" data-gaTitle="${properties.gaTitle}" data-slot="${desktopVFocus}-${desktopHFocus}">
+        <div class="container">
+            <div class="placeholder d-flex ${properties.vertical} ${properties.desktopHeight} ${properties.mobileHeight} ${properties.horizontal}">
+                <article>
+                    <div data-sly-resource="${'hero-par' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </article>
+            </div>
+        </div>
+    </div>
+</sly>

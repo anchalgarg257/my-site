@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Empty Gap"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <divider
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Divider"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <desktopGap
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                defaultValue="1"
+                                fieldDescription="Valid values have range interval 1."
+                                fieldLabel="Desktop Gap (In pixels)"
+                                min="1"
+                                name="./desktopGap"
+                                step="1"/>
+                            <mobileGap
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                defaultValue="1"
+                                fieldDescription="Valid values have range interval 1."
+                                fieldLabel="Mobile Gap (In pixels)"
+                                min="1"
+                                name="./mobileGap"
+                                step="1"/>
+                        </items>
+                    </column>
+                </items>
+            </divider>
+        </items>
+    </content>
+</jcr:root>

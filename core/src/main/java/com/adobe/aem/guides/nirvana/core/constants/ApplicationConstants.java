@@ -18,6 +18,7 @@ public final class ApplicationConstants {
     public static final String FAILURE = "failure";
     public static final String PATH = "path";
     public static final String CHILD = "child";
+    public static final String PROPERTY_HELLO = "hello";
 
     private ApplicationConstants() {
     }

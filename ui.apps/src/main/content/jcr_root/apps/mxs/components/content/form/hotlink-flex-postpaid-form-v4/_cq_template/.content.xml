@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <section_container
+        jcr:lastModified="{Date}2019-03-04T18:24:32.576+08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/section-container"
+        alignment="d-flex justify-content-center"
+        colourType="default"
+        isCampaign="false"
+        modelClose="close"
+        width="100">
+        <container
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <formcontainer
+                jcr:lastModified="{Date}2019-03-12T11:48:34.569+08:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/formcontainer"
+                cataelogIDName="$.parts.lineItem[0].id[0].schemeName.CATALOG_ID"
+                cataelogIDValue="PRD0000091"
+                cataelogTypeName="$.parts.lineItem[0].id[0].schemeName.CATALOG_TYPE"
+                cataelogTypeValue="Postpaid Flex"
+                emailMsg="Thanks for submitting Hotlink Flex Postpaid form.We will contact you within 3 working days regarding your request in Hotlink Postpaid Flex."
+                emailSubject="Hotlink Postpaid Flex"
+                emailTemplate="/etc/notification/email/mxs/forms/mxs_form_email_template.html"
+                emailTrigger="true"
+                endPointConfig="sas"
+                errorMsg="Data is not submitting successfully."
+                errorMsgTitle="Error Message"
+                formName="Hotlink Postpaid Flex"
+                sasType="form-flex"
+                serviceName="$.parts.areasOfInterest.areaOfInterest[0].name.SERVICE_TYPE"
+                serviceValue="Hotlink"
+                successMsg="We will contact you within 3 working days regarding your request in Hotlink Postpaid Flex."
+                successMsgTitle="Thank you for your request!">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mxs/components/content/title"
+                    colourType="default"
+                    textIsRich="true"
+                    title="&lt;h5>Would you like to add on a device?&lt;br>&#xa;&lt;/h5>&#xa;"/>
+                <par
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <columncontrol_703643
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/columnControl"
+                        colourType="default"
+                        columns="type-a"
+                        dividerText="AND"
+                        dividerType="divider"
+                        horizontalPadding="side-padding-xs">
+                        <col0
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <recaptcha jcr:primaryType="nt:unstructured"/>
+                            <divider
+                                jcr:created="{Date}2019-01-29T14:44:00.410+08:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2019-01-29T14:44:08.585+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/divider"
+                                dividerStyle="normal"
+                                theme="light"/>
+                            <section_container_1629518893
+                                jcr:created="{Date}2019-03-04T18:25:53.144+08:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2019-03-04T18:38:50.847+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/section-container"
+                                alignment="d-flex justify-content-center"
+                                colourType="default"
+                                isCampaign="false"
+                                modelClose="close"
+                                width="80">
+                                <container jcr:primaryType="nt:unstructured">
+                                    <divider_copy_copy_co
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/divider"
+                                        dividerStyle="normal"/>
+                                    <title
+                                        jcr:created="{Date}2019-01-29T13:09:09.422+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-01-29T14:46:58.253+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/title"
+                                        colourType="default"
+                                        textIsRich="true"
+                                        title="&lt;h3 style=&quot;text-align: center;&quot;>Get Hotlink Prepaid Flex today&lt;br>&#xd;&#xa;&lt;/h3>&#xd;&#xa;&lt;p style=&quot;text-align: center;&quot;>Sign up for a base plan and select as many add-ons and passes as you want.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"/>
+                                    <text_copy_copy
+                                        jcr:lastModified="{Date}2019-01-29T14:04:49.780+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/text"
+                                        text="&lt;h6>&lt;span style=&quot;color: #43a047;&quot;>&lt;b>&amp;nbsp;&lt;/b>&lt;/span>&lt;b>&lt;span style=&quot;color: #d40058;&quot;>STEP 1&lt;/span>&lt;/b>&lt;br>&#xa;&lt;/h6>&#xa;&lt;h6>&lt;span style=&quot;color: #262626;&quot;>&lt;span class=&quot;semi-bold&quot;>Your base plan&lt;/span>&lt;/span>&lt;br>&#xa;&lt;/h6>&#xa;"
+                                        textIsRich="true"/>
+                                    <radio
+                                        jcr:created="{Date}2019-01-29T13:10:53.822+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-03-04T18:50:53.881+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/radio"
+                                        label=" "
+                                        name="data-addon"
+                                        singleList="[{&quot;title&quot;:&quot;&lt;span style=\\&quot;color: #d40058;\\&quot;>&lt;b>FLEX PLUS&lt;/b> &lt;span class=\\&quot;small\\&quot;>(with device)&lt;/span>&lt;/span>&lt;br>\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n&quot;\,&quot;path&quot;:&quot;flex_plus&quot;\,&quot;description&quot;:&quot;&lt;p>&lt;span class=\\&quot;small\\&quot;>&lt;b>RM60/mth&lt;/b>&lt;/span>&lt;br>\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>&lt;span class=\\&quot;smaller\\&quot;>10GB High Speed Internet &lt;/span>&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>&lt;span class=\\&quot;smaller\\&quot;>Unlimited Calls / SMS&lt;/span>&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&quot;\,&quot;id&quot;:&quot;60&quot;\,&quot;checked&quot;:&quot;true&quot;\,&quot;disabled&quot;:&quot;&quot;},{&quot;title&quot;:&quot;&lt;span style=\\&quot;color: #d40058;\\&quot;>&lt;b>FLEX STANDARD&lt;/b>&lt;/span>&lt;br>\\n\\n\\n\\n\\n\\n\\n&quot;\,&quot;path&quot;:&quot;flex_standard&quot;\,&quot;description&quot;:&quot;&lt;p>&lt;span class=\\&quot;small\\&quot;>&lt;b>RM40/mth&lt;/b>&lt;/span>&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>&amp;nbsp;&lt;span class=\\&quot;smaller\\&quot;>5GB High Speed Internet&lt;/span>&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>&lt;span class=\\&quot;smaller\\&quot;>Unlimited Calls / SMS&lt;/span>&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n&lt;/p>\\n\\n&quot;\,&quot;id&quot;:&quot;40&quot;\,&quot;checked&quot;:&quot;&quot;\,&quot;disabled&quot;:&quot;&quot;},{&quot;title&quot;:&quot;&lt;span style=\\&quot;color: rgb(212\, 0\, 88);\\&quot;>&lt;b>FLEX BASIC&lt;/b>&lt;/span>&lt;br>\\n\\n\\n\\n\\n\\n\\n&quot;\,&quot;path&quot;:&quot;flex_basic&quot;\,&quot;description&quot;:&quot;&lt;p>&lt;b>RM30/mth&lt;/b>&lt;br>\\n\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>&lt;span class=\\&quot;smaller\\&quot;>1GB High Speed Internet&lt;/span>&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n&lt;/p>\\n\\n&lt;p>&lt;span class=\\&quot;smaller\\&quot;>Unlimited Calls / SMS&lt;/span>&lt;/p>\\n\\n&lt;p>\\n\\n\\n\\n\\n&lt;/p>\\n\\n&quot;\,&quot;id&quot;:&quot;30&quot;\,&quot;checked&quot;:&quot;&quot;\,&quot;disabled&quot;:&quot;&quot;}]"
+                                        type="horizontal"
+                                        typeofRadio="round">
+                                        <singleList jcr:primaryType="nt:unstructured">
+                                            <item0
+                                                jcr:primaryType="nt:unstructured"
+                                                checked="true"
+                                                description="&lt;p>&lt;span class=&quot;small&quot;>&lt;b>RM60/mth&lt;/b>&lt;/span>&lt;br>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&lt;span class=&quot;smaller&quot;>10GB High Speed Internet &lt;/span>&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&lt;span class=&quot;smaller&quot;>Unlimited Calls / SMS&lt;/span>&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;"
+                                                disabled=""
+                                                id="60"
+                                                path="flex_plus"
+                                                title="&lt;span style=&quot;color: #d40058;&quot;>&lt;b>FLEX PLUS&lt;/b> &lt;span class=&quot;small&quot;>(with device)&lt;/span>&lt;/span>&lt;br>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;"/>
+                                            <item1
+                                                jcr:primaryType="nt:unstructured"
+                                                checked=""
+                                                description="&lt;p>&lt;span class=&quot;small&quot;>&lt;b>RM40/mth&lt;/b>&lt;/span>&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&amp;nbsp;&lt;span class=&quot;smaller&quot;>5GB High Speed Internet&lt;/span>&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&lt;span class=&quot;smaller&quot;>Unlimited Calls / SMS&lt;/span>&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;"
+                                                disabled=""
+                                                id="40"
+                                                path="flex_standard"
+                                                title="&lt;span style=&quot;color: #d40058;&quot;>&lt;b>FLEX STANDARD&lt;/b>&lt;/span>&lt;br>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;"/>
+                                            <item2
+                                                jcr:primaryType="nt:unstructured"
+                                                checked=""
+                                                description="&lt;p>&lt;b>RM30/mth&lt;/b>&lt;br>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&lt;span class=&quot;smaller&quot;>1GB High Speed Internet&lt;/span>&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&lt;p>&lt;span class=&quot;smaller&quot;>Unlimited Calls / SMS&lt;/span>&lt;/p>&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;"
+                                                disabled=""
+                                                id="30"
+                                                path="flex_basic"
+                                                title="&lt;span style=&quot;color: rgb(212, 0, 88);&quot;>&lt;b>FLEX BASIC&lt;/b>&lt;/span>&lt;br>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;"/>
+                                        </singleList>
+                                    </radio>
+                                    <productlist
+                                        jcr:created="{Date}2019-03-01T15:53:24.896+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-03-01T15:55:24.422+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/productList"
+                                        path="/content/hotlink/en/admin/flex"
+                                        title="Flex">
+                                        <para2
+                                            jcr:lastModified="{Date}2019-03-04T18:48:11.648+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p class=&quot;py-5&quot;>All smartphone bundles with Hotlink Postpaid Flex Plus are subjected to Upfront Payment, 24 months contract and availability at Maxis Store.&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <para1
+                                            jcr:lastModified="{Date}2019-03-10T14:16:11.066+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>Choose your smartphone brand starting from RM1&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                    </productlist>
+                                    <divider_copy
+                                        jcr:created="{Date}2019-01-29T14:44:00.410+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-01-29T14:46:21.385+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/divider"
+                                        dividerStyle="normal"/>
+                                    <text_copy_copy_copy
+                                        jcr:lastModified="{Date}2019-01-29T14:06:00.340+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/text"
+                                        text="&lt;h6>&lt;span style=&quot;color: #43a047;&quot;>&lt;b>&amp;nbsp;&lt;/b>&lt;/span>&lt;b>&lt;span style=&quot;color: #d40058;&quot;>STEP 2&lt;/span>&lt;/b>&lt;br>&#xa;&lt;/h6>&#xa;&lt;h6>&lt;span style=&quot;color: #262626;&quot;>&lt;span class=&quot;semi-bold&quot;>Your base plan&lt;/span>&lt;/span>&lt;br>&#xa;&lt;/h6>&#xa;"
+                                        textIsRich="true"/>
+                                    <Copy_x0020_of_x0020_columncontrol_copy_c
+                                        jcr:lastModified="{Date}2019-01-29T14:51:24.729+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/columnControl"
+                                        colourType="default"
+                                        columns="type-g"
+                                        horizontalPadding="side-padding-sm">
+                                        <col0
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys">
+                                            <checkbox_copy
+                                                jcr:created="{Date}2019-01-29T14:08:55.301+08:00"
+                                                jcr:createdBy="admin"
+                                                jcr:lastModified="{Date}2019-03-04T19:09:52.245+08:00"
+                                                jcr:lastModifiedBy="admin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/form-elements/checkbox"
+                                                name="bundle-addon1"
+                                                singleList="\{&quot;title&quot;:&quot;&lt;p>&lt;span style=\\&quot;color: rgb(212, 0, 88);\\&quot;>&lt;b>Unlimited Social&lt;/b>&lt;/span>&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>&lt;b>RM10/mth&lt;/b>&lt;/p>\\n\\n\\n\\n&lt;p>&lt;img>&amp;nbsp;&lt;img src=\\&quot;/content/dam/hotlink/images/icons-social.png\\&quot; style=\\&quot;font-size: 0.8125rem;\\&quot;>&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n&quot;,&quot;path&quot;:&quot;Social&quot;,&quot;description&quot;:&quot;&quot;,&quot;id&quot;:&quot;RM10&quot;,&quot;checked&quot;:&quot;&quot;,&quot;disabled&quot;:&quot;&quot;}"
+                                                textIsRich="true"
+                                                type="horizontal">
+                                                <singleList jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                        jcr:primaryType="nt:unstructured"
+                                                        checked=""
+                                                        description=""
+                                                        disabled=""
+                                                        id="RM10"
+                                                        path="Social"
+                                                        title="&lt;p>&lt;span style=&quot;color: rgb(212, 0, 88);&quot;>&lt;b>Unlimited Social&lt;/b>&lt;/span>&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&lt;b>RM10/mth&lt;/b>&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&lt;img>&amp;nbsp;&lt;img src=&quot;/content/dam/hotlink/images/flex-addon/icons-social.png&quot; style=&quot;font-size: 0.8125rem;&quot;>&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;"/>
+                                                </singleList>
+                                            </checkbox_copy>
+                                        </col0>
+                                        <col1
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys">
+                                            <checkbox_copy
+                                                jcr:created="{Date}2019-01-29T14:08:55.301+08:00"
+                                                jcr:createdBy="admin"
+                                                jcr:lastModified="{Date}2019-03-04T19:10:09.832+08:00"
+                                                jcr:lastModifiedBy="admin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/form-elements/checkbox"
+                                                name="bundle-addon2"
+                                                singleList="\{&quot;title&quot;:&quot;&lt;p>&lt;b>&lt;span style=\\&quot;color: #d40058;\\&quot;>Unlimited Music&lt;/span>&lt;/b>&lt;/p>\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n&lt;p>&lt;b>RM20/mth&lt;/b>&lt;/p>\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n&lt;p>&lt;img style=\\&quot;font-size: 0.8125rem;\\&quot;>&lt;img>&lt;img src=\\&quot;/content/dam/hotlink/images/icons-music.png\\&quot; style=\\&quot;font-size: 0.8125rem;\\&quot;>&lt;br>\\n\\n\\n\\n\\n\\n\\n&lt;/p>\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n&lt;p>\\n\\n\\n&lt;/p>\\n\\n\\n&quot;,&quot;path&quot;:&quot;Music&quot;,&quot;description&quot;:&quot;&quot;,&quot;id&quot;:&quot;RM20&quot;,&quot;checked&quot;:&quot;&quot;,&quot;disabled&quot;:&quot;&quot;}"
+                                                textIsRich="true"
+                                                type="horizontal">
+                                                <singleList jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                        jcr:primaryType="nt:unstructured"
+                                                        checked=""
+                                                        description=""
+                                                        disabled=""
+                                                        id="RM20"
+                                                        path="Music"
+                                                        title="&lt;p>&lt;b>&lt;span style=&quot;color: #d40058;&quot;>Unlimited Music&lt;/span>&lt;/b>&lt;/p>&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&lt;p>&lt;b>RM20/mth&lt;/b>&lt;/p>&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&lt;p>&lt;img style=&quot;font-size: 0.8125rem;&quot;>&lt;img>&lt;img src=&quot;/content/dam/hotlink/images/flex-addon/icons-music.png&quot; style=&quot;font-size: 0.8125rem;&quot;>&lt;br>&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&lt;p>&#xa;&#xa;&#xa;&lt;/p>&#xa;&#xa;&#xa;"/>
+                                                </singleList>
+                                            </checkbox_copy>
+                                        </col1>
+                                        <col2
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys">
+                                            <Copy_x0020_of_x0020_checkbox_copy
+                                                jcr:created="{Date}2019-01-29T14:08:55.301+08:00"
+                                                jcr:createdBy="admin"
+                                                jcr:lastModified="{Date}2019-03-05T14:01:45.977+08:00"
+                                                jcr:lastModifiedBy="admin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/form-elements/checkbox"
+                                                name="bundle-addon3"
+                                                singleList="\{&quot;title&quot;:&quot;&lt;p>&lt;b>&lt;span style=\\&quot;color: #d40058;\\&quot;>Unlimited Chat&lt;/span>&lt;/b>&lt;/p>\\n\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n\\n&lt;p>&amp;nbsp;&lt;b style=\\&quot;font-size: 0.8125rem;\\&quot;>RM30/mth&lt;/b>&lt;/p>\\n\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n\\n&lt;p>&lt;img>&amp;nbsp;&lt;img style=\\&quot;font-size: 0.8125rem;\\&quot;>&lt;img src=\\&quot;/content/dam/hotlink/images/icons-chat.png\\&quot; style=\\&quot;font-size: 0.8125rem;\\&quot;>&lt;/p>\\n\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n\\n&lt;p>&amp;nbsp;&lt;/p>\\n\\n\\n\\n\\n&lt;p>\\n&lt;/p>\\n\\n\\n\\n\\n&quot;,&quot;path&quot;:&quot;Chat&quot;,&quot;description&quot;:&quot;&quot;,&quot;id&quot;:&quot;RM30&quot;,&quot;checked&quot;:&quot;&quot;,&quot;disabled&quot;:&quot;&quot;}"
+                                                textIsRich="true"
+                                                type="horizontal">
+                                                <singleList jcr:primaryType="nt:unstructured">
+                                                    <item0
+                                                        jcr:primaryType="nt:unstructured"
+                                                        checked=""
+                                                        description=""
+                                                        disabled=""
+                                                        id="RM30"
+                                                        path="Chat"
+                                                        title="&lt;p>&lt;b>&lt;span style=&quot;color: #d40058;&quot;>Unlimited Chat&lt;/span>&lt;/b>&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;p>&amp;nbsp;&lt;b style=&quot;font-size: 0.8125rem;&quot;>RM30/mth&lt;/b>&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;p>&lt;img>&amp;nbsp;&lt;img style=&quot;font-size: 0.8125rem;&quot;>&lt;img src=&quot;/content/dam/hotlink/images/flex-addon/icons-chat.png&quot; style=&quot;font-size: 0.8125rem;&quot;>&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;&lt;p>&#xa;&lt;/p>&#xa;&#xa;&#xa;&#xa;&#xa;"/>
+                                                </singleList>
+                                            </Copy_x0020_of_x0020_checkbox_copy>
+                                        </col2>
+                                        <col3
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys"/>
+                                    </Copy_x0020_of_x0020_columncontrol_copy_c>
+                                </container>
+                            </section_container_1629518893>
+                        </col0>
+                        <col1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys"/>
+                    </columncontrol_703643>
+                    <columncontrol_703643_479716484
+                        jcr:lastModified="{Date}2019-03-01T17:46:14.407+08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/columnControl"
+                        colourType="default"
+                        columns="type-a"
+                        dividerText="AND"
+                        dividerType="divider">
+                        <col0
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <section_container_co
+                                jcr:lastModified="{Date}2019-03-04T18:16:14.427+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/section-container"
+                                alignment="d-flex justify-content-center"
+                                colourType="default"
+                                isCampaign="false"
+                                modelClose="close"
+                                verticalPadding="ver-padding-lg"
+                                width="100">
+                                <container
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys">
+                                    <price_summary
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/admin/hotlink-flex-price-summary">
+                                        <base-plan
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>&lt;span style=&quot;color: #bfbfbf;&quot;>&lt;span class=&quot;smaller&quot;>&lt;span class=&quot;semi-bold&quot;>BASE PLAN&lt;/span>&lt;/span>&lt;/span>&lt;/p>&#xd;&#xa;&lt;p>&lt;span style=&quot;color: #737373;&quot;>&lt;span class=&quot;small&quot;>&lt;span class=&quot;semi-bold&quot;>Hotlink Flex Prepaid&lt;/span>&lt;/span>&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <data-addOn
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>&lt;span style=&quot;color: #bfbfbf;&quot;>&lt;span class=&quot;smaller&quot;>&lt;span class=&quot;semi-bold&quot;>DATA ADD-ON&lt;/span>&lt;/span>&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <device
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>&lt;span style=&quot;color: #bfbfbf;&quot;>&lt;span class=&quot;smaller&quot;>&lt;span class=&quot;semi-bold&quot;>DEVICE&lt;/span>&lt;/span>&lt;/span>&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <bundle-addOn
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>&lt;span style=&quot;color: #bfbfbf;&quot;>&lt;span class=&quot;smaller&quot;>&lt;span class=&quot;semi-bold&quot;>BUNDLE ADDON&lt;/span>&lt;/span>&lt;/span>&lt;/p>&#xa;"
+                                            textIsRich="true"/>
+                                        <summary
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;h6>&lt;b>&lt;span style=&quot;color: #d40058;&quot;>SUMMARY OF CHARGES&lt;/span>&lt;/b>&lt;/h6>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <sign-up
+                                            jcr:lastModified="{Date}2019-03-12T11:57:55.878+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/cta-button"
+                                            ctaActionType="link"
+                                            ctaAlignment="text-center"
+                                            ctaButtonFill="outline"
+                                            ctaButtonStyleOutline="btn-white"
+                                            ctaButtonStyleSolid="btn-primary"
+                                            ctaText="Sign Up"
+                                            ctaURL="#form"
+                                            gaCategory="CTA Button"
+                                            gaLabel="Sign Up"/>
+                                        <view-store
+                                            jcr:lastModified="{Date}2019-03-10T14:46:55.056+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/cta-button"
+                                            ctaActionType="link"
+                                            ctaAlignment="text-center"
+                                            ctaButtonFill="outline"
+                                            ctaButtonStyleOutline="btn-white"
+                                            ctaButtonStyleSolid="btn-primary"
+                                            ctaText="View Store"
+                                            ctaURL="/content/hotlink/en/store-locator"
+                                            gaCategory="CTA Button"
+                                            gaLabel="View Store"/>
+                                        <total
+                                            jcr:lastModified="{Date}2019-03-04T16:07:53.635+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>Total&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <smartphone
+                                            jcr:lastModified="{Date}2019-03-04T16:09:17.790+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="Choose your smartphone brand starting from RM1"
+                                            textIsRich="true"/>
+                                        <baseplan
+                                            jcr:lastModified="{Date}2019-03-04T16:09:54.891+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>Base Plan&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <ordersummary
+                                            jcr:lastModified="{Date}2019-03-04T16:51:56.150+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>ORDER SUMMARY&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                        <placeholder1
+                                            jcr:lastModified="{Date}2019-03-04T16:09:54.891+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="/mth"
+                                            textIsRich="true"/>
+                                        <placeholder2
+                                            jcr:lastModified="{Date}2019-03-04T16:09:54.891+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="/mth&#xa;"
+                                            textIsRich="true"/>
+                                        <placeholder3
+                                            jcr:lastModified="{Date}2019-03-04T16:09:54.891+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="/mth"
+                                            textIsRich="true"/>
+                                        <placeholder4
+                                            jcr:lastModified="{Date}2019-03-04T16:09:54.891+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="/mth"
+                                            textIsRich="true"/>
+                                        <placeholder5
+                                            jcr:lastModified="{Date}2019-03-14T16:40:49.601+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>/mth&lt;/p>&#xa;"
+                                            textIsRich="true"/>
+                                        <addondeviceprice
+                                            jcr:lastModified="{Date}2019-03-04T16:09:54.891+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>Add-on device price&lt;br/>&#xa;(1 time payment)&lt;p>"
+                                            textIsRich="true"/>
+                                        <unlimitedappstext
+                                            jcr:lastModified="{Date}2019-03-14T16:48:17.018+08:00"
+                                            jcr:lastModifiedBy="admin"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/text"
+                                            text="&lt;p>Unlimited Apps Add-Ons&lt;/p>&#xd;&#xa;"
+                                            textIsRich="true"/>
+                                    </price_summary>
+                                </container>
+                            </section_container_co>
+                        </col0>
+                        <col1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys"/>
+                    </columncontrol_703643_479716484>
+                    <section_container_co
+                        jcr:lastModified="{Date}2019-03-04T19:04:12.224+08:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/section-container"
+                        alignment="d-flex justify-content-center"
+                        colourType="default"
+                        isCampaign="false"
+                        modelClose="close"
+                        verticalPadding="ver-padding-lg"
+                        width="66">
+                        <section_container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mxs/components/content/section-container"
+                            alignment="d-flex justify-content-start"
+                            colourType="default"
+                            isCampaign="false"
+                            modelClose="close"
+                            width="30">
+                            <container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/foundation/components/parsys">
+                                <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/title"
+                                    colourType="default"
+                                    textIsRich="true"
+                                    title="&lt;h4>&lt;b>Select Phone&lt;/b>&lt;br>&#xd;&#xa;&lt;/h4>&#xd;&#xa;"/>
+                                <dropdown
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/form-elements/dropdown"
+                                    dropdownType="multilist"
+                                    label=" "
+                                    name="campaign-catalog-filter"
+                                    singleList="\{&quot;title&quot;:&quot;Recommended Phones&quot;,&quot;path&quot;:&quot;recomamnded phones&quot;}"
+                                    textIsRich="true"/>
+                            </container>
+                        </section_container>
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <anchor_tag
+                                jcr:created="{Date}2019-03-12T11:58:53.424+08:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2019-03-12T11:59:06.167+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/anchor-tag"
+                                id="form"/>
+                            <text_copy_copy
+                                jcr:lastModified="{Date}2019-01-29T14:35:16.466+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/text"
+                                text="&lt;h3 style=&quot;text-align: center;&quot;>Ready to sign up?&lt;/h3>&#xd;&#xa;&lt;h3 style=&quot;text-align: center;&quot;>Fill in your details so that we can contact you&lt;/h3>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <columncontrol_copy_181532336
+                                jcr:created="{Date}2018-12-07T17:28:47.628+08:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2018-12-10T12:07:33.557+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/columnControl"
+                                addGutter="true"
+                                colourType="default"
+                                columns="type-b"
+                                horizontalPadding="side-padding-sm"
+                                verticalPadding="ver-padding-xs">
+                                <col0
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys">
+                                    <reference
+                                        jcr:created="{Date}2018-12-07T17:31:30.582+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-03-10T14:24:49.210+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="foundation/components/reference"
+                                        path="/content/mxs/en/admin/forms/sas-forms-master-data/jcr:content/content/columncontrol/col0"/>
+                                    <reference_1060338993
+                                        jcr:created="{Date}2018-12-07T17:31:30.582+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-03-10T14:20:36.704+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="foundation/components/reference"
+                                        path="/content/mxs/en/admin/forms/sas-forms-master-data/jcr:content/content/columncontrol/col2"/>
+                                </col0>
+                                <col1
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys">
+                                    <reference_copy
+                                        jcr:created="{Date}2018-12-07T17:31:30.582+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-03-10T14:20:42.351+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="foundation/components/reference"
+                                        path="/content/mxs/en/admin/forms/sas-forms-master-data/jcr:content/content/columncontrol/col1"/>
+                                    <textfield_copy_79402
+                                        jcr:created="{Date}2018-07-10T15:36:33.137+08:00"
+                                        jcr:createdBy="miki"
+                                        jcr:lastModified="{Date}2019-03-12T17:37:33.608+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}10"
+                                        inputType="tel-num"
+                                        label="Alternative mobile number"
+                                        name="alt_phone_num"
+                                        regularExpression="2"
+                                        regularExpressionMessage="Please enter numbers only with a minimum of 9 digits"
+                                        required="true"
+                                        requiredMessage="This field is required"
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <reference_copy_289736945
+                                        jcr:created="{Date}2018-12-07T17:31:30.582+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-03-10T14:20:48.272+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="foundation/components/reference"
+                                        path="/content/mxs/en/admin/forms/sas-forms-master-data/jcr:content/content/columncontrol/col3"/>
+                                    <Copy_x0020_of_x0020_textfield_copy
+                                        jcr:lastModified="{Date}2019-03-04T16:30:01.946+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="hidden"
+                                        label="Total Amount"
+                                        name="hidden_total_amount"
+                                        regularExpression="0"
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <Copy_x0020_of_x0020_textfield_copy_19269
+                                        jcr:lastModified="{Date}2019-03-04T16:30:41.873+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="hidden"
+                                        label="Base Plan"
+                                        name="hidden_base_plan"
+                                        regularExpression="0"
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <Copy_x0020_of_x0020_textfield_copy_19269_1032843827
+                                        jcr:lastModified="{Date}2019-03-04T16:31:15.970+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="hidden"
+                                        label="Bundle Addon"
+                                        name="hidden_bundle_addon"
+                                        regularExpression="0"
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <Copy_x0020_of_x0020_textfield
+                                        jcr:created="{Date}2019-03-04T00:09:42.325+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2019-03-04T19:13:37.804+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="hidden"
+                                        label="Device"
+                                        name="hidden_device"
+                                        regularExpression="0"
+                                        row="1"
+                                        textIsRich="true"/>
+                                </col1>
+                            </columncontrol_copy_181532336>
+                            <columncontrol
+                                jcr:created="{Date}2019-03-07T14:50:00.721+08:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2019-03-07T14:50:26.976+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/columnControl"
+                                colourType="default"
+                                columns="type-a"
+                                horizontalPadding="side-padding-sm">
+                                <col0
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys">
+                                    <reference_copy_28973
+                                        jcr:created="{Date}2018-12-07T17:31:30.582+08:00"
+                                        jcr:createdBy="admin"
+                                        jcr:lastModified="{Date}2018-12-10T11:33:00.851+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="foundation/components/reference"
+                                        path="/content/mxs/en/admin/forms/sas-forms-master-data/jcr:content/content/columncontrol_256332_1932026074/col1"/>
+                                    <recaptcha
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/recaptcha"/>
+                                    <cta_button
+                                        jcr:lastModified="{Date}2019-01-31T17:45:57.542+08:00"
+                                        jcr:lastModifiedBy="admin"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/cta-button"
+                                        ctaActionType="submit"
+                                        ctaAlignment="text-center"
+                                        ctaButtonStyleOutline="btn-primary"
+                                        ctaButtonStyleSolid="btn-secondary"
+                                        ctaText="Agree &amp; submit"
+                                        gaCategory="CTA Button"
+                                        gaLabel="Submit"/>
+                                </col0>
+                            </columncontrol>
+                        </container>
+                    </section_container_co>
+                </par>
+            </formcontainer>
+        </container>
+    </section_container>
+</jcr:root>

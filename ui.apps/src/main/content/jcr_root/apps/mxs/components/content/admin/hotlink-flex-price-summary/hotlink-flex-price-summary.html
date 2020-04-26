@@ -1,0 +1,113 @@
+<div class="form-flex--hotlink">
+    <div id="scrolldetect"></div>
+    <div class="summary-price-bar"> 
+        <div class="summary-price-bar--inner">
+            <div class="summary-price-headline">
+                <p class="text-left mb-0 bold"><div data-sly-resource="${'ordersummary' @ resourceType='mxs/components/content/text'}"></div></p>
+            </div>
+            <div class="summary-price">
+                <div class="summary-price-row plan-container">
+                    <div class="summary-price-col">
+                        <div class="lbl"><div data-sly-resource="${'baseplan' @ resourceType='mxs/components/content/text'}"></div></div>
+                        <div class="base-plan val"></div>
+                    </div>
+                    <div class="summary-price-col text-right text-sm-left">
+                        <span class="base-plan price">
+                            <strong>RM0</strong>
+                        </span>
+						<span class="unit-after d-inline-block"><div data-sly-resource="${'placeholder1' @ resourceType='mxs/components/content/text'}"></div></span>
+                <div class="summary-price-row hidden data-addon-container">
+                    <div class="summary-price-col">
+                        <div class="lbl">Data Addon</div>
+                        <div class="data-addon val">data addon</div>
+                    </div>
+                    <div class="summary-price-col text-right text-sm-left"> 
+                        <span class="data-addon price">
+                            <strong>RM0</strong>
+                        </span>
+						<span class="unit-after d-inline-block"><div data-sly-resource="${'placeholder2' @ resourceType='mxs/components/content/text'}"></div></span>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <div class="summary-price-row hidden device-addon-container">
+                    <div class="summary-price-col">
+                        <div class="lbl"><div data-sly-resource="${'addondeviceprice' @ resourceType='mxs/components/content/text'}"></div></div>
+                        <div class="device-addon val"></div>
+                    </div>
+                    <div class="summary-price-col text-right text-sm-left">
+                        <span class="device-addon price">
+                            <strong>RM0</strong>
+                        </span>
+						<span class="unit-after d-inline-block"><div data-sly-resource="${'placeholder3' @ resourceType='mxs/components/content/text'}"></div></span>
+                    </div>
+                </div>
+
+
+<!-- logic to view this element if in edit mode start-->
+	<sly data-sly-test.editmode="${wcmmode.edit }">
+							 <div class="summary-price-row">
+                        </sly>
+
+						<sly data-sly-test="${!editmode}">
+							<div class="summary-price-row hidden bundle-addon-container">
+                        </sly>
+<!-- logic to view this element if in edit mode end-->
+
+
+                    <div class="summary-price-col">
+                    
+                        <div class="lbl"><sly data-sly-resource="${'unlimitedappstext' @ resourceType='mxs/components/content/text'}"></sly></div>
+                        <div class="bundle-addon val"></div>
+                    </div>
+                    <div class="summary-price-col text-right text-sm-left">
+                        <span class="bundle-addon price">
+                            <strong>RM0</strong>
+                        </span>
+						<span class="unit-after d-inline-block"><div data-sly-resource="${'placeholder4' @ resourceType='mxs/components/content/text'}"></div></span>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-price-total">
+            	<span class="arrow-handler"></span>
+                <div class="summary-price-row">
+                    <div class="summary-price-col">
+                        <div class="total-cost-lbl">
+                            <div data-sly-resource="${'total' @ resourceType='mxs/components/content/text'}"></div>
+                            <span class="viewSummary">View Summary</span>
+                        </div>
+                    </div>
+                    <div class="summary-price-col text-right text-sm-left">
+                        <span class="total-cost price">
+                            <strong>RM0</strong>
+                        </span>
+						<span class="unit-after d-inline-block"><div data-sly-resource="${'placeholder5' @ resourceType='mxs/components/content/text'}"></div></span>
+                        <p class="device-price">+ <strong>RM0</strong></p>
+                        <!--hyperlink -->
+                        <p class="upfront-pay"></p>
+
+
+                        <div class="cta-view-store">
+                        <div data-sly-resource="${'view-store' @ resourceType='mxs/components/content/cta-button'}"></div>
+						</div>
+
+						<sly data-sly-test.editmode="${wcmmode.edit }">
+							<div class="" > 
+                        </sly>
+
+						<sly data-sly-test="${!editmode}">
+							<div class="cta-signup" style="display: none;"> 
+                        </sly>
+
+                        <div data-sly-resource="${'sign-up' @ resourceType='mxs/components/content/cta-button'}"></div>
+						</div>
+                 <!--  <a href=".leads-form" class="btn btn-white-outline cta-signup">test</a>
+                             <a href="#" class="btn btn-white-outline cta-signup">Sign Up</a>  -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="leads-form m-0"></div>

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    storePath="/content/mxs/my/en/admin/stores">
+    <section_container
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/section-container"
+        alignment="d-flex justify-content-center"
+        colourType="default"
+        isCampaign="false"
+        modelClose="close"
+        width="88">
+        <container
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <formcontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mxs/components/content/form-elements/formcontainer"
+                cataelogIDName="$.parts.lineItem[0].id[0].schemeName.CATALOG_ID"
+                cataelogIDValue="PRD0000087"
+                cataelogTypeName="$.parts.lineItem[*].id[*].schemeName.CATALOG_TYPE"
+                cataelogTypeValue="Prime"
+                emailMsg="email message done"
+                emailTrigger="true"
+                endPointConfig="sas"
+                errorMsg="Data is not submitting successfully."
+                errorMsgTitle="Error Message"
+                formName="Maxis One Prime"
+                sasType="form-maxisone-prime"
+                serviceName="$.parts.lineItem[0].id[0].schemeName.CATALOG_ID"
+                serviceValue="Prime"
+                successMsg="We will contact you within 3 working days regarding your request in Maxis One Prime.."
+                successMsgTitle="Thank you for your request!">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="mxs/components/content/title"
+                    colourType="default"
+                    textIsRich="true"
+                    title="&lt;h5>Would you like to add on a device?&lt;br>&#xd;&#xa;&lt;/h5>&#xd;&#xa;"/>
+                <par
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/parsys">
+                    <columncontrol_703643_1480435725
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/columnControl"
+                        colourType="default"
+                        columns="type-b"
+                        dividerText="AND"
+                        dividerType="divider"
+                        horizontalPadding="side-padding-lg">
+                        <col0
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <recaptcha jcr:primaryType="nt:unstructured"/>
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/text"
+                                text="&lt;h6>&lt;span style=&quot;color: #43a047;&quot;>&lt;b>STEP 1&lt;/b>&lt;/span>&lt;br>&#xd;&#xa;&lt;/h6>&#xd;&#xa;&lt;h6>&lt;span style=&quot;color: #262626;&quot;>&lt;span class=&quot;semi-bold&quot;>Your primary line&lt;/span>&lt;/span>&lt;/h6>&#xd;&#xa;&lt;p>You will be getting a&lt;b> &lt;/b>&lt;span style=&quot;font-weight: normal;&quot;>&lt;b>MaxisONE Plan 188&lt;/b>&lt;/span> at only &lt;span style=&quot;font-weight: normal;&quot;>&lt;b>RM188/mth&lt;/b>&lt;/span>&lt;/p>&#xd;&#xa;&lt;h6>&lt;span style=&quot;color: #262626;&quot;>&lt;span class=&quot;semi-bold&quot;>Choose the number of additional mobile lines&lt;/span>&lt;/span>&lt;/h6>&#xd;&#xa;&lt;p>Each additional line is only &lt;span style=&quot;font-weight: normal;&quot;>&lt;b>RM48/mth&lt;/b>&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <radio_770039033
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/form-elements/radio"
+                                label=" "
+                                name="mobile-plan"
+                                singleList="[{&quot;title&quot;:&quot;1 line&lt;br>\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n&quot;\,&quot;path&quot;:&quot;1 line&quot;\,&quot;description&quot;:&quot;&quot;\,&quot;id&quot;:&quot;RM236/mth&quot;\,&quot;checked&quot;:&quot;true&quot;\,&quot;disabled&quot;:&quot;&quot;},{&quot;title&quot;:&quot;2 lines&quot;\,&quot;path&quot;:&quot;2 lines&quot;\,&quot;description&quot;:&quot;&quot;\,&quot;id&quot;:&quot;RM284/mth&quot;\,&quot;checked&quot;:&quot;&quot;\,&quot;disabled&quot;:&quot;&quot;},{&quot;title&quot;:&quot;3 lines&quot;\,&quot;path&quot;:&quot;3 lines&quot;\,&quot;description&quot;:&quot;&quot;\,&quot;id&quot;:&quot;RM332/mth&quot;\,&quot;checked&quot;:&quot;&quot;\,&quot;disabled&quot;:&quot;&quot;},{&quot;title&quot;:&quot;4 lines&quot;\,&quot;path&quot;:&quot;4 lines&quot;\,&quot;description&quot;:&quot;&quot;\,&quot;id&quot;:&quot;RM380/mth&quot;\,&quot;checked&quot;:&quot;&quot;\,&quot;disabled&quot;:&quot;&quot;}]"
+                                type="horizontal"
+                                typeofRadio="round"/>
+                        </col0>
+                        <col1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <text
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/text"
+                                text="&lt;h6>&amp;nbsp;&lt;/h6>&#xd;&#xa;&lt;h6>&lt;span style=&quot;color: #262626;&quot;>&lt;span class=&quot;semi-bold&quot;>Select a hom fibre internet speed&lt;/span>&lt;/span>&lt;br>&#xd;&#xa;&lt;/h6>&#xd;&#xa;&lt;p>&lt;b>Limited time promo! &lt;/b>Enjoy an upgrade to 50 Mbps when you select 30 Mbps speeds.&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <radio_770039033_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/form-elements/radio"
+                                label=" "
+                                name="fibre-plan"
+                                singleList="[{&quot;title&quot;:&quot;&lt;span class=\\&quot;strikethrough\\&quot;>30 Mbps&amp;nbsp;&lt;/span> &lt;b>50 Mbps&lt;/b>&lt;br>\\n\\n\\n\\n\\n\\n\\n\\n&quot;\,&quot;path&quot;:&quot;50 Mbps&quot;\,&quot;description&quot;:&quot;&quot;\,&quot;id&quot;:&quot;RM179/mth&quot;\,&quot;checked&quot;:&quot;true&quot;\,&quot;disabled&quot;:&quot;&quot;},{&quot;title&quot;:&quot;100 Mbps&lt;br>\\n\\n\\n&quot;\,&quot;path&quot;:&quot;100 Mbps&quot;\,&quot;description&quot;:&quot;&quot;\,&quot;id&quot;:&quot;RM299/mth&quot;\,&quot;checked&quot;:&quot;&quot;\,&quot;disabled&quot;:&quot;&quot;}]"
+                                type="horizontal"
+                                typeofRadio="round"/>
+                            <text_889494060
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/text"
+                                text="&lt;p>&lt;span class=&quot;smaller&quot;>For existing MaxisONE Prime subscribers, please call Maxis at 123 to get your speed upgraded.&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                        </col1>
+                    </columncontrol_703643_1480435725>
+                    <columncontrol_703643
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/columnControl"
+                        colourType="default"
+                        columns="type-a"
+                        dividerText="AND"
+                        dividerType="divider"
+                        horizontalPadding="side-padding-lg">
+                        <col0
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <recaptcha jcr:primaryType="nt:unstructured"/>
+                            <divider_copy_copy_co
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/divider"
+                                dividerStyle="normal"/>
+                        </col0>
+                        <col1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys"/>
+                    </columncontrol_703643>
+                    <text_copy
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/text"
+                        text="&lt;h6>&lt;span style=&quot;color: #43a047;&quot;>&lt;b>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; STEP 2&lt;/b>&lt;/span>&lt;br>&#xd;&#xa;&lt;/h6>&#xd;&#xa;&lt;h6>&lt;span style=&quot;color: #262626;&quot;>&lt;span class=&quot;semi-bold&quot;>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Would you like to add a device?&lt;/span>&lt;/span>&lt;br>&#xd;&#xa;&lt;/h6>&#xd;&#xa;"
+                        textIsRich="true"/>
+                    <columncontrol_copy
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/columnControl"
+                        colourType="default"
+                        columns="type-h"
+                        horizontalPadding="side-padding-sm"
+                        horizontalWrapper="side-margin-md">
+                        <col0
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <producttile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/products/productTile"
+                                ctaButtonAction="modal"
+                                ctaButtonTitle="Add This"
+                                fileReference="/content/dam/mxs/images/category2_placeholder/Apple_iPhone_X_image_1.png"
+                                fromTitle="From"
+                                modelPath="/content/mxs/en/testing0/test/campaigncatalogue"
+                                name="addons"
+                                paymentFrequency="/mnth"
+                                productTileType="detailed"
+                                upfrontPaymentPrice="45/mnth">
+                                <product
+                                    jcr:primaryType="nt:unstructured"
+                                    description="Available Smartphones"
+                                    price="0"
+                                    promoPrice="0"/>
+                            </producttile>
+                        </col0>
+                        <col1 jcr:primaryType="nt:unstructured">
+                            <producttile_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/products/productTile"
+                                ctaButtonAction="toggle"
+                                ctaButtonTitle="Add This"
+                                fileReference="/content/dam/mxs/images/category2_placeholder/MaxisONE_Plan_mobile_banner_(TL)1.png"
+                                fromTitle="From"
+                                name="addons"
+                                paymentFrequency="/mth"
+                                productTileType="detailed"
+                                upfrontPaymentPrice=" RM1499">
+                                <product
+                                    jcr:primaryType="nt:unstructured"
+                                    description="24MP Clearer Selfie Perfect Shot"
+                                    price="178"
+                                    promoPrice="0"
+                                    title="Panasonic 49” 4K HD Smart TV"/>
+                            </producttile_copy>
+                        </col1>
+                        <col2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <producttile_copy_cop
+                                jcr:lastModified="{Date}2018-08-04T11:53:56.301+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/products/productTile"
+                                ctaButtonAction="toggle"
+                                ctaButtonTitle="Add This"
+                                fileReference="/content/dam/next1bit/images/icons/roseGold.jpg"
+                                fromTitle="From"
+                                name="addons"
+                                paymentFrequency="/mth"
+                                productTileType="detailed"
+                                upfrontPaymentPrice=" RM14994">
+                                <product
+                                    jcr:primaryType="nt:unstructured"
+                                    description="24MP Clearer Selfie Perfect Shot Shoty shorty short short shorty shor…"
+                                    price="1783"
+                                    promoPrice="5,659.53"
+                                    title="Panasonic 49” 4K Ultra HD Smart TV"/>
+                            </producttile_copy_cop>
+                        </col2>
+                        <col3
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <producttile_copy_cop
+                                jcr:lastModified="{Date}2018-08-04T11:54:21.920+08:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/products/productTile"
+                                ctaButtonAction="toggle"
+                                ctaButtonTitle="Add This"
+                                fileReference="/content/dam/next1bit/images/icons/galaxys7edge.png"
+                                fromTitle="From"
+                                name="addons"
+                                paymentFrequency="/mth"
+                                productTileType="detailed">
+                                <product
+                                    jcr:primaryType="nt:unstructured"
+                                    description="24MP Clearer Selfie Perfect Shot"
+                                    price="178"
+                                    promoPrice="0"
+                                    title="Panasonic 49” 4K HD Smart TV"/>
+                            </producttile_copy_cop>
+                        </col3>
+                    </columncontrol_copy>
+                    <columncontrol_703643_479716484
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/columnControl"
+                        colourType="default"
+                        columns="type-a"
+                        dividerText="AND"
+                        dividerType="divider"
+                        horizontalPadding="side-padding-lg">
+                        <col0
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <recaptcha jcr:primaryType="nt:unstructured"/>
+                            <price_summary_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/maxis-price-summary">
+                                <mobile-plan
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/text"
+                                    text="&lt;p>&lt;span style=&quot;color: #bfbfbf;&quot;>&lt;span class=&quot;smaller&quot;>&lt;span class=&quot;semi-bold&quot;>MOBILE PLAN&lt;/span>&lt;/span>&lt;/span>&lt;br>&#xa;&lt;/p>&#xa;"
+                                    textIsRich="true"/>
+                                <fibre-plan
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/text"
+                                    text="&lt;p>&lt;span style=&quot;color: #bfbfbf;&quot;>&lt;span class=&quot;smaller&quot;>&lt;span class=&quot;semi-bold&quot;>HOME FIBRE PLAN&lt;/span>&lt;/span>&lt;/span>&lt;br>&#xa;&lt;/p>&#xa;"
+                                    textIsRich="true"/>
+                                <plan
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/text"
+                                    text="&lt;p>&lt;span style=&quot;color: #737373;&quot;>&lt;span class=&quot;small&quot;>&lt;span class=&quot;semi-bold&quot;>MaxisONE Plan 188 + {x}&lt;/span>&lt;/span>&lt;/span>&lt;/p>&#xa;"
+                                    textIsRich="true"/>
+                                <device-addOn
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/text"
+                                    text="&lt;p>&lt;span style=&quot;color: #bfbfbf;&quot;>&lt;span class=&quot;smaller&quot;>&lt;span class=&quot;semi-bold&quot;>DEVICE ADDON&lt;/span>&lt;/span>&lt;/span>&lt;/p>&#xa;"
+                                    textIsRich="true"/>
+                                <summary
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/text"
+                                    text="&lt;h6>&lt;span style=&quot;color: #43a047;&quot;>&lt;b>SUMMARY OF CHARGES&lt;/b>&lt;/span>&lt;/h6>&#xd;&#xa;"
+                                    textIsRich="true"/>
+                            </price_summary_copy>
+                        </col0>
+                        <col1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys"/>
+                    </columncontrol_703643_479716484>
+                    <section_container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="mxs/components/content/section-container"
+                        alignment="d-flex justify-content-center"
+                        colourType="default"
+                        isCampaign="false"
+                        modelClose="close"
+                        width="50">
+                        <section_container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="mxs/components/content/section-container"
+                            alignment="d-flex justify-content-start"
+                            colourType="default"
+                            isCampaign="false"
+                            modelClose="close"
+                            width="30">
+                            <container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="wcm/foundation/components/parsys">
+                                <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/title"
+                                    colourType="default"
+                                    textIsRich="true"
+                                    title="&lt;h4>&lt;b>Select Phone&lt;/b>&lt;br>&#xd;&#xa;&lt;/h4>&#xd;&#xa;"/>
+                                <dropdown
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="mxs/components/content/form-elements/dropdown"
+                                    dropdownType="multilist"
+                                    label=" "
+                                    name="campaign-catalog-filter"
+                                    singleList="\{&quot;title&quot;:&quot;Recommended Phones&quot;,&quot;path&quot;:&quot;recomamnded phones&quot;}"
+                                    textIsRich="true"/>
+                            </container>
+                        </section_container>
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/foundation/components/parsys">
+                            <text_copy_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/text"
+                                text="&lt;h6>&lt;b>&lt;span style=&quot;color: #43a047;&quot;>&lt;span class=&quot;semi-bold&quot;>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span>LET US CALL YOU TO CONTINUE!&lt;/span>&lt;/b>&lt;/h6>&#xd;&#xa;&lt;p>&lt;span class=&quot;semi-bold&quot;>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; All fields are mandatory&lt;/span>&lt;b>&lt;br>&#xd;&#xa; &lt;/b>&lt;/p>&#xd;&#xa;"
+                                textIsRich="true"/>
+                            <columncontrol
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/columnControl"
+                                colourType="default"
+                                columns="type-b"
+                                horizontalPadding="side-padding-md">
+                                <col0
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys">
+                                    <textfield
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="text"
+                                        label="Full name (as per identification)"
+                                        name="$.roles.customer.contactPeople.contactPerson.individualName.legalName"
+                                        regularExpression="0"
+                                        required="true"
+                                        requiredMessage="Please fill in your full name as per identification."
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <textfield_copy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}11"
+                                        inputType="tel-num"
+                                        label="Mobile number"
+                                        name="$.roles.customer.contactPeople.contactPerson.contactPoint[0].sms.subscriberNumber"
+                                        regularExpression="0"
+                                        required="true"
+                                        requiredMessage="Please fill in a legit mobile number."
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <textfield_copy_copy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="email"
+                                        label="Email address"
+                                        name="$.roles.customer.contactPeople.contactPerson.contactPoint[0].email.fullAddress"
+                                        regularExpression="4"
+                                        required="true"
+                                        requiredMessage="Please fill in a legit email address."
+                                        row="1"
+                                        textIsRich="true"/>
+                                </col0>
+                                <col1
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys">
+                                    <dropdown_copy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/dropdown"
+                                        dropdownType="multilist"
+                                        label="Type of identification"
+                                        name="$.roles.customer.contactPeople.contactPerson.id[0].schemeName.IC_TYPE"
+                                        required="true"
+                                        singleList="\{&quot;title&quot;:&quot;NRIC&quot;,&quot;path&quot;:&quot;nric&quot;}"
+                                        textIsRich="true"/>
+                                    <textfield_copy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="ic-num"
+                                        label="Identification number"
+                                        name="$.roles.customer.contactPeople.contactPerson.id[0].schemeName.IC_NO"
+                                        placeholder="NRIC"
+                                        regularExpression="0"
+                                        required="true"
+                                        requiredMessage="Please fill in a legit identification number."
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <textfield
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="hidden"
+                                        label="Total Cost"
+                                        name="total-cost"
+                                        regularExpression="0"
+                                        row="1"
+                                        textIsRich="true"/>
+                                </col1>
+                            </columncontrol>
+                            <columncontrol_copy
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="mxs/components/content/columnControl"
+                                colourType="default"
+                                columns="type-a"
+                                horizontalPadding="side-padding-md">
+                                <col1
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys"/>
+                                <col0
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm/foundation/components/parsys">
+                                    <text
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/text"
+                                        text="&lt;p>&lt;span class=&quot;semi-bold&quot;>&amp;nbsp;Installation Address&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                    <textfield_copy_copy_
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/form-elements/textfield"
+                                        characterLimit="{Long}0"
+                                        inputType="text"
+                                        label=" Address"
+                                        name="$.roles.customer.contactPeople.contactPerson.contactPoint[0].postal.street"
+                                        regularExpression="0"
+                                        required="true"
+                                        requiredMessage="Please fill in an address."
+                                        row="1"
+                                        textIsRich="true"/>
+                                    <text_copy
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/text"
+                                        text="&lt;ul>&#xd;&#xa;&lt;li>&lt;span class=&quot;smaller&quot;>I hereby declare that I wish to subscribe for the Services provided by Maxis Broadband Sdn. Bhd.&lt;/span>&lt;br>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;span class=&quot;smaller&quot;>That the above information provided is true and correct.&lt;br>&#xd;&#xa; &lt;/span>&lt;/li>&#xd;&#xa;&lt;li>&lt;span class=&quot;smaller&quot;>That I have read and agree to be bound by the following contract terms and all other Terms &amp;amp; Conditions printed and/or attached hereto and any amendments made thereto.&lt;br>&#xd;&#xa; &lt;/span>&lt;/li>&#xd;&#xa;&lt;li>&lt;span class=&quot;smaller&quot;>That I hereby consent to the collection and processing of my personal information in accordance with the Maxis Privacy Statement.&lt;/span>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;span class=&quot;smaller&quot;>&lt;b>Note&lt;/b>: Should you require non-standard installation, you will need to bear the additional charges. For table rates, click here . Maxis reserves the right to impose a cancellation fee of RM200 should the installation be cancelled by the customer within 3 days of the confirmed installation date.&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;span class=&quot;small&quot;>By clicking “Submit now” you agree and consent to the collection and processing of personal information you provided above in accordance with the Maxis Privacy Statement.&lt;/span>&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;"
+                                        textIsRich="true"/>
+                                    <section_container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/section-container"
+                                        alignment="d-flex justify-content-center"
+                                        colourType="default"
+                                        isCampaign="false"
+                                        modelClose="close"
+                                        width="40">
+                                        <section_container
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="mxs/components/content/section-container"
+                                            alignment="d-flex justify-content-start"
+                                            colourType="default"
+                                            isCampaign="false"
+                                            modelClose="close"
+                                            width="30">
+                                            <container
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="wcm/foundation/components/parsys">
+                                                <title
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="mxs/components/content/title"
+                                                    colourType="default"
+                                                    textIsRich="true"
+                                                    title="&lt;h4>&lt;b>Select Phone&lt;/b>&lt;br>&#xd;&#xa;&lt;/h4>&#xd;&#xa;"/>
+                                                <dropdown
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="mxs/components/content/form-elements/dropdown"
+                                                    dropdownType="multilist"
+                                                    label=" "
+                                                    name="campaign-catalog-filter"
+                                                    singleList="\{&quot;title&quot;:&quot;Recommended Phones&quot;,&quot;path&quot;:&quot;recomamnded phones&quot;}"
+                                                    textIsRich="true"/>
+                                            </container>
+                                        </section_container>
+                                        <container
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="wcm/foundation/components/parsys">
+                                            <cta_button
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/cta-button"
+                                                ctaActionType="submit"
+                                                ctaAlignment="text-right"
+                                                ctaButtonStyleOutline="btn-primary"
+                                                ctaButtonStyleSolid="btn-primary"
+                                                ctaText="Submit now"/>
+                                        </container>
+                                    </section_container>
+                                </col0>
+                            </columncontrol_copy>
+                        </container>
+                    </section_container>
+                </par>
+            </formcontainer>
+        </container>
+    </section_container>
+</jcr:root>

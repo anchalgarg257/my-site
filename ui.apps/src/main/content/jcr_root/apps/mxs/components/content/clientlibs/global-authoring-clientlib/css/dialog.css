@@ -1,0 +1,18 @@
+.coral-RichText.coral-RichText-editable .strikethrough {
+    text-decoration: line-through;
+}
+
+.widget-full-width{
+background: transparent !important;
+}
+
+.cq-dialog-floating .widget-full-width{
+	width:94%;
+}
+
+.coral--dark  .widget-full-width{
+	background : none;
+}
+.cq-Overlay--placeholder{
+	background-color:rgba(255, 255, 255, 0.10)
+}

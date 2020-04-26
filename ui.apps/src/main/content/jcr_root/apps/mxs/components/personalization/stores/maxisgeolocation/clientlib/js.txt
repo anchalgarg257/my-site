@@ -1,0 +1,2 @@
+store.location.js
+store.basic.js

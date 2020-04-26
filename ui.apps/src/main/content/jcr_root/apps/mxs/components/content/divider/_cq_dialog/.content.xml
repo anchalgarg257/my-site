@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Divider"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <divider
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Divider"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <theme
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Theme"
+                                name="./theme">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <dark
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Dark"
+                                        value=""/>
+                                    <light
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Light"
+                                        value="light"/>
+                                </items>
+                            </theme>
+                            <divider-style
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldLabel="Divider Style"
+                                name="./dividerStyle">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <full-line
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Full Line"
+                                        value="normal"/>
+                                    <dotted-line
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Dotted Line"
+                                        value="dashed"/>
+                                    <two-lines
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Two Lines"
+                                        value="doubled"/>
+                                </items>
+                            </divider-style>
+                        </items>
+                    </column>
+                </items>
+            </divider>
+        </items>
+    </content>
+</jcr:root>

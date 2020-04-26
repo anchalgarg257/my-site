@@ -1,0 +1,20 @@
+<sly data-sly-test.displaytype="${properties.displayType}"/>
+<sly data-sly-use.toggleModel="com.mxs.core.models.ToggleModel"/>
+<sly data-sly-test="${wcmmode.edit && !displaytype}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Color And Capacity"></div>
+</sly>
+<div class="toggle-buttons" data-sly-test="${displaytype}">
+    <h6 class="semi-bold" data-sly-test="${properties.title}">${properties.title}</h6>
+    <ul class="boxed-toggle-buttons" data-sly-test="${displaytype == 'capacity'}" style="color:#505050;">
+        <li data-sly-repeat.capacityList="${toggleModel.pdpDisplayList}">
+            <p>${capacityList.deviceCapacity}</p>
+        </li>
+    </ul>
+    <ul class="circled-toggle-buttons static" data-sly-test="${displaytype == 'colour'}">
+        <li data-sly-repeat.colourList="${toggleModel.pdpDisplayList}">
+            <button data-toggle="color" data-value="${colourList.deviceColour}"
+                    style="background : ${colourList.deviceColourCode @ context='unsafe'}"></button>
+            <p class="as-label">${colourList.deviceColour}</p>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,37 @@
+<template data-sly-template.multilistwithtextfield="${@ model,defaultvalue,name,required,disabled,subFieldName}">
+    <select data-encrypt="${properties.encryptField}" class="selectpicker" title="${defaultvalue}" name="${name}" data-name= "${subFieldName}" data-sly-attribute.required="${required=='true'}" data-sly-attribute.disabled="${disabled=='true'}" >
+        <sly data-sly-test="${model.footerLinkList.size>0}">
+            <sly data-sly-list="${model.footerLinkList}">
+                <option value="${item.path}" data-textfield="${item.path}">${item.title}</option>
+            </sly>
+        </sly>
+    </select>
+</template>
+
+<template data-sly-template.multilist="${@ model,defaultvalue,name,required,disabled,setOtherTextField}">
+    <select data-encrypt="${properties.encryptField}" class="selectpicker" title="${defaultvalue}" name="${name}" data-sly-attribute.required="${required=='true'}" data-sly-attribute.disabled="${disabled=='true'}" >
+        <sly data-sly-test="${model.footerLinkList.size>0}">
+            <sly data-sly-list="${model.footerLinkList}">
+                <option value="${item.path}">${item.title}</option>
+            </sly>
+            <sly data-sly-test="${setOtherTextField}">
+                <option value="others">Others</option>
+            </sly>
+        </sly>
+    </select>
+</template>
+
+<template data-sly-template.nestedmultilist="${@ model,defaultvalue,name,required,disabled,setOtherTextField}">
+    <select data-encrypt="${properties.encryptField}" class="selectpicker"  title="${defaultvalue}" name="${name}" data-sly-attribute.required="${required=='true'}" data-sly-attribute.disabled="${disabled=='true'}" >
+        <sly data-sly-list="${model.footerNavigationList}">
+            <optgroup label="${item.title}">
+                <sly data-sly-list.listItem="${item.singleList}">
+                    <option value="${listItem.path}">${listItem.title}</option>
+                </sly>
+            </optgroup>
+        </sly>
+        <sly data-sly-test="${properties.setOtherTextField}">
+            <option value="others">Others</option>
+        </sly>
+    </select>
+</template>

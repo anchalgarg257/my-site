@@ -1,0 +1,5 @@
+<div data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+<a href="${properties.path}">${properties.text}</a>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>

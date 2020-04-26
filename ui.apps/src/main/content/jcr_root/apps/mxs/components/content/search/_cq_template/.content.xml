@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <search-input
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mxs/components/content/form-elements/search-input"
+        description="Text sample with&amp;nbsp;bold,&amp;nbsp;&lt;i>italic&lt;/i>&amp;nbsp;and&amp;nbsp;&lt;u>underline&lt;/u>.&lt;br>&#xd;&#xa;&#xd;&#xa;"
+        iconAlignment="align-right"
+        label="Search"
+        name="global-search"
+        placeholder="Search...."
+        textIsRich="true"/>
+</jcr:root>

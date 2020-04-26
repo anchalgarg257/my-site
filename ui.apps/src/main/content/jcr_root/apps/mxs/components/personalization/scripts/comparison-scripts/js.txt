@@ -1,0 +1,4 @@
+# no scripts defined yet
+comparison-script-referrer-7days-template.js
+comparison-script-referrer-14days-template.js
+comparison-script-referrer-30days-template.js

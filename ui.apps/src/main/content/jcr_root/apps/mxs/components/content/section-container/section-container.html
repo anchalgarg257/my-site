@@ -1,0 +1,28 @@
+<sly data-sly-test.isModal="${properties.isModal}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Container"></div>
+</sly>
+<sly data-sly-test.colourType="${properties.colourType}"/>
+<sly data-sly-test.color=""/>
+
+<sly data-sly-test="${colourType=='colourwheel'}">
+    <sly data-sly-test.color="${properties.colorWheel}"/>
+</sly>
+<sly data-sly-test="${colourType=='maxiscolourpalette'}">
+    <sly data-sly-test.color="${properties.maxisColorPalette}"/>
+</sly>
+<sly data-sly-test="${colourType=='hotlinkcolourpalette'}">
+    <sly data-sly-test.color="${properties.hotlinkColorPalette}"/>
+</sly>
+<sly data-sly-test.isCampaign="${properties.isCampaign}"/>
+<div class="${!isModal?'container full':isModal} ${isCampaign && wcmmode.disabled?'mxs-campaign-catalog':''}" data-ccatalog-serviceurl="${isCampaign?'/bin/api/campaigncatalogue':''}" data-ccatalog-filter="${isCampaign?'true':''}" data-campaign-path="${!isCampaign?'':currentPage.path}">
+    <div class="${properties.alignment} ${properties.horizontalWrapper} ${properties.verticalPadding}" style="background-color: ${color @context='styleString'};">
+        <div style="width:${properties.width @context='styleString'}%">
+            <sly data-sly-test="${properties.isCampaign}">
+                <div data-sly-resource="${'section_container' @ resourceType='mxs/components/content/section-container'}">
+                </div>
+            </sly>
+            <sly data-sly-resource="${'container' @ resourceType='wcm/foundation/components/parsys'}"/>
+        </div>
+    </div>
+</div>

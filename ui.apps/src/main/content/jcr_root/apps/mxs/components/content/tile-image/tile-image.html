@@ -1,0 +1,26 @@
+<sly data-sly-test.tileImage="${properties.fileReference}"/>
+<sly data-sly-test.desktopVerticalFocus="${properties.desktopVerticalFocus}"/>
+<sly data-sly-test.desktopHorizontalFocus="${properties.desktopHorizontalFocus}"/>
+<sly data-sly-test.mobileVerticalFocus="${properties.mobileVerticalFocus}"/>
+<sly data-sly-test.mobileHorizontalFocus="${properties.mobileHorizontalFocus}"/>
+<sly data-sly-test.imageSize="${properties.imageSize}"/>
+<sly data-sly-test.minheight= "${wcmmode.edit?'150px':'0px'}"/>
+
+<sly data-sly-test.desktopVFocus3="${desktopVerticalFocus == 't' ? 'Top' : desktopVerticalFocus}"/>
+<sly data-sly-test.desktopVFocus2="${desktopVFocus3 == 'm' ? 'Middle' : desktopVFocus3}"/>
+<sly data-sly-test.desktopVFocus="${desktopVFocus2 == 'b' ? 'Bottom' : desktopVFocus2}"/>
+
+<sly data-sly-test.desktopHFocus3="${desktopHorizontalFocus == 'l' ? 'Left' : desktopHorizontalFocus}"/>
+<sly data-sly-test.desktopHFocus2="${desktopHFocus3 == 'c' ? 'Center' : desktopHFocus3}"/>
+<sly data-sly-test.desktopHFocus="${desktopHFocus2 == 'r' ? 'Right' : desktopHFocus2}"/>
+
+<sly data-sly-test="${wcmmode.edit && !tileImage}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Image Tile"></div>
+</sly>
+<sly data-sly-test="${tileImage}">
+    <div class="d-flex ${properties.vertical} image-tile ${properties.horizontal} ${imageSize} bg-position-${desktopVerticalFocus}${desktopHorizontalFocus} m-bg-position-${mobileVerticalFocus}${mobileHorizontalFocus}" data-m-height="${properties.mobileHeight}" data-d-height="${properties.deskTopHeight}" data-mobile-src="${properties.mobilefileReference}" data-desktop-src="${tileImage}"  data-gaTitle="${properties.gaTitle}" data-slot="${desktopVFocus}-${desktopHFocus}">
+        <div class="tile-content">
+            <div data-sly-resource="${'imageTile-par' @ resourceType='wcm/foundation/components/parsys'}" style="min-width: ${minheight @context='styleString'};"></div>
+        </div>
+    </div>
+</sly>

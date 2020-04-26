@@ -1,0 +1,33 @@
+<sly data-sly-test="${wcmmode.edit == true}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Hotlink Game Top Up"></div>
+</sly>
+<div class="column-control type-b hotlink-games" data-getproducts="${resource.path @ context='scriptComment',extension='json'}?actionType=GET_PRODUCTS&partnerId=${properties.partnerId}&mobileNo=${properties.mobileNo}" 
+		data-topup-url="${resource.path @ context='scriptComment',extension='json'}?actionType=PURCHASE_PRODUCT&partnerId=${properties.partnerId}">
+</div>
+<div class="sub-popup dialog-popup">
+    <div class="dialog-body">
+        <h6 class="steam-label">${properties.popUpTitle}</h6>
+        <p class="small mb-3">${properties.mobileFieldLabel}</p>
+        <form>
+            <div class="text-input tel-num form-group" data-regex="" data-regex-msg="">
+                <div class="mxs-tel">
+                    <span class="placeholder-number">60</span>
+                    <input type="text" class="form-control mb-1" name="mobileNumber" id="" placeholder="">
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mb-3 steam-submit">${properties.ctaButtonTitle}</button>
+                <p class="smaller">${properties.popUpNote}</p>
+            </div>
+        </form>
+        <button class="close"><i class="material-icons">close</i></button>
+    </div>
+</div>
+<div class="tq-popup dialog-popup">
+    <div class="dialog-body text-center">
+        <h6 class="steam-label">${properties.popUpTitle}</h6>
+        <h4 class="small mb-3">${properties.creditTitle}</h4>
+        <p class="smaller">${properties.creaditDescription}</p>
+        <button class="close"><i class="material-icons">close</i></button>
+    </div>
+</div>

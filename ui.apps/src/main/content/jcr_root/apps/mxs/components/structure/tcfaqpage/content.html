@@ -1,0 +1,27 @@
+<main>
+    <div data-sly-resource="${'heroBanner' @ resourceType='mxs/components/content/herobanner'}"></div>
+    <div class="section-container">
+        <div class="container full">
+            <div class="d-flex justify-content-center">
+                <div style="width:90%">
+                    <div class="container">
+                        <div class="columnControl">
+                            <div class="column-control type-a side-padding-sm">
+                                <div class="row">
+                                    <div class="col-md-3 left-column">
+                                        <div data-sly-resource="${'left-par' @ resourceType='wcm/foundation/components/iparsys'}"></div>
+                                    </div>
+                                    <div class="col-md-9 right-column">
+                                        <div data-sly-resource="${'right-par' @ resourceType='wcm/foundation/components/parsys'}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <sly data-sly-include="live-chat.html"/>
+</main>
+

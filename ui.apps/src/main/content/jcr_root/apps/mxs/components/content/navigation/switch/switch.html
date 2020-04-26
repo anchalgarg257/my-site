@@ -1,0 +1,41 @@
+<sly data-sly-test.tabList="${properties.singleList}"/>
+<sly data-sly-test.underlined="${properties.underlined == 'underline' ? '' : 'no-line'}"/>
+<sly data-sly-test.setClass="${!wcmmode.edit ? 'tab-pane fade' : '' }"/>
+
+<sly data-sly-use.multifieldModel="com.mxs.core.models.MultiFIeldModel"/>
+<sly data-sly-test.tabListSize="${multifieldModel.list.size}"/>
+
+<sly data-sly-test="${tabList}">
+    <sly data-sly-test.setMobileClass2="${tabListSize <= 3 && properties.displayMobileView == 'true' ? 'mb' : ''}"/>
+    <sly data-sly-test.setMobileClass="${tabListSize > 3 ? 'mb' : setMobileClass2}"/>
+</sly>
+
+
+<sly data-sly-test="${wcmmode.edit && !tabList}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Switch Navigation"></div>
+</sly>
+
+
+<div data-sly-test="${tabList}" class="tab-container ${properties.theme} ${underlined}">
+    <div class="switch-tab-mb ${setMobileClass}"></div>
+
+    <ul class="nav nav-tabs ${setMobileClass} ${properties.tabAlignment}" id="myTab" role="tablist" data-sly-list="${multifieldModel.list}" >
+        <sly data-sly-test.setTabDefault="${itemList.index == 0 ? 'active' : ''}"/>
+        <li class="nav-item">
+            <a onclick="gaEvents.pushInDataLayer(this,'Switch Navigation','${item.title @context='scriptComment'}','${item.id @context='scriptComment'}')"
+               class="nav-link ${setTabDefault}" id="tab-${item.id}" data-toggle="tab" href="#${item.id}" role="tab" aria-controls="${item.id}" aria-selected="true"><span>${item.title}</span></a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent" data-sly-list.contentTab="${multifieldModel.list}">
+        <sly data-sly-test.count="${contentTabList.count}"/>
+        <sly data-sly-test.setContentDefault="${contentTabList.index == 0 ? 'show active' : ''}"/>
+        <sly data-sly-test.parName="par${count}"/>
+
+        <sly data-sly-test="${wcmmode.edit}"><h4>Content Tab ${count}</h4></sly>
+        <div class="${setClass} ${setContentDefault}" data-view="${setMobileClass}" id="${contentTab.id}" role="tabpanel" aria-labelledby="${contentTab.id}-tab" data-tab-name="${contentTab.title}" data-tab-id="${contentTab.id}">
+            <sly data-sly-resource="${ contentTab.id @resourceType='wcm/foundation/components/parsys'}" />
+        </div>
+
+    </div>
+</div>

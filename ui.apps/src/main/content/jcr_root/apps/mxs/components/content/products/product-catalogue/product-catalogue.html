@@ -1,0 +1,14 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Catalogue Component"></div>
+</sly>
+<div class="results-wrapper" data-sortdefault="${properties.sortDefault}">
+    <div data-sly-resource="${'title' @ resourceType='mxs/components/content/title'}"></div>
+    <div data-sly-resource="${'section_container' @ resourceType='mxs/components/content/section-container',wcmmode='disabled'}"></div>
+    <script type="text/javascript">
+            var catalogue_service_url = '${resource.path @ context='scriptComment'}.list';
+			var res_path = '${resource.path @ context='scriptComment'}'
+			var pdp_path = '${properties.path @ context='scriptComment'}';
+			var cta_title = '${properties.ctaTitle @ context='scriptComment'}';
+    </script>
+    <div id="product-catalogue"></div>
+</div>

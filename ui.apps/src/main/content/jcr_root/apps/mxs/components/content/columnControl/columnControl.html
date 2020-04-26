@@ -1,0 +1,102 @@
+<sly data-sly-test.isEdit="${wcmmode.edit}"/>
+<sly data-sly-test="${isEdit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Column Control"></div>
+</sly>
+
+<sly data-sly-test.columns="${properties.columns}"/>
+<sly data-sly-test.border="${properties.addBorder}"/>
+<sly data-sly-test.gutter="${properties.addGutter=='true'?'':'no-gutters'}"/>
+<sly data-sly-test.colclass="${properties.horizontalWrapper} ${border} ${properties.verticalPadding} ${properties.secondaryCheckbox} ${properties.reverseCheckbox} ${properties.horizontalPadding}"/>
+
+<sly data-sly-test.colourType="${properties.colourType}"/>
+<sly data-sly-test.color=""/>
+
+<sly data-sly-test="${colourType=='colourwheel'}">
+    <sly data-sly-test.color="${properties.colorWheel}"/>
+</sly>
+<sly data-sly-test="${colourType=='maxiscolourpalette'}">
+    <sly data-sly-test.color="${properties.maxisColorPalette}"/>
+</sly>
+<sly data-sly-test="${colourType=='hotlinkcolourpalette'}">
+    <sly data-sly-test.color="${properties.hotlinkColorPalette}"/>
+</sly>
+<sly data-sly-test.dividerClass="${properties.dividerType}"/>
+<sly data-sly-test.dividerText="${!dividerClass?'':properties.dividerText}"/>
+<slay data-sly-test.hideDividerOnMobile="${properties.hideDividerOnMobile && dividerClass ? 'no-divider-mobile': ''}"/>
+<sly data-sly-test="${columns=='type-a'}">
+    <div class="column-control ${dividerClass} type-a ${colclass}"  data-divider-text="${dividerText}">
+        <div class="row ${gutter}" style="background-color: ${color @context='styleString'};">
+            <div class="col">
+            	<div class="${border}">
+                	<sly data-sly-resource="${'col0' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-test="${columns=='type-b' || columns=='type-c' || columns=='type-d' || columns=='type-e' || columns=='type-f'}">
+    <div class="column-control ${dividerClass} ${hideDividerOnMobile} ${columns} ${colclass}"  data-divider-text="${dividerText}">
+        <div class="row ${gutter}" style="background-color: ${color @context='styleString'};">
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col0' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col1' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-test="${columns=='type-g' || columns=='type-i'}">
+    <div class="column-control ${dividerClass} ${hideDividerOnMobile} ${columns} ${colclass}"  data-divider-text="${dividerText}">
+         <div class="row ${gutter} ${isEdit?'':'row-eq-height'}" style="background-color: ${color @context='styleString'};">
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col0' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col1' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col2' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>
+
+<sly data-sly-test="${columns=='type-h'}">
+    <div class="column-control ${dividerClass} ${hideDividerOnMobile} type-h ${colclass}"  data-divider-text="${dividerText}">
+        <div class="row ${gutter} ${isEdit?'':'row-eq-height'}" style="background-color: ${color @context='styleString'};">
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col0' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col1' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col2' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+             <div class="col">
+                <div class="${border}">
+                	<sly data-sly-resource="${'col3' @ resourceType='wcm/foundation/components/parsys'}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</sly>

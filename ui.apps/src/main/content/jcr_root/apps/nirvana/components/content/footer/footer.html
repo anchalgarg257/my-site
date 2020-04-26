@@ -1,0 +1,81 @@
+<footer data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+        data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.Multifield">
+        <!-- Footer Start-->
+        <div class="footer-area black-bg footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                       <div class="single-footer-caption mb-30">
+                          <!-- logo -->
+                          <div class="footer-logo">
+                            <sly data-sly-resource="${'Logo' @ resourceType='nirvana/components/content/image'}"/>
+                          </div>
+                          <div class="footer-social footer-social2" data-sly-list.child="${model.multifield}">
+                              <a href="${child.link @ extension = 'html'}" target="${child.openInNewTab == 'true' ? '_blank' : '_self'}"><i"${child.image}"></i></a>
+                          </div>
+                          <div class="footer-pera">
+                               <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4><sly data-sly-resource="${'Quick Links' @ resourceType='nirvana/components/content/text'}"/></h4>
+                                <ul>
+                                    <li><sly data-sly-resource="${'About Mariana' @ resourceType='nirvana/components/content/link'}"/></li>
+                                    <li><sly data-sly-resource="${'Our Best Rooms' @ resourceType='nirvana/components/content/link'}"/></li>
+                                    <li><sly data-sly-resource="${'Our Photo Gallery' @ resourceType='nirvana/components/content/link'}"/></li>
+                                    <li><sly data-sly-resource="${'Pool Service' @ resourceType='nirvana/components/content/link'}"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4><sly data-sly-resource="${'Reservations' @ resourceType='nirvana/components/content/text'}"/></h4>
+                                <ul>
+                                    <li><sly data-sly-resource="${'Telephone' @ resourceType='nirvana/components/content/link'}"/></li>
+                                    <li><sly data-sly-resource="${'Skype' @ resourceType='nirvana/components/content/link'}"/></li>
+                                    <li><sly data-sly-resource="${'Email' @ resourceType='nirvana/components/content/link'}"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4  col-sm-5">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4><sly data-sly-resource="${'Our Locations' @ resourceType='nirvana/components/content/text'}"/></h4>
+                                <ul>
+                                    <li><sly data-sly-resource="${'Address' @ resourceType='nirvana/components/content/textbox'}"</li>
+                                    <li><a href="#">Suite 721 New York NY 10016</a></li>
+                                </ul>
+                                <!-- Form -->
+                                 <div class="footer-form" >
+                                     <div id="mc_embed_signup">
+                                         <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                         method="get" class="subscribe_form relative mail_part">
+                                             <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                             class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                             onblur="this.placeholder = ' Email Address '">
+                                             <div class="form-icon">
+                                               <button type="submit" name="submit" id="newsletter-submit"
+                                               class="email_icon newsletter-submit button-contactForm"><img src="${properties.icon}" alt=""></button>
+                                             </div>
+                                             <div class="mt-10 info"></div>
+                                         </form>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>

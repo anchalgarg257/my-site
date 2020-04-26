@@ -1,0 +1,54 @@
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<h1>RTE DATA CONVERTER Converts the hierarchy of Multifield from JSON_STORE to NODE_STORE. </h1><br/>
+
+The rootPath of the Pages : ${properties.rootPath} <br/>
+The Component Path : ${properties.componentPath} <br/>
+
+The Property Name of the component : ${properties.propertyName}
+
+<h2>List of Component Relative Path with Property Name</h2>
+
+<table>
+    <tr>
+        <th>Master IDD, Plan and Trade In/Safe Device Data</th>
+        <th>mxs/components/content/admin/plan</th>
+        <th>list</th>
+    </tr>
+    <tr>
+        <th>Price Table</th>
+        <th>mxs/components/content/products/price-table</td>
+        <th>list</td>
+    </tr>
+    <tr>
+        <th>Add ON</th>
+        <th>mxs/components/content/products/addOn</th>
+        <th>list</th>
+    </tr>
+    <tr>
+        <th>Form - Radio Button</th>
+        <th>mxs/components/content/form-elements/radio</td>
+        <th>singleList</td>
+    </tr>
+    <tr>
+        <th>Form - CheckBox</th>
+        <th>mxs/components/content/form-elements/checkbox</td>
+        <th>singleList</td>
+    </tr>
+</table>

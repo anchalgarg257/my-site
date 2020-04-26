@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <product-basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Product - Basic"
+                        sling:orderBefore="thumbnail"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Product Basic - Information"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <devicebrand
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Device Brand"
+                                                name="./deviceBrand"/>
+                                            <devicemodel
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Device Model *"
+                                                name="./deviceModel"
+                                                required="{Boolean}true"/>
+                                            <devicedescription
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                fieldLabel="Device Description *"
+                                                name="./deviceDescription"
+                                                required="{Boolean}true"/>
+                                            <image
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                fieldLabel="Image *"
+                                                name="./assetPath"
+                                                required="{Boolean}true"
+                                                rootPath="/content/dam"/>
+                                            <lowestprice
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                defaultValue="0.00"
+                                                fieldLabel="Overall Lowest Price *"
+                                                min="0.00"
+                                                name="./lowestPrice"
+                                                required="{Boolean}true"
+                                                step="0.01"/>
+                                            <productsticker
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/common/tagspicker"
+                                                fieldLabel="Overall Product Sticker Tag"
+                                                name="./stickers"
+                                                rootPath="/content/cq:tags"/>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </product-basic>
+                    <product-advanced
+                        cq:showOnCreate="{Boolean}true"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Product - Articles"
+                        sling:orderBefore="thumbnail"
+                        sling:resourceType="granite/ui/components/foundation/section">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <section
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Product Details - List"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <product-detail-list
+                                                cq:showOnCreate="{Boolean}true"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/multifield"
+                                                class="field-full-width">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    jcr:title="Product Details"
+                                                    sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                                    acs-commons-nested="JSON_STORE"
+                                                    name="./articleList">
+                                                    <layout
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                                                        margin="false"/>
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            cq:showOnCreate="{Boolean}true"
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <articleID
+                                                                    cq:showOnCreate="{Boolean}true"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    fieldLabel="Article ID"
+                                                                    name="./articleID"
+                                                                    required="true"/>
+                                                                <deviceColour
+                                                                    cq:showOnCreate="{Boolean}true"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    class="product-field"
+                                                                    emptyText="e.g. White"
+                                                                    fieldLabel="Device Colour"
+                                                                    name="./deviceColour"
+                                                                    required="true"/>
+                                                                <deviceColourCode
+                                                                    cq:showOnCreate="{Boolean}true"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    emptyText="e.g. #FFFFFF"
+                                                                    fieldLabel="Device Colour Code"
+                                                                    name="./deviceColourCode"
+                                                                    required="true"/>
+                                                                <deviceCapacity
+                                                                    cq:showOnCreate="{Boolean}true"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                                    emptyText="e.g. 64GB"
+                                                                    fieldLabel="Device Capacity"
+                                                                    name="./deviceCapacity"
+                                                                    required="true"/>
+                                                                <deviceRRP
+                                                                    cq:showOnCreate="{Boolean}true"
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/foundation/form/numberfield"
+                                                                    defaultValue="0.00"
+                                                                    fieldLabel="Lowest Price"
+                                                                    min="0.00"
+                                                                    name="./deviceRRP"
+                                                                    required="{Boolean}true"
+                                                                    step="0.01"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </product-detail-list>
+                                        </items>
+                                    </section>
+                                </items>
+                            </column>
+                        </items>
+                    </product-advanced>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

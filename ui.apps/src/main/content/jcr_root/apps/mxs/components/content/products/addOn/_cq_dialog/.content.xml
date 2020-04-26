@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Add ON"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[maxis.color.wheel,maxis.dialogutils.radiobutton,maxis.price.table.validation,maxis.dialog.width,maxis.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container"
+        class="dialog-width-50rem">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <basic
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Basic"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="column-full-width">
+                        <items jcr:primaryType="nt:unstructured">
+                            <hide
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                class="cq-dialog-checkbox-showhide"
+                                cq-dialog-checkbox-showhide-target=".hidefilter-showhide-target"
+                                name="./headerHide"
+                                text="Display Header"
+                                value="true"/>
+                            <showHideContainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide hidefilter-showhide-target"
+                                showhidetargetvalue="true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <header-bgcolor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Background Colour"
+                                        name="./bgColourType">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <default
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Default"
+                                                value="default">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_color_wheel,bg_maxis_color_palette,bg_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </default>
+                                            <maxis-color-pallate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Maxis Color Palette"
+                                                value="maxiscolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_hotlink_color_palette,bg_color_wheel"
+                                                    show="bg_maxis_color_palette"
+                                                    toggle=""/>
+                                            </maxis-color-pallate>
+                                            <hotlink-colour-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/radio"
+                                                text="Hotlink Colour Palette"
+                                                value="hotlinkcolourpalette">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    hide="bg_color_wheel,bg_maxis_color_palette"
+                                                    show="bg_hotlink_color_palette"
+                                                    toggle=""/>
+                                            </hotlink-colour-palette>
+                                        </items>
+                                    </header-bgcolor>
+                                    <bg-maxis-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_maxis_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <maxis-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Maxis Colour Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bgMaxisColorPalette"/>
+                                        </items>
+                                    </bg-maxis-color-palette-container>
+                                    <bg-hotlink-color-palette-container
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            id="bg_hotlink_color_palette"/>
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hotlink-color-palette
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                                editType="{Boolean}true"
+                                                fieldLabel="Hotlink Color Palette"
+                                                freestylePaletteType="{Boolean}true"
+                                                name="./bgHotlinkColorPalette"/>
+                                        </items>
+                                    </bg-hotlink-color-palette-container>
+                                </items>
+                            </showHideContainer>
+                            <body-color
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                fieldLabel="Body Background Colour"
+                                name="./bodyBackgroundColourType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <default
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Default"
+                                        value="default">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="color_wheel,maxis_color_palette,hotlink_color_palette"
+                                            toggle=""/>
+                                    </default>
+                                    <maxis-color-pallate
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Maxis Color Palette"
+                                        value="maxiscolourpalette">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="hotlink_color_palette,color_wheel"
+                                            show="maxis_color_palette"
+                                            toggle=""/>
+                                    </maxis-color-pallate>
+                                    <hotlink-colour-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/radio"
+                                        text="Hotlink Colour Palette"
+                                        value="hotlinkcolourpalette">
+                                        <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            hide="color_wheel,maxis_color_palette"
+                                            show="hotlink_color_palette"
+                                            toggle=""/>
+                                    </hotlink-colour-palette>
+                                </items>
+                            </body-color>
+                            <body-maxis-color-palette-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="maxis_color_palette"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <maxis-color-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/maxiscolorpalette"
+                                        editType="{Boolean}true"
+                                        fieldLabel="Maxis Colour Palette"
+                                        freestylePaletteType="{Boolean}true"
+                                        name="./maxisColorPalette"/>
+                                </items>
+                            </body-maxis-color-palette-container>
+                            <body-hotlink-color-palette-container
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    id="hotlink_color_palette"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <hotlink-color-palette
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="mxs/components/content/colors/hotlinkcolorpalette"
+                                        editType="{Boolean}true"
+                                        fieldLabel="Hotlink Color Palette"
+                                        freestylePaletteType="{Boolean}true"
+                                        name="./hotlinkColorPalette"/>
+                                </items>
+                            </body-hotlink-color-palette-container>
+                            <expand-dialog-box-note
+                                jcr:primaryType="nt:unstructured"
+                                sling:orderBefore="label"
+                                sling:resourceType="cq/gui/components/authoring/dialog/note"
+                                note="Expand dialog box to use colour picker."/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldDescription="To change font colour, expand the dialog and highlight/select the text first then click Font Colour Picker icon"
+                                fieldLabel="Title"
+                                name="./title"
+                                useFixedInlineToolbar="{Boolean}true">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <experience-aem
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[justify#justifyleft,justify#justifycenter,justify#justifyright]">
+                                            <popovers jcr:primaryType="nt:unstructured"/>
+                                        </inline>
+                                        <dialogFullScreen
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[justify#justifyleft,justify#justifycenter,justify#justifyright,experience-aem#colorPicker]">
+                                            <popovers jcr:primaryType="nt:unstructured"/>
+                                        </dialogFullScreen>
+                                    </cui>
+                                </uiSettings>
+                                <htmlRules jcr:primaryType="nt:unstructured">
+                                    <blockHandling
+                                        jcr:primaryType="nt:unstructured"
+                                        removeSingleParagraphContainer="{Boolean}true"/>
+                                </htmlRules>
+                            </title>
+                        </items>
+                    </column>
+                </items>
+            </basic>
+            <feature
+                jcr:primaryType="nt:unstructured"
+                jcr:title="plan"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                margin="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <singleList
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldDescription="Click + to add a new page"
+                                fieldLabel="Multifield collection"
+                                name="./multiCol">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./list">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <title
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldLabel="Feature Name"
+                                            name="./title"
+                                            useFixedInlineToolbar="{Boolean}true">
+                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                            </rtePlugins>
+                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                <cui jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[justify#justifyleft,justify#justifycenter,justify#justifyright]">
+                                                        <popovers jcr:primaryType="nt:unstructured"/>
+                                                    </inline>
+                                                    <dialogFullScreen
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[justify#justifyleft,justify#justifycenter,justify#justifyright]">
+                                                        <popovers jcr:primaryType="nt:unstructured"/>
+                                                    </dialogFullScreen>
+                                                </cui>
+                                            </uiSettings>
+                                            <htmlRules jcr:primaryType="nt:unstructured">
+                                                <blockHandling
+                                                    jcr:primaryType="nt:unstructured"
+                                                    removeSingleParagraphContainer="{Boolean}true"/>
+                                            </htmlRules>
+                                        </title>
+                                        <divider
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Divider"
+                                            name="./id"/>
+                                        <expand-dialog-box-note
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:orderBefore="label"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/note"
+                                            note="Expand dialog box to use colour picker."/>
+                                        <description
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                            fieldLabel="Feature Description"
+                                            name="./description"
+                                            useFixedInlineToolbar="{Boolean}true">
+                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                <format
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                                <experience-aem
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    features="*"/>
+                                            </rtePlugins>
+                                            <uiSettings jcr:primaryType="nt:unstructured">
+                                                <cui jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[format#bold,format#italic,format#underline,justify#justifyleft,justify#justifycenter,justify#justifyright]">
+                                                        <popovers jcr:primaryType="nt:unstructured"/>
+                                                    </inline>
+                                                    <dialogFullScreen
+                                                        jcr:primaryType="nt:unstructured"
+                                                        toolbar="[format#bold,format#italic,format#underline,experience-aem#colorPicker,justify#justifyleft,justify#justifycenter,justify#justifyright]">
+                                                        <popovers jcr:primaryType="nt:unstructured"/>
+                                                    </dialogFullScreen>
+                                                </cui>
+                                            </uiSettings>
+                                            <htmlRules jcr:primaryType="nt:unstructured">
+                                                <blockHandling
+                                                    jcr:primaryType="nt:unstructured"
+                                                    removeSingleParagraphContainer="{Boolean}true"/>
+                                            </htmlRules>
+                                        </description>
+                                    </items>
+                                </field>
+                            </singleList>
+                        </items>
+                    </column>
+                </items>
+            </feature>
+        </items>
+    </content>
+</jcr:root>

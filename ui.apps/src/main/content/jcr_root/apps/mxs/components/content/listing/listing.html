@@ -1,0 +1,20 @@
+<sly data-sly-use.listing="com.mxs.core.models.MultiFIeldModel"/>
+<sly data-sly-test="${wcmmode.edit && (!listing.list.size && !properties.title)}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Listing Component"></div>
+</sly>
+<sly data-sly-test="${listing.list.size || properties.title}">
+    <div class="listing-components mb-0">
+        <sly data-sly-test.title="${properties.title}">
+            <h6>${title}</h6>
+        </sly>
+        <ul>
+            <sly data-sly-list="${listing.list}">
+                <li>
+                    <sly data-sly-test.isNewTab="${item.isNewWindow?'_blank':''}"/>
+                    <a onclick="gaEvents.pushInDataLayer(this,'Listing Component', '${item.title @context='scriptComment'}', '${item.path @context='scriptComment'}')"
+                       href="${item.path}.html" target="${isNewTab?'_blank':item.isNewWindow}">${item.title}</a>
+                </li>
+            </sly>
+        </ul>
+    </div>
+</sly>

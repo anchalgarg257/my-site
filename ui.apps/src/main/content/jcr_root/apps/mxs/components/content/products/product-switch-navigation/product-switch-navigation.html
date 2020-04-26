@@ -1,0 +1,62 @@
+<sly data-sly-test.isEdit="${wcmmode.edit}"/>
+<sly data-sly-use.productSwitchNavigation="com.mxs.core.models.ProductSwitchNavigationModel"/>
+<sly data-sly-test.map="${productSwitchNavigation.map}"/>
+<sly data-sly-test.primaryLabel="${properties.primaryLabel}"/>
+
+<sly data-sly-test="${isEdit && !primaryLabel}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Product Switch Navigation"></div>
+</sly>
+
+<sly data-sly-test="${primaryLabel && map.size>0}">
+    <div class="product-switch">
+        <div class="row no-gutters">
+            <div class="col d-flex align-items-center">
+                <p class="label" style="font-weight: 600; color: #505050">${properties.primaryLabel}</p>
+            </div>
+            <div class="col">
+                <div class="toggle-buttons" data-toggle="model">
+                    <ul class="nav boxed-toggle-buttons single-select" role="tablist" data-sly-list.mapItem="${map}">
+                        <li class="${mapItemList.count==1?'selected':''}">
+                            <button data-toggle="tab"  data-content=${mapItem} href="#tab${mapItemList.count}">${mapItem}</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col d-flex align-items-center">
+                <p class="label" style="font-weight: 600; color: #505050">${properties.secondaryLabel}</p>
+            </div>
+            <div class="col">
+                <div class="ps-placeholder tab-content" data-sly-list.mapItem="${map}">
+                    <div class="toggle-buttons tab-pane ${mapItemList.count==1?'active':''}"
+                         id="tab${mapItemList.count}"
+                         role="tabpanel" data-toggle="capacity">
+                        <ul class="nav boxed-toggle-buttons single-select" role="tablist"
+                            data-sly-list.item="${map[mapItem]}">
+                            <li class="${itemList.count==1?'selected':''}">
+                                <button class="" data-toggle="tab" data-content=${item} href="#tabchild${mapItemList.count}${itemList.count}"
+                                        role="tab">${item}
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ps-placeholder tab-content">
+            <sly data-sly-list.mapItem="${map}">
+                <sly data-sly-list="${map[mapItem]}">
+                    <sly data-sly-test.className="tabchild${mapItemList.count}${itemList.count}"/>
+                    <div class="tab-pane ${isEdit?'active':''} ${!isEdit && mapItemList.count==1 && itemList.count==1 ?'active':''}"
+                         id="tabchild${mapItemList.count}${itemList.count}" role="tabpanel">
+                        <sly data-sly-test.name="${mapItem} ${item}"/>
+                        ${!isEdit?'':name}
+                        <div data-sly-resource="${className @ resourceType='wcm/foundation/components/parsys'}">
+                        </div>
+                    </div>
+                </sly>
+            </sly>
+        </div>
+    </div>
+</sly>

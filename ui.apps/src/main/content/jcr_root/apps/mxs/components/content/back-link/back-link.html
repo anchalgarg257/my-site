@@ -1,0 +1,28 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Back"></div>
+</sly>
+
+<div class="mb-3 bold ${properties.hideDestopView && properties.hideMobileView ? 'd-none' : '' } ${properties.hideDestopView && !properties.hideMobileView ? 'd-sm-none' : '' } ${!properties.hideDestopView && properties.hideMobileView ? 'd-none d-sm-block' : '' }" >
+	<sly data-sly-test="${properties.level=='one'}">
+
+        <a href="${currentPage.parent.path}.html" >	
+            < ${properties.title}
+        </a>
+    </sly>
+
+	<sly data-sly-test="${properties.level=='two'}">
+
+        <a href="${currentPage.parent.parent.path}.html" >	
+            < ${properties.title}
+        </a>
+    </sly>
+
+
+	<sly data-sly-test="${properties.level=='three'}">
+
+        <a href="${currentPage.parent.parent.parent.path}.html" >	
+            < ${properties.title}
+        </a>
+    </sly>
+
+</div>

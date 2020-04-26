@@ -1,0 +1,114 @@
+<!--/* Basic Product Tile Template */-->
+<template data-sly-template.basic="${@ productTile,modelPopUp}">
+    <sly data-sly-test.stickers="${productTile.list}"/>
+    <div class="detail-product">
+        <div class="detail-product-content">
+            <div class="badge-container" data-sly-list="${stickers}">
+                <div class="stickers"
+                     style="background-color: ${item.stickerBgColor @ context='styleToken'}; color: #ffffff">
+                    ${item.StickerTagTitle}
+                </div>
+            </div>
+            <div class="img-container" style="background: url(${productTile.fileReference @context='styleString'}) center/contain no-repeat">
+                <img class="portrait" src="${productTile.fileReference}">
+            </div>
+            <div class="product-details">
+                <h5 class="text-center">
+                    ${productTile.title}
+                </h5>
+            </div>
+        </div>
+        <div class="product-button">
+            <sly data-sly-test="${properties.ctaButtonAction=='toggle'}">
+                <button onclick="gaEvents.pushInDataLayer(this,'Product Tile','${properties.ctaButtonTitle @context='scriptComment'}','${productTile.title @context='scriptComment'}')"
+                        type="button" class="btn btn-primary-outline">${properties.ctaButtonTitle}</button>
+                <input type="radio" name="${properties.name}" value="Bundle" class="hidden">
+                <p class="remove-button hidden">
+                    <small><a href="">remove this</a></small>
+                </p>
+
+            </sly>
+            <sly data-sly-test="${properties.ctaButtonAction=='link'}">
+                <sly data-sly-use.model ="${'com.mxs.core.models.ResourceUtil' @ path=properties.ctaButtonLink}"/>
+                <a onclick="gaEvents.pushInDataLayer(this,'Product Tile','${properties.gaAction @context='scriptComment'}','${productTile.title @context='scriptComment'}')"
+                    href="${model.path}" class="btn btn-primary-outline"
+                   target="${properties.isNewWindow}">${properties.ctaButtonTitle}</a>
+            </sly>
+            <sly data-sly-test="${properties.ctaButtonAction=='modal'}">
+                <a href="${properties.ctaButtonLink}" class="btn btn-primary-outline" data-toggle="modal"
+                   data-target="#${modelPopUp.id}">${properties.ctaButtonTitle}</a>
+                <input type="radio" name="${properties.name}" data-upfront="${properties.upfrontPaymentPrice}" value="${productTile.title}" class="hidden" id="RM${productTile.price}/mth">
+                <p class="remove-button hidden">
+                    <small><a href="">remove this</a></small>
+                </p>
+            </sly>
+        </div>
+    </div>
+</template>
+
+<!--/* Detailed Product Tile Template */-->
+<template data-sly-template.detailed="${@ productTile,modelPopUp}">
+    <sly data-sly-test.stickers="${productTile.list}"/>
+    <div class="detail-product">
+        <div class="detail-product-content">
+            <div class="badge-container" data-sly-list="${stickers}">
+                <div class="stickers"
+                     style="background-color: ${item.stickerBgColor @ context='styleToken'}; color: #ffffff">
+                    ${item.StickerTagTitle}
+                </div>
+            </div>
+            <div class="img-container" style="background: url(${productTile.fileReference @context='styleString'}) center/contain no-repeat">
+                <img class="landscape" src="${productTile.fileReference}">
+            </div>
+            <div class="product-details">
+                <div class="product-title">
+                    <h3>${productTile.title}</h3>
+                </div>
+                <p>${productTile.description}</p>
+                <div class="price-container">
+                    <sly data-sly-test.price="${properties.currency}${productTile.price}"/>
+                    <sly data-sly-test.final="${productTile.price}"/>
+                    <sly data-sly-test="${properties['product/promoPrice']}">
+                        <sly data-sly-test.final="${properties['product/promoPrice']}"/>
+                        <p>
+                            ${properties.fromTitle} <del>${price}<em>${properties.paymentFrequency}</em></del>
+                        </p>
+                        <p class="product-price">
+                            <strong>${properties['product/promoPrice']}</strong>
+                        </p>
+                    </sly>
+                    <sly data-sly-test="${!properties['product/promoPrice']}">
+                        <p class="product-price">
+                            ${properties.fromTitle} <strong>${price}</strong>${properties.paymentFrequency}
+                        </p>
+                    </sly>
+
+                </div>
+        </div>
+        </div>
+        <div class="product-button">
+            <sly data-sly-test="${properties.ctaButtonAction=='toggle'}">
+                <button onclick="gaEvents.pushInDataLayer(this,'Product Tile','${properties.ctaButtonTitle @context='scriptComment'}','${productTile.title @context='scriptComment'}')"
+                        type="button" class="btn btn-primary-outline">${properties.ctaButtonTitle}</button>
+                <input type="radio" name="${properties.name}" data-upfront="${properties.upfrontPaymentPrice}" value="${productTile.title}" class="hidden" id="RM${final}/mth">
+                <p class="remove-button hidden">
+                    <small><a href="">remove this</a></small>
+                </p>
+            </sly>
+            <sly data-sly-test="${properties.ctaButtonAction=='link'}">
+                <sly data-sly-use.model ="${'com.mxs.core.models.ResourceUtil' @ path=properties.ctaButtonLink}"/>
+                <a onclick="gaEvents.pushInDataLayer(this,'Product Tile','${properties.gaAction @context='scriptComment'}','${productTile.title @context='scriptComment'}')"
+                   href="${model.path}" class="btn btn-primary-outline"
+                   target="${properties.isNewWindow}">${properties.ctaButtonTitle}</a>
+            </sly>
+            <sly data-sly-test="${properties.ctaButtonAction=='modal'}">
+                <a href="${properties.ctaButtonLink}" class="btn btn-primary-outline" data-toggle="modal"
+                   data-target="#${modelPopUp.id}">${properties.ctaButtonTitle}</a>
+                <input type="radio" name="${properties.name}" data-upfront="${properties.upfrontPaymentPrice}" value="Bundle" class="hidden" id="RM${productTile.price}${properties.paymentFrequency}">
+                <p class="remove-button hidden">
+                    <small><a href="">remove this</a></small>
+                </p>
+            </sly>
+        </div>
+    </div>
+</template>

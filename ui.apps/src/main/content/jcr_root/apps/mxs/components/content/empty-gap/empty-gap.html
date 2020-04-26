@@ -1,0 +1,10 @@
+<sly data-sly-test.mobileGap="${properties.mobileGap}"/>
+<sly data-sly-test.desktopGap="${properties.desktopGap}"/>
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Empty Gap"></div>
+</sly>
+<sly data-sly-test="${mobileGap && desktopGap}">
+    <div class="d-none d-lg-block" style="padding-bottom: ${desktopGap @context='styleString'}px"></div>
+    <div class="d-none d-sm-block d-md-block d-lg-none" style="padding-bottom:${desktopGap @context='styleString'}px"></div>
+    <div class="d-block d-sm-none" style="padding-bottom:${mobileGap @context='styleString'}px"></div>
+</sly>

@@ -1,16 +1,11 @@
 <!-- Make customer Start-->
 <section data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
    class="make-customer-area customar-padding fix">
-   <div class="container-fluid p-0">
-      <div class="row">
-         <sly data-sly-resource="${'customerimage' @ resourceType='nirvana/components/content/customerimage'}"/>
-         <div class=" col-xl-4 col-lg-4">
-            <div class="customer-caption">
-               <sly data-sly-resource="${'responsive' @ resourceType='wcm/foundation/components/responsivegrid'}"/>
-            </div>
+      <div class="container-fluid p-0">
+         <div class="row">
+                  <sly data-sly-resource="${'responsive' @ resourceType='wcm/foundation/components/responsivegrid'}"/>
          </div>
       </div>
-   </div>
 </section>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
 <!-- Make customer End-->

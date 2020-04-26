@@ -1,0 +1,15 @@
+<button class="toolTip">
+    <i class="material-icons">
+        info
+    </i>
+    <sly data-sly-test="${wcmmode.edit}">
+        <div style="width:100% important;">
+            <sly data-sly-resource="${'tooltip-text' @ resourceType='mxs/components/content/text'}"/>
+        </div>
+    </sly>
+    <sly data-sly-test="${!wcmmode.edit}">
+        <div class="toolTip-container">
+            <sly data-sly-resource="${'tooltip-text' @ resourceType='mxs/components/content/text'}"/>
+        </div>
+    </sly>
+</button>

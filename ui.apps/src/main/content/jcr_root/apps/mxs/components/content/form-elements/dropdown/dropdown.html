@@ -1,0 +1,56 @@
+<sly data-sly-use.id="com.mxs.core.models.FormWidgetModel"/>
+<sly data-sly-test.labelFor="${component.name}${id.hashCode}"/>
+<sly data-sly-test.dropDownType="${properties.dropdownType}"/>
+<sly data-sly-test.required="${properties.required}"/>
+<sly data-sly-test.name="${properties.name}"/>
+<sly data-sly-test.requiredMessage="${properties.requiredMessage}"/>
+<sly data-sly-test.description="${properties.description}"/>
+<sly data-sly-test.disabled="${properties.disabled}"/>
+<sly data-sly-test.subFieldName="${properties.subFieldName}"/>
+<sly data-sly-test.defaultvalue="${properties.defaultValue}"/>
+<sly data-sly-test.isMultifieldWithTextfield="${dropDownType=='multilist-with-textfield'}"/>
+
+
+<sly data-sly-test="${wcmmode.edit}">
+    <div class="cq-placeholder cq-marker-start" data-emptytext="Form DropDown"></div>
+</sly>
+<sly data-sly-use.lib="template.html"/>
+<sly data-sly-test="${name}">
+    <sly data-sly-test="${dropDownType=='multilist-with-textfield'}">
+        <div class="dropdown-select-inputfield">
+    </sly>
+    <div class="dropdown-select form-group ${isMultifieldWithTextfield?'textinput-select':''}">
+        <label for="${labelFor}">${properties.label}</label>
+        <sly data-sly-use.model="com.mxs.core.models.FooterNavigationModel"/>
+        <sly data-sly-test="${dropDownType == 'multilist'}">
+            <sly data-sly-call="${lib.multilist @ model=model, name=name, defaultvalue=defaultvalue, required=required, disabled= disabled, setOtherTextField = properties.setOtherTextField}"></sly>
+        </sly>
+        <sly data-sly-test="${isMultifieldWithTextfield}">
+            <sly data-sly-call="${lib.multilistwithtextfield @ model=model, name=name, defaultvalue=defaultvalue, required=required, disabled= disabled, subFieldName = subFieldName }"></sly>
+        </sly>
+        <sly data-sly-test="${dropDownType == 'nestedmultilist'}">
+            <sly data-sly-call="${lib.nestedmultilist @ model=model, name=name, defaultvalue=defaultvalue, required=required, disabled= disabled}"></sly>
+        </sly>
+        <sly data-sly-test="${description}">
+            <small>${description @context='html'}</small>
+        </sly>
+        <sly data-sly-test="${required && requiredMessage}">
+            <div class="invalid-feedback">
+                ${requiredMessage}
+            </div>
+        </sly>
+    </div>
+    <sly data-sly-test="${isMultifieldWithTextfield}" data-sly-list="${model.footerLinkList}">
+        <sly data-sly-test="${item.path}">
+            <h3 data-sly-test="${wcmmode.edit}">${item.title}</h3>
+            <sly data-sly-test.parname="par${itemList.count}"/>
+            <div data-sly-resource="${parname @ resourceType='mxs/components/content/form-elements/textfield', selectors=item.path}"></div>
+        </sly>
+    </sly>
+    <sly data-sly-test="${isMultifieldWithTextfield}">
+        </div>
+    </sly>
+</sly>
+<sly data-sly-test="${properties.setOtherTextField && !isMultifieldWithTextfield}">
+    <div class="mxs-dd-others ${wcmmode.edit?'':'hidden'}" data-sly-resource="${'others_textfield'  @resourceType = 'mxs/components/content/form-elements/textfield'}"></div>
+</sly>
