@@ -33,26 +33,26 @@ public class SearchPropertyServlet extends SlingSafeMethodsServlet {
     @Reference
     ResourceResolverFactory resolverFactory;
 
-    private   final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
         try {
-            String contentPath = request.getParameter("contentpath");
-            String etcPath = request.getParameter("etcpath");
+            String contentPath = request.getParameter(ApplicationConstants.PARAM_CONTENTPATH);
+            String etcPath = request.getParameter(ApplicationConstants.PARAM_ETCPATH);
 
             if (StringUtils.isBlank(contentPath) && StringUtils.isBlank(etcPath)) {
                 logger.error("Content Path and etcPath is null");
                 return;
             }
 
-          ResourceResolver  resolver = resolverFactory.getServiceResourceResolver(Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, "testSystemUserService"));
+          ResourceResolver  resolver = resolverFactory.getServiceResourceResolver(Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, ApplicationConstants.SYSTEM_USER_NIRVANA_SYSTEM_USER_SERVICE));
 
             JSONObject jsonObject = new JSONObject();
 
 
             jsonObject.put(contentPath, getValueFromResource(contentPath, ApplicationConstants.PROPERTY_HELLO, resolver));
-            jsonObject.put(etcPath, getValueFromResource(etcPath, "hello", resolver));
+            jsonObject.put(etcPath, getValueFromResource(etcPath, ApplicationConstants.PROPERTY_HELLO, resolver));
             response.getWriter().write(jsonObject.toString());
         }
         catch (JSONException | LoginException e) {
@@ -62,15 +62,17 @@ public class SearchPropertyServlet extends SlingSafeMethodsServlet {
     }
    private String getValueFromResource(final String resourcePath, final String propertyName, final ResourceResolver resourceResolver) {
 
-        if (resourcePath == null){
-           logger.error("Resource path is null at path {}",resourcePath);
+       if (resourcePath == null) {
+           logger.error("Resource path is null at path {}", resourcePath);
        }
-        Resource resource = resourceResolver.getResource(resourcePath);
+         Resource resource = resourceResolver.getResource(resourcePath);
 
-       if (resource == null) {
-           logger.error("Resource is null at path {}", resource);
+
+           if (resource == null) {
+               logger.error("Resource is null at path {}", resource);
+           }
+
+           return resource.getValueMap().get(propertyName, String.class);
        }
 
-      return resource.getValueMap().get(propertyName, String.class);
-   }
 }

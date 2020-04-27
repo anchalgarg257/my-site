@@ -19,6 +19,9 @@ public final class ApplicationConstants {
     public static final String PATH = "path";
     public static final String CHILD = "child";
     public static final String PROPERTY_HELLO = "hello";
+    public static final String PARAM_CONTENTPATH = "contentpath";
+    public static final String PARAM_ETCPATH = "etcpath";
+    public static final String SYSTEM_USER_NIRVANA_SYSTEM_USER_SERVICE = "nirvanaSystemUserService";
 
     private ApplicationConstants() {
     }
