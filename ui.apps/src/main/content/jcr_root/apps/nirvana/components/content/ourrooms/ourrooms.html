@@ -1,0 +1,49 @@
+<!-- Room Start -->
+<section class="room-area r-padding1" data-sly-use.templates="core/wcm/components/commons/v1/templates.html">>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <!--font-back-tittle  -->
+                        <div class="font-back-tittle mb-45">
+                            <div class="archivment-front">
+                                <h3>Our Rooms</h3>
+                            </div>
+                            <h3 class="archivment-back">Our Rooms</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <!-- Single Room -->
+                        <div class="single-room mb-50">
+                            <sly data-sly-resource="${'room 1' @ resourceType='nirvana/components/content/singleroom'}"/>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <!-- Single Room -->
+                        <div class="single-room mb-50">
+                            <sly data-sly-resource="${'room 2' @ resourceType='nirvana/components/content/singleroom'}"/>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <!-- Single Room -->
+                        <div class="single-room mb-50">
+                            <sly data-sly-resource="${'room 3' @ resourceType='nirvana/components/content/singleroom'}"/>
+                        </div>
+                    </div>
+
+
+                    
+                <div class="row justify-content-center">
+                    <div class="room-btn pt-70">
+                        <a href="#" class="btn view-btn1">View more  <i class="ti-angle-right"></i> </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+<!-- Room End -->
+

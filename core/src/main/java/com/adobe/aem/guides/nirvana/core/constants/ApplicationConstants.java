@@ -22,6 +22,13 @@ public final class ApplicationConstants {
     public static final String PARAM_CONTENTPATH = "contentpath";
     public static final String PARAM_ETCPATH = "etcpath";
     public static final String SYSTEM_USER_NIRVANA_SYSTEM_USER_SERVICE = "nirvanaSystemUserService";
+    public static final String CHILDNODE_JCR_CONTENT = "jcr:content";
+    public static final String CHILDNODE_LIST = "list";
+    public static final String PROPERTY_JCR_TITLE = "jcr:title";
+    public static final String PROPERTY_VALUE = "value";
+    public static final String STRING_KEY = "key";
+    public static final String STRING_VALUE = "value";
+    public static final String STRING_JCR_TITLE = "jcr:title";
 
     private ApplicationConstants() {
     }

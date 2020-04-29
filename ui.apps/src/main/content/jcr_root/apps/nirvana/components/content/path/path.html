@@ -1,16 +1,5 @@
 <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-     data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.FindAllImages">
-
-
-     <div data-sly-list.child="${model.imagesPath}">
-<br>
-Title = ${child.title}
-<br>
-Description = ${child.description}
-<br>
-Path = ${child.path}
-
-</div>
+     data-sly-use.model = "com.adobe.aem.guides.nirvana.core.models.GenericServiceModel">
 
 </div>
 <sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>

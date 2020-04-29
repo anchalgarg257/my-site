@@ -1,0 +1,13 @@
+<!-- Room Start -->
+<div class="room-img" data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+      <sly data-sly-resource="${'room' @ resourceType='nirvana/components/content/image'}"/>
+         <div class="room-caption">
+              <sly data-sly-resource="${'classic double bed' @ resourceType='nirvana/components/content/link'}"/>
+               <div class="per-night">
+                    <sly data-sly-resource="${'price' @ resourceType='nirvana/components/content/text'}"/>
+               </div>
+         </div>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !text}"></sly>
+        <!-- Room End -->
