@@ -29,6 +29,7 @@ public final class ApplicationConstants {
     public static final String STRING_KEY = "key";
     public static final String STRING_VALUE = "value";
     public static final String STRING_JCR_TITLE = "jcr:title";
+    public static final String SYSTEM_USER_ACS_SYSTEM_USER_SERVICE = "acsSystemUserService";
 
     private ApplicationConstants() {
     }

@@ -11,10 +11,10 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 public class GenericServiceModel {
 
     @ValueMapValue
-    String pathfield;
+    private String pathfield;
 
     @OSGiService
-    GenericListService genericListService;
+    private GenericListService genericListService;
 
     public String getJsonFromGenericList() {
         return genericListService.getGenericListJSON(pathfield).toString();
