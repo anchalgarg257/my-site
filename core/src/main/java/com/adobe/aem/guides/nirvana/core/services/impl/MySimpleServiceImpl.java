@@ -47,4 +47,6 @@ public class MySimpleServiceImpl implements MySimpleService {
     public String getPassword() {
         return config.getPassword();
     }
-}
+
+
+    }

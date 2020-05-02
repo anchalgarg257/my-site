@@ -9,5 +9,6 @@ public interface MySimpleService {
     int getNumberValue();
     String getUserName();
     String getPassword();
+
 }
 
