@@ -19,8 +19,6 @@ import org.slf4j.LoggerFactory;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 @Designate(ocd = CustomScheduler.Config.class)
 @Component(immediate = true, service = Runnable.class)
@@ -86,11 +84,12 @@ public class CustomScheduler implements Runnable {
 
     @Override
     public void run() {
+        logger.info("CustomScheduler is running");
         if (!config.schedulerOff()) {
-            logger.info("CustomScheduler is running");
+
 
             try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, ApplicationConstants.SYSTEM_USER_NIRVANA_SYSTEM_USER_SERVICE))) {
-               
+
                 Resource resource = resourceResolver.getResource(config.path());
 
 

@@ -1,0 +1,33 @@
+.small img {
+    height: 100px;
+    width: 150px;
+}
+
+.medium img {
+    height: 200px;
+    width: 300px;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+.large img {
+    height: 500px;
+    width: 800px;
+  margin-left: 50%;
+  margin-right: 100%;
+}
+
+.left img {
+  margin-left: 10%;
+  margin-right: 40%;
+}
+
+.center img {
+  margin-left: 30%;
+  margin-right: 50%;
+}
+
+.right img {
+  margin-left: 60%;
+  margin-right: 10%;
+}
