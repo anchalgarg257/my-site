@@ -2,4 +2,5 @@
 <workspaceFilter version="1.0">
     <filter root="/apps/nirvana"/>
     <filter root="/apps/msm/nirvana_blueprint" mode="merge"/>
+    <filter root="/etc/a" mode="update"/>
 </workspaceFilter>
