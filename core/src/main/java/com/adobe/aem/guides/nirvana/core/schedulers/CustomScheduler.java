@@ -87,11 +87,9 @@ public class CustomScheduler implements Runnable {
         logger.info("CustomScheduler is running");
         if (!config.schedulerOff()) {
 
-
             try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(Collections.singletonMap(ResourceResolverFactory.SUBSERVICE, ApplicationConstants.SYSTEM_USER_NIRVANA_SYSTEM_USER_SERVICE))) {
 
                 Resource resource = resourceResolver.getResource(config.path());
-
 
                 if (resource == null) {
                     logger.error("Resource is null at path {}", config.path());
