@@ -3,7 +3,8 @@
     jcr:primaryType="sling:OrderedFolder">
     <jcr:content
         jcr:primaryType="nt:unstructured"
-        jcr:title="NIRVANA Site">
+        jcr:title="NIRVANA Site"
+        metadataSchema="/conf/global/settings/dam/adminui-extension/metadataschema/nirvana custom">
         <folderThumbnail/>
     </jcr:content>
     <asset.jpg/>

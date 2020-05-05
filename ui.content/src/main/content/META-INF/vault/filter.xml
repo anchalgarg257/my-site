@@ -2,7 +2,8 @@
 <workspaceFilter version="1.0">
     <filter root="/conf/nirvana" mode="merge"/>
     <filter root="/content/nirvana" mode="merge"/>
-    <filter root="/content/dam/nirvana" mode="merge"/>
+    <filter root="/content/dam/nirvana" mode="update"/>
     <filter root="/content/experience-fragments/nirvana" mode="merge"/>
     <filter root="/content/nirvana2"/>
+    <filter root="/conf/global/settings/dam/adminui-extension/metadataschema/nirvana custom"/>
 </workspaceFilter>
