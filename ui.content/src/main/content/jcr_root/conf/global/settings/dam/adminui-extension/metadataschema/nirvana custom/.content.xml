@@ -1818,6 +1818,34 @@
                                         requiredCascading="always"
                                         visibilityCascading="default"/>
                                 </_x0031_588696099509>
+                                <_x0031_588749055767
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="dam/gui/components/admin/schemafield"
+                                        emptyText="Select Option"
+                                        fieldDescription="Country of Camera Man"
+                                        fieldLabel="Country of Camera Man"
+                                        name="./jcr:content/metadata/country"
+                                        resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/formfields/v2/metadataselect">
+                                    <granite:data
+                                            jcr:primaryType="nt:unstructured"
+                                            choicesCascading="default"
+                                            metaType="dropdown"
+                                            requiredCascading="default"
+                                            visibilityCascading="default"/>
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <_x0031_588753805459
+                                                jcr:primaryType="nt:unstructured"
+                                                text="India"
+                                                value="india"/>
+                                        <_x0031_588753813362
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Malaysia"
+                                                value="malaysia"/>
+                                    </items>
+                                    <cascadeitems
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="dam/gui/coral/components/admin/schemaforms/formbuilder/cascadeitems"/>
+                                </_x0031_588749055767>
                             </items>
                         </col1>
                         <col2
