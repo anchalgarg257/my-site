@@ -24,6 +24,7 @@
 
     <modules>
         <module>all</module>
+        
         <module>core</module>
 
         <module>ui.apps</module>
